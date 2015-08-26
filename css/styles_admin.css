@@ -1,0 +1,488 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/****************************************************/
+/* STUCTURAL STYLES CSS */
+/****************************************************/
+* {
+	font-family: 'Lato', sans-serif;
+	font-weight: normal;
+	font-size: 100%;
+	line-height:140%;
+}
+html, body {
+	background-color:#F3F3F3;
+	background-image: url(css_images/admin/BGs/BG_diagonal.png);
+	background-repeat: repeat;
+}
+div#wrap {
+	margin:0 auto;
+}
+div#headContainer {
+	background-color:none;
+}
+div#bodyContainer {
+	padding:10px 0;
+	background-color:#DADADA;
+}
+div#body {
+	background-color:#FFF;
+}
+div#footContainer {
+	background-color:none;
+	padding:10px 0;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* LINK STYLES CSS */
+/****************************************************/
+a:link,
+a:visited {
+	color:#F30;
+	text-decoration:none;
+}
+a:hover,
+a:active {
+	color:#333;
+	text-decoration:underline;
+}
+a.non:link,
+a.non:visited {
+	color:#333;
+	text-decoration:none;
+}
+a.non:hover,
+a.non:active {
+	color:#F30;
+	text-decoration:none;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* TYPOGRAPHY STYLES CSS */
+/****************************************************/
+p {
+	font-size:0.8em;
+	margin-bottom:10px;
+}
+h1 {
+	font-size:1.6em;
+}
+h2 {
+	font-size:1.4em;
+}
+h3 {
+	font-size:1.2em;
+}
+h4 {
+	font-size:1em;
+}
+h5 {
+	font-size:0.9em;
+}
+h6 {
+	font-size:0.7em;
+}
+strong {
+	font-weight:700;
+}
+.strong {
+	font-weight:700;
+}
+.textBottom {
+	margin-bottom:10px;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* CLASS TYPOGRAPHY STYLES CSS */
+/****************************************************/
+.gridPadding {
+	padding:15px 0;
+}
+
+/* Text Padding Styles */
+.textPadBoth p, 
+.textPadBoth h1,
+.textPadBoth h2,
+.textPadBoth h3,
+.textPadBoth h4,
+.textPadBoth h5,
+.textPadBoth h6,
+.textPadBoth h6 {
+	padding:0 30px;
+}
+.textPadLeft p, 
+.textPadLeft h1,
+.textPadLeft h2,
+.textPadLeft h3,
+.textPadLeft h4,
+.textPadLeft h5,
+.textPadLeft h6,
+.textPadLeft h6 {
+	padding:0 0 0 30px;
+}
+.textPadMid p,
+.textPadMid h1,
+.textPadMid h2,
+.textPadMid h3,
+.textPadMid h4,
+.textPadMid h5,
+.textPadMid h6,
+.textPadMid h6 {
+	padding:0 15px 0 15px;
+}
+.textPadRight p,
+.textPadRight h1,
+.textPadRight h2,
+.textPadRight h3,
+.textPadRight h4,
+.textPadRight h5,
+.textPadRight h6,
+.textPadRight h6 {
+	padding:0 30px 0 0;
+}
+
+div#body ul li {
+	font-size:0.8em;
+	margin:0 0 3px 15px;
+	padding:0 30px 0 0;
+	list-style-image: url(css_images/main/misc/bullet.png);
+	list-style-position: outside;
+}
+div#body ol li {
+	font-size:0.8em;
+	margin:0 0 3px 20px;
+	padding:0 30px 0 0;
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+div#body ul,
+div#body ol {
+	margin:0 0 15px 30px;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* TABLE STYLES CSS */
+/****************************************************/
+.containerArea table {
+	margin:0 30px 20px 30px;
+}
+.containerArea td {
+	font-size:0.8em;
+	padding:3px 7px;
+	border:solid 1px #CCC;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* DEFINITION LIST STYLES CSS */
+/****************************************************/
+dt.admin {
+	margin:0 30px;
+	cursor:pointer;
+}
+dd.admin {
+	margin:10px 30px 15px 30px;
+	color:#444;
+	padding:15px;
+	background-color: #FAFAFA;
+	border:dashed 1px #DADADA;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* FORM STYLES CSS */
+/****************************************************/
+form {
+	font-size:0.9em;
+	margin:10px 30px 10px 30px;
+	padding:10px 15px;
+	background: #FAFAFA;
+}
+fieldset {
+	margin:0 0 10px 0;
+	padding:10px 20px 16px 20px;
+	border:solid 1px #DADADA;
+}
+legend {
+	font-size:1em;
+	font-weight:700;
+	color:#F30;
+	padding:0 3px;
+}
+label {
+	font-size:0.9em;
+	margin:3px 0 3px 0;
+	display:block;
+}
+.opt_label {
+	margin-left:26px;
+}
+select {
+	font-size: 0.9em;
+	margin:0 0 5px 0;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+	margin:0 0 5px 0;
+	padding:5px;
+	border:solid 1px #EBEBEB;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+textarea {
+	padding:5px;
+	border:solid 1px #EBEBEB;
+}
+input[type=submit],
+input[type=button] {
+	font-size:0.9em;
+	margin:0 0 5px 0;
+	padding:4px;
+	border:solid 1px #EBEBEB;
+	cursor:pointer;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* HTML TABLE STYLES CSS */
+/****************************************************/
+
+/************************************************************************************/
+.keyNotes table {
+	margin:0 30px;
+}
+.keyNotes td {
+	padding:5px;
+	border:solid 1px #CCC;
+}
+.keyNotes img {
+	margin:4px 0 10px 30px;
+}
+/****************************************************/
+/* HTML ELEMENT STYLES CSS */
+/****************************************************/
+
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* COLOUR & TRANSPARENCY STYLES CSS */
+/****************************************************/
+.textOrange {
+	color:#FF3300;
+}
+.textGrey {
+	color:#777;
+}
+.textRed {
+	color:#F30;
+}
+.transparent {
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* BUTTON STYLES CSS */
+/****************************************************/
+.adminBut,
+a.adminBut:link,
+a.adminBut:visited {
+	color:#333;
+	font-size:0.9em;
+	width:134px;
+	height:80px;
+	padding:36px 0 0 0;
+	margin:0 10px 10px 0;
+	text-align:center;
+	cursor:pointer;
+	border:solid 1px #DADADA;
+	display:inline-block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #fafafa 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#fafafa)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#fafafa 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#fafafa 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#fafafa 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#fafafa 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fafafa',GradientType=0 ); /* IE6-9 */
+}
+.adminBut:hover,
+a.adminBut:hover,
+a.adminBut:active {
+	color:#F30;
+	text-decoration:none;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+	border:solid 1px #999;
+	background-color:#FFF;
+}
+
+.butSmall,
+a:link.butSmall,
+a:visited.butSmall {
+	font-size:0.8em;
+	font-style: normal;
+	color:#333;
+	padding:4px 12px;
+	display:inline-block;
+	text-decoration:none;
+	cursor:pointer;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	border:solid 1px #DADADA;
+	
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #ececec 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#ececec 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#ececec 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#ececec 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#ececec 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
+
+}
+a:hover.butSmall,
+a:active.butSmall {
+	font-size:0.8em;
+	color:#F30;
+	border:solid 1px #999;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+}
+.butLeft {
+	margin:5px 0 0 30px;
+	display:block;
+}
+.butRight {
+	margin:5px 30px 0 0;
+	display:inline;
+	float:right;
+}
+.butBack {
+	margin:5px 5px 0 0;
+	display:inline;
+	float:right;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* MARGIN STYLES CSS */
+/****************************************************/
+.marginLeft {
+	margin-left:30px;
+}
+.marginRight {
+	margin-right:30px;
+}
+.marginTop {
+	margin-top:15px;
+	display: block;
+}
+.marginBot {
+	margin-bottom:15px;
+	display: block;
+}
+/************************************************************************************/
+
+
+
+/****************************************************/
+/* MISC CLASS STYLES CSS */
+/****************************************************/
+.message_success {
+	font-weight:bold;
+	margin:0 0 3px 0;
+	padding:5px 10px;
+	color:#99CC00;
+	background-color:#FAFFF2;
+	border-top:solid 1px #99CC00;
+	border-bottom:solid 1px #99CC00;
+	overflow:hidden;
+}
+.message_error {
+	font-weight:bold;
+	margin:0 0 3px 0;
+	padding:5px 10px;
+	color:#C00;
+	background-color:#FFF5F5;
+	border-top:solid 1px #C00;
+	border-bottom:solid 1px #C00;
+	overflow:hidden;
+}
+.gridHeader {
+	font-size:1em;
+	color:#FFF;
+	padding:10px 30px;
+	background-color:#333;
+	text-transform:uppercase;
+}
+.greyArrow {
+	padding:0 30px;
+	background-image: url(css_images/main/BGs/BG_arrow.png);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.horzLine {
+	width:auto;
+	height:2px;
+	margin:20px 30px;
+	clear:both;
+	border-top:dashed 1px #CCC;
+}
+.underLine {
+	width:auto;
+	height:2px;
+	margin:2px 30px;
+	border-top:solid 1px #CCC;
+}
+.image {
+	display:block;
+	margin:10px 0 5px 0;
+}
+.reason {
+	margin:10px 0 7px 0;
+	display:block;
+	clear:left;
+}
+/************************************************************************************/
