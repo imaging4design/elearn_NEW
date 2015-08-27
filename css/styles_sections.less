@@ -23,14 +23,70 @@
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
-| STRUCTURE
+| RESULTS
 |-----------------------------------------------------------------------------------------------------------------
 */
-
-
+.result {
+	/*margin-left: 0px;
+	margin-right: 0px;
+	padding: 10px 0 4px 0;
+	&:hover {
+		color: #FFF;
+		background: #333;
+		cursor: pointer;
+	}*/
+}
+.result p {
+	font-size: 14px;
+	margin-top: 3px; 
+}
+.result div:first-child {
+	margin-bottom: -12px;
+	text-align: left;
+}
+.guage-container {
+	position: relative;
+	width: 100%;
+	height: 7px;
+	background: #EEEEEE;
+	display: inline-block;
+}
+.guage-line {
+	position: absolute;
+	height: 16px;
+	width: 1px;
+	margin-top: -5px;
+	margin-left: -1px;
+	background: #666;
+	display: inline-block;
+}
+.guage {
+	height: 7px;
+	float: left;
+}
+.poor {
+	background: @colGrey;
+	width: 25%;
+	display: inline-block;
+}
+.low {
+	background: @colRed;
+	width: 50%;
+	display: inline-block;
+}
+.good {
+	background: @colBlue;
+	width: 75%;
+	display: inline-block;
+}
+.high {
+	background: @colGreen;
+	width: 100%;
+	display: inline-block;
+}
 /*
 |-----------------------------------------------------------------------------------------------------------------
-| TYPOGRAPHY
+| KEY NOTES
 |-----------------------------------------------------------------------------------------------------------------
 */
 .key-notes {
@@ -90,9 +146,7 @@
 | LISTS
 |-----------------------------------------------------------------------------------------------------------------
 */
-.results ul li {
-	font-size: 10px;
-}
+
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -232,18 +286,31 @@
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+@media (min-width: 768px) {
+
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
 	
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 979px) {
-	
+
+	.result div:first-child {
+		margin-bottom: -12px;
+		text-align: right;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	
+
+	.result div:first-child {
+		margin-bottom: -12px;
+		text-align: right;
+	}
 }
 
