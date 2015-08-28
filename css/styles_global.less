@@ -15,7 +15,7 @@
 
 @colWhite: #FFFFFF;
 @colRed: #F7393D;
-@colGreen: #AFC800;
+@colGreen: #2AB4A0;
 @colYellow: #FEC817;
 @colBlue: #00A9E9;
 @colGrey: #999999;
@@ -48,8 +48,8 @@
 body {
 	position: relative;
 	font-family: @font;
-	font-weight: 300;
-	font-size: 15px;
+	font-weight: 400;
+	font-size: 16px;
 	padding-top: 50px;
 	background: @colWhite;
 	/*.noselect*/
@@ -72,12 +72,12 @@ body {
 	margin-bottom: 35px;
 }
 .band-grey {
-	background: #FAFAFA;
+	background: #F5F5F5;
 	margin: 0;
 	padding-top: 30px;
 	padding-bottom: 70px;
-	border-top: solid 1px #EBEBEB; 
-	border-bottom: solid 1px #EBEBEB; 
+/*	border-top: solid 1px #EBEBEB; 
+	border-bottom: solid 1px #EBEBEB; */
 }
 .band-grey-topics {
 	color: @colWhite;
@@ -114,7 +114,7 @@ body {
 .modules {
 	color: @colWhite;
 	margin: 20px 0 30px 0;
-	min-height: 550px;
+	min-height: 580px;
 	padding: 10px 20px 10px 20px;
 	top:0;
 	.transition-fast;
@@ -148,14 +148,12 @@ h1 {
 	letter-spacing: -1px;
 }
 h2 {
-	font-family: @fontHead;
 	font-size: 26px;
 	font-weight: 400;
 	letter-spacing: -1px;
 	text-transform: uppercase;
 }
 h3 {
-	font-family: @fontHead;
 	font-size: 18px;
 	font-weight: 300;
 	letter-spacing: -1px;
@@ -407,7 +405,9 @@ input.form-control:focus {
     line-height: 1.33333;
 	border-radius: 0;
 }
-
+.options label, .options > .label {
+    padding-left:0;
+}
 
 
 
@@ -545,6 +545,13 @@ a.btn {
 .marTop60 { margin-top: 60px; }
 .marBot60 { margin-bottom: 60px; }
 
+.pad20 { padding: 20px 0; }
+.padTop20 { padding-top: 20px; }
+.padBot20 { padding-bottom: 20px; }
+.pad60 { padding: 60px 0; }
+.padTop60 { padding-top: 60px; }
+.padBot60 { padding-bottom: 60px; }
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | ICONS
@@ -644,18 +651,19 @@ div.multiseparator {
 }
 .navbar-default .navbar-nav > li > a {
 	font-size: 14px;
-    color: #AAA;
+    color: #000;
     font-family: @fontHead;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
 	font-size: 14px;
-	color: #333;
+	color: #000;
 	border-bottom: none;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
+	color: #000;
 	border-bottom: none;
 	background: transparent;
 }
@@ -678,7 +686,7 @@ div.multiseparator {
 .nav-tabs > li.active > a:focus {
     color: #FFF;
     background-color: @colFooter;
-    border-width: 1px;
+    border-width: 0;
     border-style: solid;
     border-color: #DDD #DDD transparent;
     -moz-border-top-colors: none;
@@ -691,10 +699,10 @@ div.multiseparator {
 
 .nav-tabs > li > a {
 	color: #333;
-	font-weight: 300;
-    margin-right: 2px;
+	font-weight: 400;
+    margin-right: 0;
     line-height: 1.42857;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 0;
     background: #F5F5F5;
 }
@@ -702,7 +710,7 @@ div.multiseparator {
 .nav-tabs > li {
     float: none;
     margin-bottom: -1px;
-    display: inline-block;
+    display: block;
 }
 
 /* Accordion */
@@ -778,7 +786,6 @@ div.multiseparator {
 	}
 
 
-
 	/*
 	|-----------------------------------------------------------------------------------------------------------------
 	| MAIN HEADER NAV BAR - ANIMATED
@@ -843,6 +850,12 @@ div.multiseparator {
 	nav.menu-bar-large {
 		height:101px;
 		padding: 34px 20px 26px 20px;
+	}
+
+	.nav-tabs > li {
+	    float: none;
+	    margin-bottom: -1px;
+	    display: inline-block;
 	}
 
 }

@@ -78,7 +78,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 
-					<h2>Topics</h2>
+					<h2>Course Topics</h2>
 					<div class=	"multiseparator vc_custom"></div>
 					<p>Click <i class="fa fa-search"></i> for leaderboard results</p>
 

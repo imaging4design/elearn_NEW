@@ -20,22 +20,36 @@
 				  foreach ( $items as $item ):
 					
 					$segments = array( 'purchase', url_title( $item->name, 'dash', true ), $item->id );
+
+
+					echo '<div class="col-md-5 modules red">';
+						echo '<div class="module-head">';
+							echo '<div class="icon-med text-red"><i class="fa fa-check-square-o"></i></div>';
+							echo '<p class="text-red">' . $item->name . ' <br />$' . $item->price . ' <small>(incl GST)</small></p>';
+						echo '</div>';
+						
+						
+						echo '<div class="multiseparator vc_custom"></div>';
+						echo '<p class="text-red">' . $item->special_offer . '</p>';
+						echo '<p>' . $item->description . '</p><br />';
+
+
+						if( $item->subType == 0) 
+						{
+							// (i.e., a 'student subscription' - send to PayPal)
+							echo anchor( $segments, 'PURCHASE NOW', array('class'=>'btn btn-lg btn-green')) . '<br/> <br/>';
+						}
+						else
+						{
+							// (i.e., a 'school subscription' - send to manual order page)
+							echo anchor( 'items/school_order', 'ORDER NOW', array('class'=>'btn btn-lg btn-green')) . '<br/> <br/>';
+						}
+
+
+					echo '</div>';
 					
-					echo '<h2 class="text-capitalize">' . $item->name . ' <span class="label label-default">$' . $item->price . '</span> <small>(incl GST)</small></h2>';
-					echo '<div class="multiseparator vc_custom"></div>';
-					echo '<p class="text-red">' . $item->special_offer . '</p>';
-					echo '<p>' . $item->description . '</p><br />';
-					
-					if( $item->subType == 0) 
-					{
-						// (i.e., a 'student subscription' - send to PayPal)
-						echo anchor( $segments, 'PURCHASE NOW', array('class'=>'btn btn-lg btn-green')) . '<br/> <br/>';
-					}
-					else
-					{
-						// (i.e., a 'school subscription' - send to manual order page)
-						echo anchor( 'items/school_order', 'ORDER NOW', array('class'=>'btn btn-lg btn-green')) . '<br/> <br/>';
-					}
+										
+					echo '<div class="col-md-2"></div>';
 					
 						
 				  endforeach;
@@ -57,6 +71,4 @@
 		</div><!--ENDS col-->
 	</div><!--ENDS row-->
 </div><!--ENDS container-->
-
-
 

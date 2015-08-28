@@ -262,7 +262,7 @@
 				<div class="icon-sub-super text-red"><i class="fa fa-user"></i></div>
 				<?php echo show_prices(0); ?> <!-- see section_helper.php -->
 				<br>
-				<?php echo anchor('paypal/items', '<i class="fa fa-credit-card"></i> SIGN UP NOW', array('class'=>'btn btn-lg btn-red')); ?>
+				<?php echo anchor('paypal/items', 'SIGN UP NOW', array('class'=>'btn btn-lg btn-red')); ?>
 
 			</div>
 		</div><!--ENDS col-->
@@ -273,7 +273,7 @@
 				<div class="icon-sub-super text-blue"><i class="fa fa-users"></i></div>
 				<?php echo show_prices(1); ?> <!-- see section_helper.php -->
 				<br>
-				<?php echo anchor('paypal/items', '<i class="fa fa-credit-card"></i> SIGN UP NOW', array('class'=>'btn btn-lg btn-blue')); ?>
+				<?php echo anchor('paypal/items', 'SIGN UP NOW', array('class'=>'btn btn-lg btn-blue')); ?>
 				
 			</div>
 		</div><!--ENDS col-->

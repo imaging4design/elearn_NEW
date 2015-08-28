@@ -26,36 +26,7 @@
 				By using the <strong>step-by-step</strong> approach as outlined above, you can quickly grasp the fundamentals of each topic. Depending on your learning style there is something for every student, whether you prefer full course notes, condensed summaries, listening to audio/video presentations or writing full answers to questions to help ingrain the material, you will find something to suit you.
 			</p>
 
-			<br>
-
-			<?php
-
-				$dan = array(
-					'src' => base_url() . 'images/dan_rennie.jpg',
-					'alt' => 'Ran Rennie',
-					'width' => '180',
-					'height' => '180',
-					'style' => 'display:block;',
-					'class' => 'img-circle'
-				);
-
-				echo img($dan);
-
-			?>
-
-
-
-			<h2>The Author <br class="visible-xs">- Dan Rennie</h2>
-			<div class="multiseparator vc_custom"></div>
-
-			<p>
-				Dan Rennie has written and published over 30 economics resource publications in the past 20 years and is one of New Zealand's foremost experts on the subject. A former (HOD) head of department at Rosmini College on Auckland's North Shore, Dan conceived and developed the eLearn Economics website as the now <strong>'go to'</strong> online resource for learning the subject. 
-			</p>
-
-			<p>
-				Driven by a desire to promote and teach economics, Dan designed this online platform to offer the most current and up-to-date content available. With access available 24/7, students now have the ability to learn in their own time, at their own pace and track their progress through the recordable results facility, giving real time feedback.
-			</p>
-
+			
 
 		</div><!-- ENDS col -->
 
@@ -67,3 +38,44 @@
 
 	</div><!--ENDS row-->
 </div><!--ENDS container-->
+
+
+<div class="band-grey padTop60">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<?php
+
+					$dan = array(
+						'src' => base_url() . 'images/dan_rennie.jpg',
+						'alt' => 'Ran Rennie',
+						'width' => '180',
+						'height' => '180',
+						'style' => 'display:block;',
+						'class' => 'img-circle'
+					);
+
+					echo img($dan);
+
+				?>
+
+
+
+				<h2>The Author <br class="visible-xs">- Dan Rennie</h2>
+				<div class="multiseparator vc_custom"></div>
+
+				<p>
+					Dan Rennie has written and published over 30 economics resource publications in the past 20 years and is one of New Zealand's foremost experts on the subject. A former (HOD) head of department at Rosmini College on Auckland's North Shore, Dan conceived and developed the eLearn Economics website as the now <strong>'go to'</strong> online resource for learning the subject. 
+				</p>
+
+				<p>
+					Driven by a desire to promote and teach economics, Dan designed this online platform to offer the most current and up-to-date content available. With access available 24/7, students now have the ability to learn in their own time, at their own pace and track their progress through the recordable results facility, giving real time feedback.
+				</p>
+				
+			</div><!--ENDS col-->
+		</div><!--ENDS row-->
+	</div><!--ENDS container-->
+</div>
+
+
