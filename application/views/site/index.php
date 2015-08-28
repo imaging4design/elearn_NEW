@@ -1,4 +1,4 @@
-<!-- Starts Carousel new comment -->
+<!-- Starts Carousel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	
 	<!-- Indicators -->
