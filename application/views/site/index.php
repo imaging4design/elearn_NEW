@@ -161,11 +161,11 @@
 						<?php echo anchor(base_url() . 'section/demo/3', '<li>AS</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/5', '<li>IB (SL)</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/7', '<li>AP Micro</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/2', '<li>IGCSE</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/4', '<li>A2</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/6', '<li>IB (HL)</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/8', '<li>AP Macro</li>'); ?>
+						<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/11', '<li>NCEA Level 2</li>'); ?>
 						<?php echo anchor(base_url() . 'section/demo/12', '<li>NCEA Level 3</li>'); ?>
 					</ul>
