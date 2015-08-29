@@ -48,7 +48,7 @@
 					<?php if( isset($topic)) { ?>
 
 						<!--DISPLAY INSTRUCTIONS-->				
-						<h2>RESULTS LEADER BOARD: Information:</h2>
+						<h2>How it Works</h2>
 						<ul>
 							<li> Results are ordered by highest percentage (%) score for the month selected.</li>
 							<li> Where two or more students have the same (%) score, the student who has completed the most tests in that topic (for the month) will rank higher.</li>
@@ -297,7 +297,7 @@
 			<div class="col-sm-12 col-full">
 
 				<!--DISPLAY INSTRUCTIONS-->
-				<h2>RESULTS LEADER BOARD: Information:</h2>
+				<h2>How it Works</h2>
 				<ul>
 					<li> Results are ordered by highest percentage (%) score for the month selected.</li>
 					<li> Where two or more students have the same (%) score, the student who has completed the most tests in that topic (for the month) will rank higher.</li>

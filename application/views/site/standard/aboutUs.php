@@ -56,7 +56,7 @@
 						'width' => '180',
 						'height' => '180',
 						'style' => 'display:block;',
-						'class' => 'img-circle'
+						'class' => 'img-circle img-border'
 					);
 
 					echo img($dan);

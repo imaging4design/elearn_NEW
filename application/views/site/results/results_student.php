@@ -118,7 +118,7 @@
 								//'style' => 'float:right; margin:5px 30px 0 0;'
 							);
 
-						echo img($score_guage);
+						//echo img($score_guage);
 
 						echo '<h3><strong>' . strtoupper($topic->topic) . '</strong></h3>';
 					}
