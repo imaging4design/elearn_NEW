@@ -213,7 +213,6 @@
 </div><!--ENDS container-->
 
 
->>>>>>> c58297203698da68eb90cac0060646832e10d50e
 
 			</div><!-- ENDS col -->
 				
