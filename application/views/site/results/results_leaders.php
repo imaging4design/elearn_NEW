@@ -1,4 +1,4 @@
-<div class="band-white">
+<div class="band-topic-sections">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-full">
@@ -45,24 +45,20 @@
 					?>
 
 
-					<?php if( isset($topic)) { ?>
+					<?php //if( isset($topic)) { ?>
 
 						<!--DISPLAY INSTRUCTIONS-->				
-						<h2>How it Works</h2>
-						<ul>
-							<li> Results are ordered by highest percentage (%) score for the month selected.</li>
-							<li> Where two or more students have the same (%) score, the student who has completed the most tests in that topic (for the month) will rank higher.</li>
-							<li> You must complete at least five tests in the selected topic to be listed on the leader board.</li>
-						</ul>
+						
+						
 
 						<?php
 							// Only display link to 'Options' page if user is a paid member
 							$link = ( $this->session->userdata( 'member_type' ) == 'paid_member' ) ? anchor('section/edit_options', 'MY OPTIONS', array('class'=>'btn btn-lg btn-red')) : 'MY OPTIONS';
 						?>
-						<p><strong>If you wish to appear on the leader board you must opt in on the start page under </strong></p><br>
+						<p><strong>If you wish to appear on the leader board you must 'opt in' under My Options ...  </strong></p>
 						<?php echo $link; ?>
 
-					<?php } ?>
+					<?php //} ?>
 
 
 			</div><!-- ENDS col -->
@@ -73,7 +69,7 @@
 
 
 
-<div class="band-grey-dark">
+<div class="band-white">
 	<div class="container">
 
 		<div class="row">
@@ -173,8 +169,8 @@
 					if( ($this->input->post('topic') or $this->uri->segment(3) ) && $num_rows === 0)
 					{
 						// If $num_rows === 0, display 'No results found'
-						echo '<h4 class="bold textOrange">No results posted yet.</h4>';
-						echo '<h6>A minimum of 5 tests is required to appear on the Leaderboard. You must also select <strong>\'YES\'</strong> to <strong>\'Show my results on the Leaderboard\'</strong> in your My Options Tab.</h6>';
+						echo '<h4>No results posted yet.</h4>';
+						echo '<p>A minimum of 5 tests is required to appear on the Leaderboard. You must also select <strong>\'YES\'</strong> to <strong>\'Show my results on the Leaderboard\'</strong> in your My Options Tab.</p>';
 					}
 
 
@@ -281,7 +277,7 @@
 					{
 						// If $num_rows === 0, display 'No results found'
 						echo '<h4>No results posted yet.</h4>';
-						echo '<h6>A minimum of 5 tests is required to appear on the Leaderboard. You must also select <strong>\'YES\'</strong> to <strong>\'Show my results on the Leaderboard\'</strong> in your My Options Tab.</h6>';
+						echo '<p>A minimum of 5 tests is required to appear on the Leaderboard. You must also select <strong>\'YES\'</strong> to <strong>\'Show my results on the Leaderboard\'</strong> in your My Options Tab.</p>';
 					}
 
 				?>
@@ -303,13 +299,6 @@
 					<li> Where two or more students have the same (%) score, the student who has completed the most tests in that topic (for the month) will rank higher.</li>
 					<li> You must complete at least five tests in the selected topic to be listed on the leader board.</li>
 				</ul>
-
-				<?php
-					// Only display link to 'Options' page if user is a paid member
-					$link = ( $this->session->userdata( 'member_type' ) == 'paid_member' ) ? anchor('section/edit_options', 'MY OPTIONS', array('class'=>'btn btn-lg btn-red')) : 'MY OPTIONS';
-				?>
-				<p><strong>If you wish to appear on the leader board you must opt in on the start page under</strong></p><br>
-				<?php echo $link; ?>
 
 			</div><!--ENDS col-->
 		</div><!--ENDS row-->

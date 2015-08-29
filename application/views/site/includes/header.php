@@ -13,11 +13,11 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/coda_slider.css" type="text/css" /><!--JQ CODA SLIDER CSS-->
 	<!--<link rel="stylesheet" href="<?php //echo base_url(); ?>css/charts.css" type="text/css" />MAIN STYLES CSS-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css" type="text/css" /><!--BOOTSTRAP CSS-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/styles.css" type="text/css" /><!--MAIN STYLES CSS-->
-
-
+	
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.carousel.css"><!--OWL CAROUSEL CSS-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.theme.css"><!--OWL CAROUSEL DEFAULT THEME CSS-->
+
+	<link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/styles.css" type="text/css" /><!--MAIN STYLES CSS-->
 
 
 	<!--JS IMPORTS-->

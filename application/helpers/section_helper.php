@@ -233,15 +233,15 @@ function resultColourCodes($average_score_percent = NULL)
 	}
 	elseif( $average_score_percent > 35 && $average_score_percent <= 70)
 	{
-		$div_colour = 'low';
+		$div_colour = 'good';
 	}
 	elseif( $average_score_percent > 70 && $average_score_percent <= 84)
 	{
-		$div_colour = 'good';
+		$div_colour = 'satisfactory';
 	}
 	else
 	{
-		$div_colour = 'high';
+		$div_colour = 'excellent';
 	}
 
 	return $div_colour;

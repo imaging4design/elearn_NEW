@@ -25,7 +25,7 @@
 					<!-- Start EasyHtml5Video.com BODY section -->
 					<div data-video="isvideo" id="checkVideo" class="center video">
 
-						<video controls="controls"  poster="<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.jpg" width="900" height="480"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
+						<video controls="controls"  poster="<?php echo $path; ?><?php echo '_video_intro_slide.jpg'; ?>" width="900" height="480"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
 
 							<source src="<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.mp4" type="video/mp4" />
 							<source src="<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.webm" type="video/webm" />

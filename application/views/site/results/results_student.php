@@ -1,4 +1,4 @@
-<div class="band-white">
+<div class="band-topic-sections">
 	<div class="container results">
 		<div class="row">
 			<div class="col-lg-12 col-full">
@@ -21,17 +21,15 @@
 
 					<h3>12 MONTH BREAKDOWN</h3>
 
-						<label>Select Topic</label>
+					<?php
+						$id = '';
+						$topic_name = 'List of Topics';
+						
+						//echo dropDownTopics($id, $id, $topic_name); // See section_helper
+						echo topicsWithResultsStudents($id, $id, $topic_name); // See section_helper
+					?>
 
-						<?php
-							$id = '';
-							$topic_name = 'List of Topics';
-							
-							//echo dropDownTopics($id, $id, $topic_name); // See section_helper
-							echo topicsWithResultsStudents($id, $id, $topic_name); // See section_helper
-						?>
-
-						<!--<input type="submit" name="sub_topic" value="Results by Topic" style="display:block;"/>-->
+					<!--<input type="submit" name="sub_topic" value="Results by Topic" style="display:block;"/>-->
 					
 
 				<?php
@@ -58,14 +56,14 @@
 
 					<div class="row">
 						<div class="col-sm-6">
-							<label>Order By:</label>
+
 							<?php 
 								echo orderDropdown($value='', $selected='', $label='Order By'); 
 							?>
 						</div><!-- ENDS col -->
 
 						<div class="col-sm-6">
-							<label>Select Month</label>
+
 							<?php
 								$month = date('M'); // Get current Month - for 'value'
 								$month_full = date('F'); // Get current Month - for 'label'
@@ -93,11 +91,13 @@
 
 
 
+	</div><!-- ENDS container -->
+</div><!-- ENDS band-topic-sections -->
 
 
 
-
-
+<div class="band-white">
+	<div class="container results">
 		<div class="row">
 			<div class="col-lg-12">
 
@@ -109,18 +109,16 @@
 					//****************************************************************************//
 					if( isset($topic) && $this->input->post('token'))
 					{
-						$score_guage = array(
-								'src' => $this->css_path_url . 'main/misc/score_guage.png',
-								'alt' => 'eLearn Economics',
-								'width' => '400',
-								'height' => '25',
-								'class' => 'score_guage'
-								//'style' => 'float:right; margin:5px 30px 0 0;'
-							);
+						// Show performance rating guage
+						echo '<div class="rating-container">';
+							echo '<span class="poor rating">&nbsp;</span> Poor';
+							echo '<span class="good rating">&nbsp;</span> Satisfactory';
+							echo '<span class="satisfactory rating">&nbsp;</span> Good';
+							echo '<span class="excellent rating">&nbsp;</span> Excellent';
+						echo '</div>';
 
-						//echo img($score_guage);
-
-						echo '<h3><strong>' . strtoupper($topic->topic) . '</strong></h3>';
+						echo '<h2>' . strtoupper($topic->topic) . '</h2>';
+						echo '<div class="multiseparator vc_custom"></div>';
 					}
 
 				
@@ -145,7 +143,7 @@
 					$min_tests = FALSE;
 
 
-					echo '<h5>Last Test Date: ' . $results->test_date . '</h5>';
+					echo '<p>Last test completed on: <strong>' . $results->test_date . '</strong></p>';
 
 
 					for ($i = 0, $num = count($month); $i < $num; $i++):
@@ -178,13 +176,12 @@
 
 
 						echo '<div class="row result">';
-							echo '<div class="col-md-1">';
-
-								echo '<p>' . $month[$i] . ' ' . date('Y') . ' <br> ' . $results->$n_month[$i] . ' / ' . $average_score_percent . ' %</p>';
+							echo '<div class="col-md-2">';
+								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . ' %</p>';
 							echo '</div>';
-							echo '<div class="col-lg-11 col-md-6">';
+							echo '<div class="col-lg-10 col-md-6">';
 								echo '<span class="guage-container">';
-									echo '<span class="guage '.$div_colour.'" style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
+									echo '<span class="guage ' . $div_colour . ' " style="width:' . $average_score_percent . '%;"></span>';
 								echo '</span>';
 							echo '</div>';
 							
@@ -202,11 +199,11 @@
 
 
 						echo '<div class="row result">';
-							echo '<div class="col-md-1">';
+							echo '<div class="col-md-2">';
 
-								echo '<p>' . $month[$i] . ' ' . date('Y') . ' <br> ' . $results->$n_month[$i] . ' / ' . $average_score_percent . ' %</p>';
+								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . ' %</p>';
 							echo '</div>';
-							echo '<div class="col-lg-11 col-md-6">';
+							echo '<div class="col-lg-10 col-md-6">';
 								echo '<span class="guage-container">';
 									echo '<span class="guage poop '.$div_colour.'" style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
 								echo '</span>';
@@ -361,7 +358,7 @@
 
 
 				<!--DISPLAY INSTRUCTIONS-->
-				<h3>RESULTS SUMMARY <span class="text-redLight">(Information):</span></h3>
+				<br><h3>RESULTS SUMMARY <span class="text-redLight">(Information):</span></h3>
 
 				<p>Each progress bar shows your average multi-choice test score (as %) for the <span class="bold">LAST FIVE TESTS</span> completed in the topic. (Each time you take a topic test, your oldest result is dropped and your newest result added - then your five latest test results are divided to show your average score).</p>
 

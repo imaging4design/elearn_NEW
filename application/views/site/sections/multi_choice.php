@@ -13,8 +13,8 @@
 					echo '<h3 class="bold" align="center">ANSWERS: You scored ' . $score . ' out of 10</h3>';
 
 					// Display score in graphic output
-					echo '<div class="guage guage_grey">';
-					echo '<div class="guage guage_green" style="width:'.$score.'0%;"></div>';
+					echo '<div>';
+					echo '<div style="width:'.$score.'0%;"></div>';
 					echo '</div>';
 					
 					// Display actual list of results as $results array
@@ -76,7 +76,7 @@
 
 										echo '<h2><span class="quest-num">Q'.$count.'</span> ' . $display_image . '</h2>';
 										echo '<h3>QUESTION: <span class="log"></span></h3>';
-										echo '<p>' . $row->question . '</p>';
+										echo '<p><strong>' . $row->question . '</strong></p>';
 
 									
 

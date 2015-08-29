@@ -1,12 +1,12 @@
-<div class="band-white">
+<div class="band-topic-sections">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-full">
 
 
-				<h2>SELECT AN ECONOMICS TOPIC</h2>
+				<h2>Select your course level topics</h2>
 				<div class="multiseparator vc_custom"></div>
-				<p>Select course level best suited to your study requirements</p>
+				<p>Select a course level from below that best suits your study requirements</p>
 
 
 				<div class="row">

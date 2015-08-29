@@ -16,12 +16,12 @@
 	zoom: 1;
 	*display: inline;/*IE7 life-saver */
 	margin: 5px;
-	padding: 3px 10px;
+	padding: 10px 20px;
 	font-size: 12px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
-	background: #869791;
+	background: #E74C3C;
 	filter: Alpha(Opacity=50);/*IE7 fix*/
 	opacity: 0.5;
 }

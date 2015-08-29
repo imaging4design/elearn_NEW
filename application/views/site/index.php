@@ -2,7 +2,7 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	
 	<!-- Indicators -->
-	<ol class="carousel-indicators">
+	<ol class="carousel-indicators hidden-xs">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
@@ -15,9 +15,9 @@
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">eLearn Economics</h1>
-					<h2>Full Key Notes on ALL Topics</h2>
-					<p>The site covers a wide range of courses and individuals have the ability to customise their course or do extension work</p>
-					<p><a class="btn btn-lg btn-red" href="#" role="button">SUBSCRIBE TODAY</a></p>
+					<h2 class="hidden-xs">Full Key Notes on ALL Topics</h2>
+					<p class="hidden-xs">The site covers a wide range of courses and individuals have the ability to customise their course or do extension work</p>
+					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="#" role="button">SUBSCRIBE TODAY</a></p>
 				</div> 
 			</div>
 		</div>
@@ -26,9 +26,9 @@
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">eLearn Economics</h1>
-					<h2>Audio and Video Presentations</h2>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-					<p><a class="btn btn-lg btn-red" href="#" role="button">Learn more</a></p>
+					<h2 class="hidden-xs">Audio and Video Presentations</h2>
+					<p class="hidden-xs">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="#" role="button">Learn more</a></p>
 				</div>
 			</div>
 		</div>

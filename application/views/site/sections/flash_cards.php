@@ -1,4 +1,4 @@
-<div class="band-off-white">
+<div class="band-white">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -77,14 +77,23 @@
 				</div><!-- ENDS owl-example -->
 
 
-
+				<!-- OPTIONS :: to include the answer and question together or separate them on different slides -->
 				<?php echo form_open('section/flash_cards/' . $this->uri->segment(3), array('class' => 'section_form', 'id' => 'section_form')); ?>
-					
-					<div class="flash-cards-options">
-						<input type="radio" name="flash_opt" class="flash_opt" value="combine" <?php if( $flash_opt == 'combine' ) { echo 'checked = \"checked\"'; } ?> /> Answers on same slide 
-						<input type="radio" name="flash_opt" class="flash_opt" value="separate" <?php if( $flash_opt == 'separate' ) { echo 'checked = \"checked\"'; } ?> /> Answers on following slide
-						<input type="submit" id="submit_But" class="btn btn-sm btn-red" value="Change" />
+
+					<div class="radio">
+						<label>
+							<input type="radio" name="flash_opt" class="flash_opt" id="optionsRadios1" value="combine" <?php if( $flash_opt == 'combine' ) { echo 'checked = \"checked\"'; } ?> />
+							Answers on same slide
+						</label>
 					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="flash_opt" class="flash_opt" id="optionsRadios2" value="separate" <?php if( $flash_opt == 'separate' ) { echo 'checked = \"checked\"'; } ?> />
+							Answers on following slide
+						</label>
+					</div>
+					
+					<!-- <input type="submit" id="submit_But" class="btn btn-sm btn-red" value="Change" /> -->
 
 				<?php echo form_close(); ?>
 

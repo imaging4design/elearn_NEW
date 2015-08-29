@@ -29,11 +29,11 @@
 				<?php
 					if( $this->session->userdata('logged_in') ==1)
 					{
-						echo anchor('section/index', '<i class="fa fa-angle-left"></i> Topics', array('class'=>'btn btn-sm btn-red btn-back-2 pull-right'));
+						echo anchor('section/index', '<i class="fa fa-angle-left"></i> Topics', array('class'=>'btn btn-sm btn-grey btn-back-2 pull-right'));
 					}
 					else
 					{
-						echo anchor('section/demo', '<i class="fa fa-angle-left"></i> Topics', array('class'=>'btn btn-sm btn-red btn-back-2 pull-right'));
+						echo anchor('section/demo', '<i class="fa fa-angle-left"></i> Topics', array('class'=>'btn btn-sm btn-grey btn-back-2 pull-right'));
 					}
 				?>
 

@@ -10,10 +10,10 @@ ul.leaders-list {
 		list-style: none;
 		margin: 0 0 2px 0;
 		padding: 10px 15px;
-		background: darken(@colGreyDark, 10%);
+		background: @colGreySoft;
 		&:hover {
 			color: @colWhite;
-			background: darken(@colGreyDark, 15%);
+			background: darken(@colGreyMid, 15%);
 			cursor: pointer;
 		}
 	}
@@ -33,6 +33,7 @@ ul.leaders-list {
 		background: #333;
 		cursor: pointer;
 	}*/
+	margin-top: 10px;
 }
 .result p {
 	font-size: 14px;
@@ -55,7 +56,7 @@ ul.leaders-list {
 	width: 1px;
 	margin-top: -5px;
 	margin-left: -1px;
-	background: #666;
+	background: @colGreyMid;
 	display: inline-block;
 }
 .guage {
@@ -67,28 +68,35 @@ ul.leaders-list {
 	width: 0;
 	display: inline-block;
 }
-.low {
+.good {
 	background: @colRedLight;
 	width: 0;
 	display: inline-block;
 }
-.good {
+.satisfactory {
 	background: @colBlueLight;
 	width: 0;
 	display: inline-block;
 }
-.high {
+.excellent {
 	background: @colGreenLight;
 	width: 0;
 	display: inline-block;
 }
-.poop {
-	width: 0;
+.rating-container {
+	font-size: 12px;
 }
-.none {
-	display: none;
+.rating {
+	font-size: 12px;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	line-height: .9;
+	margin-left: 10px;
 }
-
+.rating:first-child {
+	margin-left: 0;
+}
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | TYPOGRAPHY
@@ -259,10 +267,10 @@ h3 {
 }
 .owl-carousel-cont {
 	background: #FFF;
-	padding: 5px 15px 15px 15px;
+	padding: 5px 10px 10px 10px;
 	overflow: hidden;
-	border-top: solid 10px #F5F5F5;
-	border-bottom: solid 10px #F5F5F5;
+	/*border-top: solid 10px #F5F5F5;
+	border-bottom: solid 10px #F5F5F5;*/
 	textarea {
 		margin-bottom: 15px;
 	}
@@ -270,12 +278,34 @@ h3 {
 		margin-bottom: 10px;
 	}
 }
+
+.owl-theme .owl-controls {
+	margin-top: 30px;
+}
+
+.owl-theme .owl-controls .owl-buttons div{
+	color: #FFF;
+	padding: 10px 20px;
+	font-size: 12px;
+	border-radius: 30px;
+	background: #E74C3C;
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1.0;
+}
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+	background: #C0392B;
+}
+
 .flash-cards-options {
 	background: #FFF;
 	margin-top: 30px;
 	padding: 20px;
 	overflow: hidden;
-	border: dashed 1px #EBEBEB;
+}
+.flash_opt {
+	display: block;
 }
 /*
 |-----------------------------------------------------------------------------------------------------------------

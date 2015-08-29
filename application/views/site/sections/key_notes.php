@@ -1,4 +1,4 @@
-<div class="band-off-white">
+<div class="band-white">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
