@@ -1,44 +1,10 @@
 /*
 |-----------------------------------------------------------------------------------------------------------------
-| IMPORTS
+| IMPORTS (MIXINS)
 |-----------------------------------------------------------------------------------------------------------------
 */
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| MIXINS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-@font: 'Open Sans', sans-serif; /* 300 400, 600, 700, 800 */
-@fontHead: 'Montserrat', sans-serif; /* 400, 700 */
-
-@colWhite: #FFFFFF;
-@colRed: #F7393D;
-@colGreen: #2AB4A0;
-@colYellow: #FEC817;
-@colBlue: #00A9E9;
-@colGrey: #999999;
-@colFooter: #414B4F;
-
-.transition {
-	-webkit-transition: all 0.6s linear;
-	transition: all 0.6s linear;
-	-webkit-transform: translateZ(0);
-}
-.transition-fast {
-	-webkit-transition: all 0.2s linear;
-	transition: all 0.2s linear;
-	-webkit-transform: translateZ(0);
-}
-.noselect {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
+@import url("mixins.less"); /*Get Mixins*/ 
+@import url("styles_sections.less"); /*Get Mixins*/ 
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -49,6 +15,7 @@ body {
 	position: relative;
 	font-family: @font;
 	font-weight: 400;
+	color: #333;
 	font-size: 16px;
 	padding-top: 50px;
 	background: @colWhite;
@@ -56,10 +23,10 @@ body {
 }
 .footer {
 	color: @colWhite;
-	background: @colFooter;
-	margin: 40px 0 10px 0;
+	background: darken(@colGreyDark, 25%);
+	margin: 0 0 10px 0;
 	padding: 60px 0 40px 0;
-	border-bottom: solid 3px @colRed;
+	border-bottom: solid 3px @colRedLight;
 	text-align: center;
 }
 .topics-list p {
@@ -71,23 +38,40 @@ body {
 .footer div.col-sm-3 {
 	margin-bottom: 35px;
 }
+.band-topic-sections {
+	color: @colWhite;
+	background: @colGreyMid;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.band-white {
+	background: @colWhite;
+	margin: 0;
+	padding: 80px 0;
+}
+.band-off-white {
+	background: @colGreyMid;
+	margin: 0;
+	padding: 80px 0;
+}
+.band-red {
+	color: @colWhite;
+	background: @colRedLight;
+	margin: 0;
+	padding: 80px 0;
+}
 .band-grey {
 	background: #F5F5F5;
 	margin: 0;
-	padding-top: 30px;
-	padding-bottom: 70px;
-/*	border-top: solid 1px #EBEBEB; 
-	border-bottom: solid 1px #EBEBEB; */
+	padding: 80px 0;
 }
-.band-grey-topics {
+.band-grey-dark {
 	color: @colWhite;
-	background: @colFooter;
-	margin-bottom: 40px;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	/*border-top: solid 1px #EBEBEB; 
-	border-bottom: solid 1px #EBEBEB; */
+	background: @colGreyDark;
+	margin: 0;
+	padding: 80px 0;
 }
+
 .row.no-gutters {
 	margin-right: 0;
 	margin-left: 0;
@@ -103,12 +87,12 @@ body {
 	margin-top: 20px;
 }
 .module-head {
-	background: @colWhite;
+	background: #FAFAFA;
 	margin: -10px -20px 15px -20px;
-	padding: 10px 20px 10px 20px;
+	padding: 14px 20px 6px 20px;
 	text-align: center;
 	h4 {
-		font-size: 30px;
+		font-size: 26px;
 	}
 }
 .modules {
@@ -148,12 +132,14 @@ h1 {
 	letter-spacing: -1px;
 }
 h2 {
+	font-family: @fontHead;
 	font-size: 26px;
 	font-weight: 400;
 	letter-spacing: -1px;
 	text-transform: uppercase;
 }
 h3 {
+	font-family: @fontHead;
 	font-size: 18px;
 	font-weight: 300;
 	letter-spacing: -1px;
@@ -177,7 +163,7 @@ p {
 	font-family: @fontHead;
 	font-weight: 300;
 	font-size: 80px;
-	color: @colRed;
+	color: @colRedLight;
 	letter-spacing: -5px;
 }
 .giant-text-rev {
@@ -186,7 +172,6 @@ p {
 }
 .icon-super {
 	font-size: 120px;
-	color: @colWhite;
 	margin-bottom: -25px;
 }
 .icon-sub-super {
@@ -210,8 +195,8 @@ p {
 	width:300px !important;
 	margin: 0 auto;
 	padding: 4px 0 0 0;
-	border-top:dotted 1px @colRed;
-	border-bottom:dotted 1px @colRed;
+	border-top:dotted 1px @colRedLight;
+	border-bottom:dotted 1px @colRedLight;
 }
 .center {
 	text-align: center;
@@ -229,21 +214,22 @@ p {
 |-----------------------------------------------------------------------------------------------------------------
 */
 .col-full {
-	/*min-height:700px;*/
-	margin: 20px 0;
+	margin: 0;
 }
-/*.col-full h2:first-child {
-	font-size: 35px;
-}*/
 .col-full .created {
 	text-transform: uppercase;
 }
-.col-full li {
-	padding-left: 18px;
+.col-full ul {
+	padding: 0;
+	/*background: @colGreySoft;*/
+	li {
+		margin: 0 0 5px 0;
+		padding-left: 18px;
+		list-style: none;
+	}
 }
-
 .col-full li:before {
-	color: @colRed;
+	color: @colRedLight;
 	content:"\f00c ";
 	font-family: FontAwesome; /* FontAwesome or whatever */
 	display: inline-block;
@@ -257,7 +243,7 @@ p {
 |-----------------------------------------------------------------------------------------------------------------
 */
 .sidebar {
-	margin: 34px 0;
+	margin: 14px 0;
 	padding: 0 20px;
 	/*border-left: solid 1px #DDD;*/
 	p {
@@ -268,7 +254,7 @@ p {
 		font-size: 14px;
 	}
 	ul li:before {
-		color: @colRed;
+		color: @colRedLight;
 		content:"\f00c ";
 		font-size: 14px;
 		font-family: FontAwesome; /* FontAwesome or whatever */
@@ -329,7 +315,7 @@ p {
 	margin: 0 1px;
 	display: block;
 	&:hover {
-		background: darken(@colBlue, 5%);
+		background: @colRedLight;
 		text-decoration: none !important;
 	}
 }
@@ -340,9 +326,9 @@ p {
 |-----------------------------------------------------------------------------------------------------------------
 */
 a {
-	color: @colRed;
+	color: @colRedLight;
 	&:hover {
-		color: @colBlue;
+		color: @colBlueLight;
 	}
 }
 a:hover {
@@ -352,7 +338,7 @@ a:hover {
 
 .social-media a .fa,
 .social-media p a {
-	color: @colGrey;
+	color: @colGreyDark;
 	&:hover {
 		color: @colWhite;
 		.transition-fast;
@@ -361,7 +347,7 @@ a:hover {
 .topics-list a {
 	color: #333;
 	&:hover {
-		color: @colRed;
+		color: @colRedLight;
 	}
 }
 
@@ -443,7 +429,7 @@ input.form-control:focus {
 .btn {
 	font-family: @fontHead;
 	border: none;
-	/*border-bottom: solid 4px transparent;*/
+	border-bottom: solid 4px transparent;
 	border-radius: 0;
 	text-transform: uppercase;
 }
@@ -454,23 +440,23 @@ a.btn {
 }
 .btn-red {
 	color: @colWhite;
-	background-color: @colRed;
-	border-color: darken(@colRed, 20%);
+	background-color: @colRedLight;
+	border-color: @colRedDark;
 }
 .btn-red:hover {
 	color: @colWhite;
-	background-color: darken(@colRed, 10%);
-	border-color: darken(@colRed, 20%);
+	background-color: darken(@colRedLight, 10%);
+	border-color: darken(@colRedLight, 20%);
 }
 .btn-blue {
 	color: @colWhite;
-	background-color: @colBlue;
-	border-color: darken(@colBlue, 15%);
+	background-color: @colBlueLight;
+	border-color: darken(@colBlueLight, 15%);
 }
 .btn-blue:hover {
 	color: @colWhite;
-	background-color: darken(@colBlue, 5%);
-	border-color: darken(@colBlue, 15%);
+	background-color: darken(@colBlueLight, 5%);
+	border-color: darken(@colBlueLight, 15%);
 }
 .btn-yellow {
 	color: @colWhite;
@@ -484,13 +470,23 @@ a.btn {
 }
 .btn-green {
 	color: @colWhite;
-	background-color: @colGreen;
-	border-color: darken(@colGreen, 15%);
+	background-color: @colGreenDark;
+	border-color: darken(@colGreenDark, 15%);
 }
 .btn-green:hover {
 	color: @colWhite;
-	background-color: darken(@colGreen, 6%);
-	border-color: darken(@colGreen, 15%);
+	background-color: darken(@colGreenDark, 6%);
+	border-color: darken(@colGreenDark, 15%);
+}
+.btn-grey {
+	color: @colWhite;
+	background-color: @colGreyDark;
+	border-color: darken(@colGreyDark, 15%);
+}
+.btn-grey:hover {
+	color: @colWhite;
+	background-color: darken(@colGreyDark, 6%);
+	border-color: darken(@colGreyDark, 15%);
 }
 .btn-settings {
 		&:hover, &:active, &:focus {
@@ -507,37 +503,37 @@ a.btn {
 | COLOURS
 |-----------------------------------------------------------------------------------------------------------------
 */
-.red {
-	background: @colRed;
+/*.red {
+	background: @colRedLight;
 }
 .green {
-	background: @colGreen;
+	background: @colGreenDark;
 }
 .yellow {
 	background: @colYellow;
 }
 .blue {
-	background: @colBlue;
+	background: @colBlueLight;
 }
 .grey {
 	background: @colGrey;
 }
 
 .text-red {
-	color: @colRed;
+	color: @colRedLight;
 }
 .text-green {
-	color: @colGreen;
+	color: @colGreenDark;
 }
 .text-yellow {
 	color: @colYellow;
 }
 .text-blue {
-	color: @colBlue;
+	color: @colBlueLight;
 }
 .text-grey {
 	color: @colGrey;
-}
+}*/
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -571,7 +567,7 @@ a.btn {
 	width:100%;
 	margin-left: 0;
 	margin-right: -15px;
-	background: @colRed;
+	background: @colRedLight;
 	padding: 30px;
 	text-align: center;
 }
@@ -585,7 +581,7 @@ video {
 	width: 100% !important;
 	height: auto !important;
 	margin-top: 20px;
-	border: solid 1px @colGrey;
+	border: solid 1px @colGreyDark;
 }
 hr {
 	margin: 60px 0;
@@ -606,7 +602,7 @@ div.multiseparator::before {
 	box-sizing: border-box;
 }
 div.multiseparator::after {
-	background-color: @colRed;
+	background-color: @colRedLight;
 	bottom: 0;
 	content: "";
 	display: block;
@@ -677,7 +673,7 @@ div.multiseparator {
 	border-color: transparent;
 }
 .carousel-inner {
-	margin-bottom: 70px;
+	/*margin-bottom: 70px;*/
 }
 
 /* Nav Tabs */
@@ -691,7 +687,7 @@ div.multiseparator {
 .nav-tabs > li.active > a:hover, 
 .nav-tabs > li.active > a:focus {
 	color: #FFF;
-	background-color: @colFooter;
+	background-color: @colRedLight;
 	border-width: 0;
 	border-style: solid;
 	border-color: #DDD #DDD transparent;
@@ -705,13 +701,17 @@ div.multiseparator {
 }
 
 .nav-tabs > li > a {
-	color: #333;
+	color: @colWhite;
 	font-weight: 400;
     margin-right: 0;
     line-height: 1.42857;
     border: none;
     border-radius: 0;
-    background: #F5F5F5;
+    background: @colRedDark;
+    background: darken(@colGreyDark, 25%);
+    &:hover {
+    	background: @colRedLight;
+    }
 }
 
 .nav-tabs > li {
@@ -735,7 +735,7 @@ div.multiseparator {
 	&:active {
 		text-decoration: none;
 		color: @colWhite;
-		background:@colRed;
+		background:@colRedLight;
 	}
 }
 .panel-group .panel {
@@ -749,7 +749,7 @@ div.multiseparator {
 .panel-default > .panel-heading {
 	color: #444;
 	background-color: @colWhite;
-	border-left: solid 3px @colRed !important;
+	border-left: solid 3px @colRedLight !important;
 }
 .panel-body {
 	/*color: @colGrey;*/
@@ -761,7 +761,7 @@ div.multiseparator {
 /* Label */
 .label-default {
 	font-weight: 400;
-	background-color: @colRed;
+	background-color: @colRedLight;
 }
 
 /* Dropdown Btn */
@@ -818,12 +818,12 @@ div.multiseparator {
 	}
 	.navbar-default .navbar-nav > li > a:hover,
 	.navbar-default .navbar-nav > li > a:focus {
-		border-bottom: solid 5px @colRed;
+		border-bottom: solid 5px @colRedLight;
 	}
 	.navbar-default .navbar-nav > .active > a, 
 	.navbar-default .navbar-nav > .active > a:hover, 
 	.navbar-default .navbar-nav > .active > a:focus {
-		border-bottom: solid 5px @colRed;
+		border-bottom: solid 5px @colRedLight;
 	}
 	nav.menu-bar-small.navbar-default .navbar-brand, 
 	.navbar-default .navbar-brand:active  {
@@ -874,328 +874,3 @@ div.multiseparator {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 }
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| IMPORTS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| MIXINS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-@font: 'Open Sans', sans-serif; /* 300 400, 600, 700, 800 */
-@fontHead: 'Montserrat', sans-serif; /* 400, 700 */
-
-@colWhite: #FFFFFF;
-@colRed: #F7393D;
-@colGreen: #2AB4A0;
-@colYellow: #FEC817;
-@colBlue: #00A9E9;
-@colGrey: #999999;
-@colFooter: #414B4F;
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| RESULTS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-.result {
-	/*margin-left: 0px;
-	margin-right: 0px;
-	padding: 10px 0 4px 0;
-	&:hover {
-		color: #FFF;
-		background: #333;
-		cursor: pointer;
-	}*/
-}
-.result p {
-	font-size: 14px;
-	margin-top: 3px; 
-}
-.result div:first-child {
-	margin-bottom: -12px;
-	text-align: left;
-}
-.guage-container {
-	position: relative;
-	width: 100%;
-	height: 7px;
-	background: #EEEEEE;
-	display: inline-block;
-}
-.guage-line {
-	position: absolute;
-	height: 16px;
-	width: 1px;
-	margin-top: -5px;
-	margin-left: -1px;
-	background: #666;
-	display: inline-block;
-}
-.guage {
-	height: 7px;
-	float: left;
-}
-.poor {
-	background: @colGrey;
-	width: 25%;
-	display: inline-block;
-}
-.low {
-	background: @colRed;
-	width: 50%;
-	display: inline-block;
-}
-.good {
-	background: @colBlue;
-	width: 75%;
-	display: inline-block;
-}
-.high {
-	background: @colGreen;
-	width: 100%;
-	display: inline-block;
-}
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| TYPOGRAPHY
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-h3 {
-	font-weight: 600;
-}
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| KEY NOTES
-|-----------------------------------------------------------------------------------------------------------------
-*/
-.key-notes {
-	h1 {
-		font-size: 26px;
-		letter-spacing: -1px;
-		text-transform: uppercase;
-		strong {
-			font-weight: 400;
-		}
-	}
-	h2 {
-		font-size: 22px;
-		letter-spacing: -1px;
-		text-transform: uppercase;
-	}
-	h3 {
-		font-size: 18px;
-		letter-spacing: -1px;
-		text-transform: uppercase;
-	}
-	h4 {
-		font-size: 14px;
-		line-height: 1.2;
-	}
-	h5 {
-		font-size: 12px;
-		letter-spacing: -1px;
-		line-height: 1.3;
-	}
-	p {
-		font-size: 16px;
-		letter-spacing: -0.3px;
-	}
-
-	ul li, ol li {
-		font-size: 16px;
-		margin-bottom: 5px;
-		margin-left: 16px;
-		list-style: disc;
-	}
-
-	ol li {
-		list-style-type: decimal;
-		margin-left: 17px;
-	}
-
-}
-
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| LISTS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| LINKS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| FORMS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| TABLES
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| IMAGES
-|-----------------------------------------------------------------------------------------------------------------
-*/
-
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| BUTTONS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-.key-notes {
-	position: relative;
-	ul li {
-		margin-left: -22px;
-	}
-	.btn-pdf {
-		color: @colWhite;
-		margin: 15px 0;
-		background-color: @colGreen;
-		border-color: darken(@colGreen, 20%);
-	}
-	.btn-pdf:hover {
-		color: @colWhite;
-		background-color: darken(@colGreen, 10%);
-		border-color: darken(@colGreen, 20%);
-	}
-	.btn-pdf:before {
-		color: @colWhite;
-		content:"\f0ed ";
-		font-size: 14px;
-		font-family: FontAwesome; /* FontAwesome or whatever */
-		display: inline-block;
-  		width: 16px;
-  		padding-right: 20px;
-	}
-
-}
-
-.btn-back {
-	position: fixed;
-	font-size: 30px;
-	color: @colWhite;
-	background: @colRed;
-	/*background: rgba(0,0,0, 0.9);*/
-	padding: 15px 30px 15px 25px;
-	bottom: -100px;
-	cursor: pointer;
-	.transition;
-	&:hover {
-		color: @colWhite;
-		background: #333;
-		.transition-fast;
-	}
-}
-
-.btn-top {
-	.btn-back;
-	padding: 13px 30px 18px 25px;
-	right:0;
-	bottom: -100px;
-	z-index: 1000;
-}
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| OWL CAROUSEL SLIDER
-|-----------------------------------------------------------------------------------------------------------------
-*/
-.owl-prev,
-.owl-next {
-	text-transform: uppercase;
-}
-.quest-num {
-	color: @colRed;
-	background: none;
-	padding: 0;
-	display: inline-block;
-}
-.owl-carousel-cont {
-	background: #FFF;
-	padding: 5px 15px 15px 15px;
-	overflow: hidden;
-	border-top: solid 10px #F5F5F5;
-	border-bottom: solid 10px #F5F5F5;
-	textarea {
-		margin-bottom: 15px;
-	}
-	.btn {
-		margin-bottom: 10px;
-	}
-}
-.flash-cards-options {
-	background: #FFF;
-	margin-top: 30px;
-	padding: 20px;
-	overflow: hidden;
-	border: dashed 1px #EBEBEB;
-}
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| MISC
-|-----------------------------------------------------------------------------------------------------------------
-*/
-.hr-written {
-	margin: 20px 0;
-}
-
-
-
-
-
-
-
-
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
-@media (min-width: 768px) {
-
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-	
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 979px) {
-
-	.result div:first-child {
-		margin-bottom: -12px;
-		text-align: right;
-	}
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-
-	.result div:first-child {
-		margin-bottom: -12px;
-		text-align: right;
-	}
-}
-

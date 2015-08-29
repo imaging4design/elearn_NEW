@@ -17,7 +17,7 @@
 	</ul>
 </div>
 
-<div class="band-grey-topics">
+<div class="band-topic-sections">
 
 	<div class="container">
 		<div class="row">

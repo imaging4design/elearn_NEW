@@ -21,7 +21,7 @@ function show_prices($id)
 	//return the data $query
 	if($query = $var) 
 	{
-		echo '<h2><strong>' . $query->name . '</strong></h2>';
+		echo '<h2>' . $query->name . '</h2>';
 		echo '<p><strong>$' . $query->price . '</strong> (incl GST) for the current school year.<br .>';
 		echo $query->special_offer . '</p>';
 	}
@@ -229,19 +229,19 @@ function resultColourCodes($average_score_percent = NULL)
 
 	if( $average_score_percent <= 35)
 	{
-		$div_colour = 'codeRed';
+		$div_colour = 'poor';
 	}
 	elseif( $average_score_percent > 35 && $average_score_percent <= 70)
 	{
-		$div_colour = 'codeOrange';
+		$div_colour = 'low';
 	}
 	elseif( $average_score_percent > 70 && $average_score_percent <= 84)
 	{
-		$div_colour = 'codeBlue';
+		$div_colour = 'good';
 	}
 	else
 	{
-		$div_colour = 'codeGreen';
+		$div_colour = 'high';
 	}
 
 	return $div_colour;

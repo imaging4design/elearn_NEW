@@ -1,29 +1,27 @@
 /*
 |-----------------------------------------------------------------------------------------------------------------
-| IMPORTS
+| LEADERBOARD
 |-----------------------------------------------------------------------------------------------------------------
 */
-
+ul.leaders-list {
+	padding: 0;
+	/*background: @colGreySoft;*/
+	li {
+		list-style: none;
+		margin: 0 0 2px 0;
+		padding: 10px 15px;
+		background: darken(@colGreyDark, 10%);
+		&:hover {
+			color: @colWhite;
+			background: darken(@colGreyDark, 15%);
+			cursor: pointer;
+		}
+	}
+}
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
-| MIXINS
-|-----------------------------------------------------------------------------------------------------------------
-*/
-@font: 'Open Sans', sans-serif; /* 300 400, 600, 700, 800 */
-@fontHead: 'Montserrat', sans-serif; /* 400, 700 */
-
-@colWhite: #FFFFFF;
-@colRed: #F7393D;
-@colGreen: #2AB4A0;
-@colYellow: #FEC817;
-@colBlue: #00A9E9;
-@colGrey: #999999;
-@colFooter: #414B4F;
-
-/*
-|-----------------------------------------------------------------------------------------------------------------
-| RESULTS
+| PROGRESS / RESULTS
 |-----------------------------------------------------------------------------------------------------------------
 */
 .result {
@@ -65,24 +63,30 @@
 	float: left;
 }
 .poor {
-	background: @colGrey;
-	width: 25%;
+	background: @colGreyDark;
+	width: 0;
 	display: inline-block;
 }
 .low {
-	background: @colRed;
-	width: 50%;
+	background: @colRedLight;
+	width: 0;
 	display: inline-block;
 }
 .good {
-	background: @colBlue;
-	width: 75%;
+	background: @colBlueLight;
+	width: 0;
 	display: inline-block;
 }
 .high {
-	background: @colGreen;
-	width: 100%;
+	background: @colGreenLight;
+	width: 0;
 	display: inline-block;
+}
+.poop {
+	width: 0;
+}
+.none {
+	display: none;
 }
 
 /*
@@ -102,6 +106,7 @@ h3 {
 */
 .key-notes {
 	h1 {
+		font-family: @fontHead;
 		font-size: 26px;
 		letter-spacing: -1px;
 		text-transform: uppercase;
@@ -133,16 +138,12 @@ h3 {
 		letter-spacing: -0.3px;
 	}
 
-	ul li, ol li {
-		font-size: 16px;
-		margin-bottom: 5px;
-		margin-left: 16px;
-		list-style: disc;
-	}
-
-	ol li {
-		list-style-type: decimal;
-		margin-left: 17px;
+	ul {
+		/*background: @colGreySoft;*/
+		li {
+			margin: 0 0 10px 0;
+			padding-left: 3px;
+		}
 	}
 
 }
@@ -196,13 +197,13 @@ h3 {
 	.btn-pdf {
 		color: @colWhite;
 		margin: 15px 0;
-		background-color: @colGreen;
-		border-color: darken(@colGreen, 20%);
+		background-color: @colGreenDark;
+		border-color: darken(@colGreenDark, 20%);
 	}
 	.btn-pdf:hover {
 		color: @colWhite;
-		background-color: darken(@colGreen, 10%);
-		border-color: darken(@colGreen, 20%);
+		background-color: darken(@colGreenDark, 10%);
+		border-color: darken(@colGreenDark, 20%);
 	}
 	.btn-pdf:before {
 		color: @colWhite;
@@ -220,7 +221,7 @@ h3 {
 	position: fixed;
 	font-size: 30px;
 	color: @colWhite;
-	background: @colRed;
+	background: @colRedLight;
 	/*background: rgba(0,0,0, 0.9);*/
 	padding: 15px 30px 15px 25px;
 	bottom: -100px;
@@ -251,7 +252,7 @@ h3 {
 	text-transform: uppercase;
 }
 .quest-num {
-	color: @colRed;
+	color: @colRedLight;
 	background: none;
 	padding: 0;
 	display: inline-block;
@@ -310,7 +311,6 @@ h3 {
 
 	.result div:first-child {
 		margin-bottom: -12px;
-		text-align: right;
 	}
 }
 
@@ -319,7 +319,6 @@ h3 {
 
 	.result div:first-child {
 		margin-bottom: -12px;
-		text-align: right;
 	}
 }
 

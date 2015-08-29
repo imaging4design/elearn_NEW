@@ -8,7 +8,7 @@
 
 			<?php 
 				$segments = array( 'item', url_title( $item->name, 'dash', true ), $item->id );
-				echo '<h3>' . $item->name . ' <span class="text-red">$' . $item->price . '</span></h3>';
+				echo '<h3>' . $item->name . ' <span class="text-redLight">$' . $item->price . '</span></h3>';
 				echo '<p>(Subscription period - as per terms and conditions).</p>';
 			?>
 

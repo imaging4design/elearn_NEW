@@ -21,7 +21,7 @@ var	gulp = require('gulp'),
 
 // TASK :: Concat ALL LESS files into single file called 'styles.less'
 gulp.task('concat', function() {
-	return gulp.src(['css/styles_global.less', 'css/styles_sections.less'])
+	return gulp.src(['css/styles_global.less'])
 	.pipe(concat('styles.less'))
 	.pipe(gulp.dest('css'));
 });

@@ -24,13 +24,13 @@
 
 					echo '<div class="col-md-5 modules red">';
 						echo '<div class="module-head">';
-							echo '<div class="icon-med text-red"><i class="fa fa-check-square-o"></i></div>';
-							echo '<p class="text-red">' . $item->name . ' <br />$' . $item->price . ' <small>(incl GST)</small></p>';
+							echo '<div class="icon-med text-redLight"><i class="fa fa-check-square-o"></i></div>';
+							echo '<p class="text-redLight">' . $item->name . ' <br />$' . $item->price . ' <small>(incl GST)</small></p>';
 						echo '</div>';
 						
 						
 						echo '<div class="multiseparator vc_custom"></div>';
-						echo '<p class="text-red">' . $item->special_offer . '</p>';
+						echo '<p class="text-redLight">' . $item->special_offer . '</p>';
 						echo '<p>' . $item->description . '</p><br />';
 
 

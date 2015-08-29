@@ -1,4 +1,4 @@
-<h5><strong><span class="text-red"><i class="fa fa-exclamation-circle"></span></i> ATTENTION</strong></h5>
+<h5><strong><span class="text-redLight"><i class="fa fa-exclamation-circle"></span></i> ATTENTION</strong></h5>
 <div class="multiseparator vc_custom"></div>
 <p><strong>Before you subscribe:</strong></p>
 

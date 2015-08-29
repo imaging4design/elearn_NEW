@@ -11,7 +11,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'><!--FONTS CSS-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><!-- FONT AWESOME CSS -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/coda_slider.css" type="text/css" /><!--JQ CODA SLIDER CSS-->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/charts.css" type="text/css" /><!--MAIN STYLES CSS-->
+	<!--<link rel="stylesheet" href="<?php //echo base_url(); ?>css/charts.css" type="text/css" />MAIN STYLES CSS-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css" type="text/css" /><!--BOOTSTRAP CSS-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/styles.css" type="text/css" /><!--MAIN STYLES CSS-->
 

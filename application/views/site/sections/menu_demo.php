@@ -55,7 +55,7 @@
 				<div class="col-sm-12">
 
 					
-						<h2>Main Topics - Select any <span class="text-red">(demo)</span> topic for a free sample</h2>
+						<h2>Main Topics - Select any <span class="text-redLight">(demo)</span> topic for a free sample</h2>
 						<div class=	"multiseparator vc_custom"></div>
 
 
@@ -121,7 +121,7 @@
 
 									if( in_array($row->topicID, $demo_topics)) 
 									{
-										$segments = '<p>' . anchor( 'section/key_notes/' . $row->topicID, $row->topic ) . ' <span class="text-red">(demo)</span></p>';
+										$segments = '<p>' . anchor( 'section/key_notes/' . $row->topicID, $row->topic ) . ' <span class="text-redLight">(demo)</span></p>';
 									}
 									else
 									{
@@ -134,7 +134,7 @@
 											// Only show new alpha letter at the start of each alpha category
 											$alpha_header = ( $set_letter != $letter ) ? $letter . '<div class=	"multiseparator vc_custom"></div>' : ''; 
 											// Display alpha letter (i.e., A, B, C ...)
-											echo '<h4 class="text-red"><strong>' . $alpha_header . '</strong></h4>';
+											echo '<h4 class="text-redLight"><strong>' . $alpha_header . '</strong></h4>';
 											//echo '<div class=	"multiseparator vc_custom"></div>';
 
 											// Display Topic Name
@@ -220,7 +220,7 @@
 										// Only show new alpha letter at the start of each alpha category
 										$alpha_header = ( $set_letter != $letter ) ? $letter . '<div class=	"multiseparator vc_custom"></div>' : ''; 
 										// Display alpha letter (i.e., A, B, C ...)
-										echo '<h5 class="text-red"><strong>' . $alpha_header . '</strong></h5>';
+										echo '<h5 class="text-redLight"><strong>' . $alpha_header . '</strong></h5>';
 										// Display Topic Name - links back to the parent topic (Key Notes)
 										echo '<p><small>' . $row->subTopic . '</small></p>';
 										

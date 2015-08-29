@@ -8,7 +8,7 @@
 
 
 			<h2 class="text-capitalize"><?php echo $item->name . ' <span class="label label-default">$' . $item->price . '</span>'; ?></h2>
-			<p class="text-red"><?php echo $item->special_offer; ?></p>
+			<p class="text-redLight"><?php echo $item->special_offer; ?></p>
 			<p><?php echo $item->description; ?></p>
 
 			<?php $segments = array( 'purchase', url_title( $item->name, 'dash', true ), $item->id ); ?>

@@ -11,7 +11,7 @@
 	<div class="carousel-inner" role="listbox">
 
 		<div class="item active">
-			<img class="first-slide center-block" src="<?php echo base_url() . 'images/banner_01.jpg'; ?>">
+			<img class="first-slide center-block" src="<?php echo base_url() . 'images/banner_04.jpg'; ?>">
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">eLearn Economics</h1>
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img class="second-slide center-block" src="<?php echo base_url() . 'images/banner_02.jpg'; ?>">
+			<img class="second-slide center-block" src="<?php echo base_url() . 'images/banner_03.jpg'; ?>">
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">eLearn Economics</h1>
@@ -50,196 +50,170 @@
 
 
 <!-- Main Home Page Content -->
-<div class="container">
+<div class="band-white">
+	<div class="container">
 
 
-	<?php 
-		$total = ( isset( $total ) ) ? $total : '';
-		$num_users = ( isset( $num_users ) ) ? $num_users : '';
-	?>
+		<?php 
+			$total = ( isset( $total ) ) ? $total : '';
+			$num_users = ( isset( $num_users ) ) ? $num_users : '';
+		?>
 
-	<!-- Starts total tests completed counter -->
-	<div class="row">
-		<div class="col-sm-12 center">
+		<!-- Starts total tests completed counter -->
+		<div class="row">
+			<div class="col-sm-12 center">
 
-			<div><strong><span class="count"><?php echo $total; ?></span></strong></div>
-			<h4>online tests completed!</h4>
+				<div><strong><span class="count"><?php echo $total; ?></span></strong></div>
+				<h4>online tests completed!</h4>
 
-		</div><!-- ENDS col -->
+			</div><!-- ENDS col -->
 
-	</div><!--ENDS row-->
+		</div><!--ENDS row-->
 
-	<br>
+		<br>
 
 
-	<!-- Intro text -->
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
+		<!-- Intro text -->
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
 
-			<div class="center">
+				<div class="center">
 
-				<h1>Want to learn Economics?</h1>
-				<h4>
-					Are you studying or teaching Macroeconomics, Microeconomics, Advanced Placement, IB&nbsp;Economics, Cambridge Economics or another Economics Course? 
-				</h4>
+					<h1>Want to learn Economics?</h1>
+					<h4>
+						Are you studying or teaching Macroeconomics, Microeconomics, Advanced Placement, IB&nbsp;Economics, Cambridge Economics or another Economics Course? 
+					</h4>
 
+					<p>
+						 Help is at hand, elearnEconomics assists individuals studying Economics. This site covers a wide range of courses and individuals have the ability to customise their course or do extension work. It's simple, easy to use and very cost effective.
+					</p>
+					
+				</div>
+
+			</div><!-- ENDS col -->
+		</div><!--ENDS row-->
+
+
+		<br><hr>
+
+		<!-- Features and benefits (4 x boxes) -->
+		<div class="row no-gutters">
+
+			<div class="col-lg-12">
+
+				<h2 class="center">Features &amp; Content</h2>
+
+				<div class="module-parent">
+
+					
+				
+					<div class="col-md-3 modules greyMid">
+						<div class="module-head">
+							<div class="icon-med text-greyMid"><i class="fa fa-check-square-o"></i></div>
+							<h4 class="text-greyMid">Ticks the boxes</h4>
+						</div>
+						<ul>
+							<li>Quality economic content available 24/7</li>
+							<li>Comprehensive range of material and activities</li>
+							<li>Caters for different learning styles</li>
+							<li>Q&amp;A's to build economic literacy</li>
+							<li>Printable worksheets with answers</li>
+							<li>Track and monitor progress for improved results</li>
+							<li>Affordable</li>
+						</ul>
+					</div>
+
+					<div class="col-md-3 modules greyDark">
+						<div class="module-head">
+							<div class="icon-med text-greyDark"><i class="fa fa-book"></i></div>
+							<h4 class="text-greyDark">Course material</h4>
+						</div>
+						<ul>
+							<li>International Baccalaureate Economics (SL and HL)</li>
+							<li>Cambridge AS and A Level Economics</li>
+							<li>Cambridge IGCSE Economics</li>
+							<li>Advanced Placement Microeconomics</li>
+							<li>Advanced Placement Macroeconomics</li>
+							<li>NCEA Economics</li>
+						</ul>
+					</div>
+				
+					<div class="col-md-3 modules redLight">
+						<div class="module-head">
+							<div class="icon-med text-redLight"><i class="fa fa-desktop"></i></div>
+							<h4 class="text-redLight">Content formats</h4>
+						</div>
+						<ul>
+							<li><strong>KEY NOTES</strong> - comprehensive explinations detailing each topic in depth </li>
+							<li><strong>AUDIO/VIDEO</strong> - professionally animated and narrated video clips</li>
+							<li><strong>FLASH CARDS</strong> - question and answer concept prompts</li>
+							<li><strong>WRITTEN QUESTIONS</strong> - designed to enforce the learning process</li>
+							<li><strong>MULTI-CHOICE</strong> - test your knowledge with tracked results</li>
+						</ul>
+					</div>
+
+					<div class="col-md-3 modules redDark">
+						<div class="module-head">
+							<div class="icon-med text-redDark"><i class="fa fa-list"></i></div>
+							<h4 class="text-redDark">View the topics</h4>
+						</div>
+						<ul>
+							<?php echo anchor(base_url() . 'section/demo/1', '<li>All Topics</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/3', '<li>AS</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/5', '<li>IB (SL)</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/7', '<li>AP Micro</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/2', '<li>IGCSE</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/4', '<li>A2</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/6', '<li>IB (HL)</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/8', '<li>AP Macro</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/11', '<li>NCEA Level 2</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/12', '<li>NCEA Level 3</li>'); ?>
+						</ul>
+					</div>
+				</div><!-- ENDS module parent -->
+
+			</div><!-- ENDS col -->
+				
+		</div><!--ENDS row-->
+
+
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 center">
+
+				<h2>A Great Learning Tool</h2>
 				<p>
-					 Help is at hand, elearnEconomics assists individuals studying Economics. This site covers a wide range of courses and individuals have the ability to customise their course or do extension work. It's simple, easy to use and very cost effective.
+					eLearnEconomics is a great learning tool and a comprehensive revision system, offering multiple ways of understanding the key concepts of economics through flash cards, key notes, audio/visual clips, written answers and multiple choice tests. It enables you to learn at your pace and in your own time. For more information, download the 'Site Guide' below.
 				</p>
+				<br>
+
+				<?php echo anchor(base_url() . 'userfiles/file/elearn_siteGuide.pdf', '<i class="fa fa-cloud-download"></i> DOWNLOAD SITE GUIDE', array('class' => 'btn btn-lg btn-red')); ?>
 				
-			</div>
-
-		</div><!-- ENDS col -->
-	</div><!--ENDS row-->
+			</div><!--ENDS col-->
+		</div><!--ENDS row-->
 
 
-<br><hr>
-
-	<!-- Features and benefits (4 x boxes) -->
-	<div class="row no-gutters">
-
-		<div class="col-lg-12">
-
-			<h2 class="center"><strong>Features &amp; Content</strong></h2>
-
-			<div class="module-parent">
-
-				
-			
-				<div class="col-md-3 modules green">
-					<div class="module-head">
-						<div class="icon-med text-green"><i class="fa fa-check-square-o"></i></div>
-						<h4 class="text-green">Ticks all the boxes</h4>
-					</div>
-					<ul>
-						<li>Quality economic content available 24/7</li>
-						<li>Comprehensive range of material and activities</li>
-						<li>Caters for different learning styles</li>
-						<li>Q&amp;A's to build economic literacy</li>
-						<li>Printable worksheets with answers</li>
-						<li>Track and monitor progress for improved results</li>
-						<li>Affordable</li>
-					</ul>
-				</div>
-
-				<div class="col-md-3 modules red">
-					<div class="module-head">
-						<div class="icon-med text-red"><i class="fa fa-book"></i></div>
-						<h4 class="text-red">Course material</h4>
-					</div>
-					<ul>
-						<li>International Baccalaureate Economics (SL and HL)</li>
-						<li>Cambridge AS and A Level Economics</li>
-						<li>Cambridge IGCSE Economics</li>
-						<li>Advanced Placement Microeconomics</li>
-						<li>Advanced Placement Macroeconomics</li>
-						<li>NCEA Economics</li>
-					</ul>
-				</div>
-			
-				<div class="col-md-3 modules yellow">
-					<div class="module-head">
-						<div class="icon-med text-yellow"><i class="fa fa-desktop"></i></div>
-						<h4 class="text-yellow">Content formats</h4>
-					</div>
-					<ul>
-						<li><strong>KEY NOTES</strong> - comprehensive explinations detailing each topic in depth </li>
-						<li><strong>AUDIO/VIDEO</strong> - professionally animated and narrated video clips</li>
-						<li><strong>FLASH CARDS</strong> - question and answer concept prompts</li>
-						<li><strong>WRITTEN QUESTIONS</strong> - designed to enforce the learning process</li>
-						<li><strong>MULTI-CHOICE</strong> - test your knowledge with tracked results</li>
-					</ul>
-				</div>
-
-				<div class="col-md-3 modules blue">
-					<div class="module-head">
-						<div class="icon-med text-blue"><i class="fa fa-list"></i></div>
-						<h4 class="text-blue">View the topics</h4>
-					</div>
-					<ul>
-						<?php echo anchor(base_url() . 'section/demo/1', '<li>All Topics</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/3', '<li>AS</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/5', '<li>IB (SL)</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/7', '<li>AP Micro</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/2', '<li>IGCSE</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/4', '<li>A2</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/6', '<li>IB (HL)</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/8', '<li>AP Macro</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/11', '<li>NCEA Level 2</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/12', '<li>NCEA Level 3</li>'); ?>
-					</ul>
-				</div>
-			</div><!-- ENDS module parent -->
-
-		</div><!-- ENDS col -->
-			
-	</div><!--ENDS row-->
-
-
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 center">
-
-			<h2><strong>A Great Learning Tool</strong></h2>
-			<p>
-				eLearnEconomics is a great learning tool and a comprehensive revision system, offering multiple ways of understanding the key concepts of economics through flash cards, key notes, audio/visual clips, written answers and multiple choice tests. It enables you to learn at your pace and in your own time. For more information, download the 'Site Guide' below.
-			</p>
-			<br>
-
-			<?php echo anchor(base_url() . 'userfiles/file/elearn_siteGuide.pdf', '<i class="fa fa-cloud-download"></i> DOWNLOAD SITE GUIDE', array('class' => 'btn btn-lg btn-red')); ?>
-			
-		</div><!--ENDS col-->
-	</div><!--ENDS row-->
-
-
-</div><!--ENDS container-->
-
-
-
-
-<!-- Starts Blog Section -->
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-
-			<?php
-				// if( isset($news))
-				// {
-				// 	foreach($news as $row):
-
-				// 		echo '<h1 class="bold">' . $row->title . '</h1>';
-				// 		echo '<h5 class="bold textOrange">News Release: ' . $row->created_at . '</h5>';
-				// 		echo $row->content;
-
-				// 	endforeach;
-
-				// 	echo '<p>' . anchor('#', 'HIDE', array('id' => 'hideNews')) . ' | ' . anchor('main/news', 'SEE MORE NEWS') . '</p>';
-				// }
-			?>
-			
-		</div><!--ENDS col-->
-	</div><!--ENDS row-->
-</div><!--ENDS container-->
-
+	</div><!--ENDS container-->
+</div><!-- ENDS band-white -->
 
 
 
 <!-- Starts FREE Tour Section -->
-<div class="band-grey mar60">
+<div class="band-grey">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 center">
 
-				<div class="icon-super text-green"><i class="fa fa-rocket"></i></div>
+				<div class="icon-super text-greyDark"><i class="fa fa-rocket"></i></div>
 
-				<h2><strong>Take a Test Drive</strong></h2>
+				<h2>Take a Test Drive</h2>
 				
 				<p>
 					Take the <strong>FREE DEMO</strong> tour of eLearn Economics to sample the content and features available. Full members have unlimited access, with the addition of leader boards, progress charts and printable PDF worksheets with answers.
 				</p>
 				<br>
 
-				<?php echo anchor('section/demo', 'TRY THE DEMO <i class="fa fa-arrow-right"></i>', array('class'=>'btn btn-lg btn-green')); ?>
+				<?php echo anchor('section/demo', 'TRY THE DEMO <i class="fa fa-arrow-right"></i>', array('class'=>'btn btn-lg btn-red')); ?>
 
 			</div><!--ENDS col-->
 		</div><!--ENDS row-->
@@ -252,45 +226,45 @@
 
 
 <!-- Starts Subscription Prices -->
+<div class="band-white">
+	<div class="container">
+		<div class="row">
 
-<div class="container">
-	<div class="row">
+			<div class="col-sm-6">
+				<div class="center">
 
-		<div class="col-sm-6">
-			<div class="center">
+					<div class="icon-sub-super text-redLight"><i class="fa fa-user"></i></div>
+					<?php echo show_prices(0); ?> <!-- see section_helper.php -->
+					<br>
+					<?php echo anchor('paypal/items', 'SIGN UP NOW', array('class'=>'btn btn-lg btn-red')); ?>
 
-				<div class="icon-sub-super text-red"><i class="fa fa-user"></i></div>
-				<?php echo show_prices(0); ?> <!-- see section_helper.php -->
-				<br>
-				<?php echo anchor('paypal/items', 'SIGN UP NOW', array('class'=>'btn btn-lg btn-red')); ?>
+				</div>
+			</div><!--ENDS col-->
 
-			</div>
-		</div><!--ENDS col-->
+			<div class="col-sm-6">
+				<div class="center">
 
-		<div class="col-sm-6">
-			<div class="center">
+					<div class="icon-sub-super text-greyDark"><i class="fa fa-users"></i></div>
+					<?php echo show_prices(1); ?> <!-- see section_helper.php -->
+					<br>
+					<?php echo anchor('paypal/items', 'SIGN UP NOW', array('class'=>'btn btn-lg btn-grey')); ?>
+					
+				</div>
+			</div><!--ENDS col-->
 
-				<div class="icon-sub-super text-blue"><i class="fa fa-users"></i></div>
-				<?php echo show_prices(1); ?> <!-- see section_helper.php -->
-				<br>
-				<?php echo anchor('paypal/items', 'SIGN UP NOW', array('class'=>'btn btn-lg btn-blue')); ?>
-				
-			</div>
-		</div><!--ENDS col-->
-
-	</div><!--ENDS row-->
-</div><!--ENDS container-->
-
+		</div><!--ENDS row-->
+	</div><!--ENDS container-->
+</div><!-- ENDS band-white -->
 
 
 
 <!-- Starts Testimonials -->
-<div class="band-grey mar60">
+<div class="band-grey">
 	<div class="container">
 
 		<div class="row">
 			<div class="col-sm-12 center">
-				<h2><strong>What our users are saying ...</strong></h2><br>
+				<h2>What our users are saying ...</h2><br>
 			</div>
 		</div>
 
