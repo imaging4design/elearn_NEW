@@ -1,4 +1,4 @@
-<!-- Starts Carousel -->
+<!-- Starts Carousel new comment -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	
 	<!-- Indicators -->
@@ -18,7 +18,7 @@
 					<h2>Full Key Notes on ALL Topics</h2>
 					<p>The site covers a wide range of courses and individuals have the ability to customise their course or do extension work</p>
 					<p><a class="btn btn-lg btn-red" href="#" role="button">SUBSCRIBE TODAY</a></p>
-				</div>
+				</div> 
 			</div>
 		</div>
 		<div class="item">
@@ -171,48 +171,7 @@
 							<?php echo anchor(base_url() . 'section/demo/12', '<li>NCEA Level 3</li>'); ?>
 						</ul>
 					</div>
-<<<<<<< HEAD
 				</div><!-- ENDS module parent -->
-=======
-					<ul>
-						<?php echo anchor(base_url() . 'section/demo/1', '<li>All Topics</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/3', '<li>AS</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/5', '<li>IB (SL)</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/7', '<li>AP Micro</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/2', '<li>IGCSE</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/4', '<li>A2</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/6', '<li>IB (HL)</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/8', '<li>AP Macro</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/11', '<li>NCEA Level 2</li>'); ?>
-						<?php echo anchor(base_url() . 'section/demo/12', '<li>NCEA Level 3</li>'); ?>
-					</ul>
-				</div>
-			</div><!-- ENDS module parent -->
-
-		</div><!-- ENDS col -->
-			
-	</div><!--ENDS row-->
-
-
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 center">
-
-			<h2><strong>A Great Learning Tool</strong></h2>
-			<p>
-				eLearnEconomics is a great learning tool and a comprehensive revision system, offering multiple ways of understanding the key concepts of economics through flash cards, key notes, audio/visual clips, written answers and multiple choice tests. It enables you to learn at your pace and in your own time. For more information, download the 'Site Guide' below.
-			</p>
-			<br>
-
-			<?php echo anchor(base_url() . 'userfiles/file/elearn_siteGuide.pdf', '<i class="fa fa-cloud-download"></i> DOWNLOAD SITE GUIDE', array('class' => 'btn btn-lg btn-red')); ?>
-			
-		</div><!--ENDS col-->
-	</div><!--ENDS row-->
-
-
-</div><!--ENDS container-->
-
-
 
 			</div><!-- ENDS col -->
 				
