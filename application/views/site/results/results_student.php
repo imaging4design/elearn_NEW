@@ -179,7 +179,7 @@
 							echo '<div class="col-md-2">';
 								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . ' %</p>';
 							echo '</div>';
-							echo '<div class="col-lg-10 col-md-6">';
+							echo '<div class="col-md-10">';
 								echo '<span class="guage-container">';
 									echo '<span class="guage ' . $div_colour . ' " style="width:' . $average_score_percent . '%;"></span>';
 								echo '</span>';
@@ -203,7 +203,7 @@
 
 								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . ' %</p>';
 							echo '</div>';
-							echo '<div class="col-lg-10 col-md-6">';
+							echo '<div class="col-md-10">';
 								echo '<span class="guage-container">';
 									echo '<span class="guage poop '.$div_colour.'" style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
 								echo '</span>';

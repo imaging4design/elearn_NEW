@@ -4,14 +4,7 @@
 		<div class="row">
 			<div class="col-sm-12 col-full">
 
-				<?php
-				// TEACHERS LOGIN LINK
-					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red pull-right hidden-xs'));
-					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red center-block visible-xs'));
-				?>
-
-				<h2>Member Login</h2>
-				<div class="multiseparator vc_custom"></div>
+				
 
 				<?php
 					
@@ -36,14 +29,18 @@
 			<!-- Student Login panel -->
 			<div class="col-sm-6">
 
+				<h2>Premium Login</h2>
+				<p><small>Login here if you have paid for an individual student membership.</small></p>
+				<div class="multiseparator vc_custom"></div>
+				
+
 				<?php 
 
 					echo form_open('main/login_member_student'); ?>
 
-						<fieldset class="well">
-						<h3>PREMIUM MEMBERS LOGIN</h3>
+						<fieldset class="well well-trans">
 
-						<p><small>Login here if you have paid for an individual student membership.</small></p>
+							
 
 							<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
@@ -51,7 +48,7 @@
 								<label for="username">Username (email):</label>
 								<input type="text" class="form-control" name="username" id="username" size="35" value="<?php echo set_value('username'); ?>" placeholder="Username">
 							</div>
-							<br>
+
 							<div class="form-group-lg">
 								<label>Password:</label>
 								<input type="password" class="form-control" name="password" id="password" size="35" value="<?php echo set_value('password'); ?>" placeholder="Password">
@@ -59,9 +56,7 @@
 							<br>
 							<button type="submit" id="edit_submit" class="btn btn-lg btn-red btn-block">LOGIN</button>
 							
-							<!-- <input type="submit" id="edit_submit" value="Login" /><br /> -->
-
-							<br><small>Forgot Password? - <?php echo anchor('main/login_lostpass_form', 'Click Here'); ?></small>
+							<div class="text-center marTop20"><small>Forgot Password? - <?php echo anchor('main/login_lostpass_form', 'Click Here'); ?></small></div>
 
 						</fieldset>
 
@@ -81,14 +76,15 @@
 			<!-- Teachers Login panel -->
 			<div class="col-sm-6">
 
+				<h2>Guest Login</h2>
+				<p><small>Login here if you have a username and password from your school.</small></p>
+				<div class="multiseparator vc_custom"></div>
+
 				<?php
 
 					echo form_open('main/login_guest_student', array('class' => 'bg_lock')); ?>
 
-						<fieldset class="well">
-						<h3>SCHOOL GUEST MEMBERS LOGIN</h3>
-
-						<p><small>Login here if you have a username and password from your school.</small></p>
+						<fieldset class="well well-trans">
 
 							<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
@@ -96,7 +92,7 @@
 								<label>Username:</label>
 								<input type="text" class="form-control" name="student_user" id="student_user" size="35" value="<?php echo set_value('student_user'); ?>" placeholder="Username">
 							</div>
-							<br>
+							
 							<div class="form-group-lg">
 								<label>Password:</label>
 								<input type="password" class="form-control" name="student_pass" id="student_pass" size="35" value="<?php echo set_value('student_pass'); ?>" placeholder="Password">
@@ -104,7 +100,7 @@
 							<br>
 							<button type="submit" id="edit_submit2" class="btn btn-lg btn-grey btn-block">LOGIN</button>
 
-							<br><small>Lost your school password? Please ask your teacher.</small>
+							<div class="text-center marTop20"><small>Lost your school password? Please ask your teacher.</small></div>
 
 						</fieldset>
 
@@ -144,6 +140,12 @@
 					// Unset $this->session->userdata('code_message')
 					$this->session->unset_userdata('code_message');
 
+				?>
+
+				<?php
+				// TEACHERS LOGIN LINK
+					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red pull-right hidden-xs'));
+					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red center-block visible-xs'));
 				?>
 				
 			</div><!--ENDS col-->

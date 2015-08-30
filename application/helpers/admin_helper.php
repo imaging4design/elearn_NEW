@@ -395,7 +395,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
 			$data = $query;
 		}
 		
-		echo '<select name="schoolID" id="schoolID">';
+		echo '<select name="schoolID" class="form-control" id="schoolID">';
 		
 			if($value)
 			{

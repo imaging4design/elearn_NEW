@@ -195,6 +195,7 @@
 				if( isset($topic))
 				{
 					
+					echo '<br class="visible-xs">';
 					echo '<h3>National Leaderboard </h3>';
 					echo '<h2>' . $topic->topic . '</h2>';
 					echo '<div class="multiseparator vc_custom"></div>';

@@ -50,7 +50,7 @@
 
 
 <!-- Main Home Page Content -->
-<div class="band-white">
+<div class="band-white-home">
 	<div class="container">
 
 
@@ -194,7 +194,7 @@
 
 
 	</div><!--ENDS container-->
-</div><!-- ENDS band-white -->
+</div><!-- ENDS band-white-home -->
 
 
 
@@ -226,7 +226,7 @@
 
 
 <!-- Starts Subscription Prices -->
-<div class="band-white">
+<div class="band-white-home">
 	<div class="container">
 		<div class="row">
 
@@ -254,7 +254,7 @@
 
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
-</div><!-- ENDS band-white -->
+</div><!-- ENDS band-white-home -->
 
 
 

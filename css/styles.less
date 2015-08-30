@@ -44,32 +44,32 @@ body {
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+.band-white-home {
+	background: @colWhite;
+	margin: 0;
+	padding: 40px 0;
+}
 .band-white {
 	background: @colWhite;
 	margin: 0;
-	padding: 80px 0;
-}
-.band-off-white {
-	background: @colGreyMid;
-	margin: 0;
-	padding: 80px 0;
+	padding: 40px 0;
 }
 .band-red {
 	color: @colWhite;
 	background: @colRedLight;
 	margin: 0;
-	padding: 80px 0;
+	padding: 40px 0;
 }
 .band-grey {
 	background: #F5F5F5;
 	margin: 0;
-	padding: 80px 0;
+	padding: 40px 0;
 }
 .band-grey-dark {
 	color: @colWhite;
 	background: @colGreyDark;
 	margin: 0;
-	padding: 80px 0;
+	padding: 40px 0;
 }
 
 .row.no-gutters {
@@ -367,8 +367,9 @@ a:hover {
 |-----------------------------------------------------------------------------------------------------------------
 */
 label {
-	font-weight: 400;
-	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 4px 5px;
 }
 .radio label, 
 .checkbox label {
@@ -386,14 +387,26 @@ input.form-control:focus {
 	-moz-transition: none;
 	-webkit-transition: none;
 }
-.form-group-lg .form-control {
-    height: 46px;
-    padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.33333;
+
+.form-control {
+    margin-bottom: 10px;
 	border-radius: 0;
 }
+.form-group-lg .form-control {
+	.form-control;
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 1.33333;
+}
 
+.form-group-md .form-control {
+	.form-control;
+    height: 38px;
+    padding: 10px 16px;
+    font-size: 13px;
+    line-height: 1.33333;
+}
 
 .radio input[type="radio"], 
 .radio-inline input[type="radio"], 
@@ -435,6 +448,7 @@ input.form-control:focus {
 	border-bottom: solid 4px transparent;
 	border-radius: 0;
 	text-transform: uppercase;
+	display: block;
 }
 a.btn {
 	&:hover, &:active, &:focus {
@@ -506,37 +520,7 @@ a.btn {
 | COLOURS
 |-----------------------------------------------------------------------------------------------------------------
 */
-/*.red {
-	background: @colRedLight;
-}
-.green {
-	background: @colGreenDark;
-}
-.yellow {
-	background: @colYellow;
-}
-.blue {
-	background: @colBlueLight;
-}
-.grey {
-	background: @colGrey;
-}
 
-.text-red {
-	color: @colRedLight;
-}
-.text-green {
-	color: @colGreenDark;
-}
-.text-yellow {
-	color: @colYellow;
-}
-.text-blue {
-	color: @colBlueLight;
-}
-.text-grey {
-	color: @colGrey;
-}*/
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -637,12 +621,15 @@ div.multiseparator {
 /* Well */
 .well {
     min-height: 20px;
-    padding: 10px 30px 30px 30px;
+    padding: 20px 30px 30px 30px;
     margin-bottom: 20px;
     background-color: #F5F5F5;
     border: none;
     border-radius: 0;
     box-shadow: none;
+}
+.well-trans {
+	background: rgba(0,0,0,0.05);
 }
 
 /* Navbar */
@@ -752,10 +739,9 @@ div.multiseparator {
 .panel-default > .panel-heading {
 	color: #444;
 	background-color: @colWhite;
-	border-left: solid 3px @colRedLight !important;
 }
 .panel-body {
-	/*color: @colGrey;*/
+	background: @colGreySoft;
 }
 
 /* Carousel */
@@ -797,6 +783,23 @@ div.multiseparator {
 
 	h1 {
 		font-size: 60px;
+	}
+
+	.btn {
+		display: inline-block;
+	}
+
+	.band-topic-sections {
+		padding: 30px 0;
+	}
+	.band-white-home {
+		padding: 80px 0;
+	}
+	.band-white,
+	.band-red,
+	.band-grey,
+	.band-grey-dark {
+		padding: 60px 0;
 	}
 
 	/*
