@@ -1,4 +1,4 @@
-<div class="band-white">
+<div class="band-grey">
 	<div class="container">
 		<div class="row">
 
@@ -10,37 +10,26 @@
 					echo '<h2>' . $item->name . ' <span class="text-redLight">$' . $item->price . '</span></h2>';
 					echo '<div class="multiseparator vc_custom"></div>';
 					echo '<p>(Subscription period - as per terms and conditions).</p>';
-				?>
-
-
-				<h3>Instructions</h3>
-				<p>To purchase the <?php echo anchor( $segments, $item->name, array('class' => 'bold')); ?> subscription:</p>
-
-				<ul>
-					<li>Enter your (valid) email address below and click through to pay with PayPal. </li>
-					<li>Tick the checkbox below agreeing to the terms and conditions.</li>
-					<li>Upon confirmation of your payment, you will receive an email with a link to complete your registration.</li>
-				</ul>
-
-				<p><strong>IMPORTANT:</strong> The email address you enter below will be your <strong>login USERNAME</strong> for eLearnEconomics. <br />When you get to PayPal, you can use whatever email you prefer for the PayPal processing form.</p>
-
-
-
-
-				<?php
+				
 					$url_title = url_title( $item->name, 'dash', true );
 					echo form_open( 'purchase/' . $url_title . '/' . $item->id, array('class' => 'bg_credit_card'));
 				?>
-
-				<br>
 				
+					<fieldset class="well well-trans">
 
-					
-
-					<fieldset class="well well-sm">
-
-						<h3>Purchase via PayPal</h3>
+						<h3>Instructions</h3>
 						<div class="multiseparator vc_custom"></div>
+						<p>To purchase the <?php echo anchor( $segments, $item->name, array('class' => 'bold')); ?> subscription:</p>
+
+						<ul>
+							<li>Enter your (valid) email address below and click through to pay with PayPal. </li>
+							<li>Tick the checkbox below agreeing to the terms and conditions.</li>
+							<li>Upon confirmation of your payment, you will receive an email with a link to complete your registration.</li>
+						</ul>
+
+						<p><strong>IMPORTANT:</strong> The email address you enter below will be your <strong>login USERNAME</strong> for eLearnEconomics. <br />When you get to PayPal, you can use whatever email you prefer for the PayPal processing form.</p>
+
+						<br>
 
 						<div class="form-group-lg">
 							<label for="username"><strong>Email Address:</strong> <small>(This will be your 'login USERNAME' and where your confirmation details will be sent):</small></label>

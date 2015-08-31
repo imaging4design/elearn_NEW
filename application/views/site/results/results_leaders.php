@@ -28,7 +28,11 @@
 							$topic_name = 'Select Topic';
 						}
 						
-						echo dropDownLeaderboardTopics($id, $id, $topic_name) . '&nbsp;'; // See admin_helper
+						echo '<div class="row">';
+							echo '<div class="col-md-6">';
+								echo dropDownLeaderboardTopics($id, $id, $topic_name) . '&nbsp;'; // See admin_helper
+							echo '</div><!-- ENDS col -->';
+						echo '</div><!-- ENDS row -->';
 
 						?>
 

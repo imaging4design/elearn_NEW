@@ -1,5 +1,5 @@
 <!-- Starts Member Login (Both Students and Teachers) -->
-<div class="band-white">
+<div class="band-grey">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-full">

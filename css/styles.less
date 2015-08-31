@@ -61,7 +61,7 @@ body {
 	padding: 40px 0;
 }
 .band-grey {
-	background: #F5F5F5;
+	background: @colGreySoft;
 	margin: 0;
 	padding: 40px 0;
 }
@@ -71,7 +71,6 @@ body {
 	margin: 0;
 	padding: 40px 0;
 }
-
 .row.no-gutters {
 	margin-right: 0;
 	margin-left: 0;
@@ -378,16 +377,33 @@ label {
 select {
 	margin-bottom: 20px;
 }
-input.form-control,
-input.form-control:focus {
-	font-weight: 600;
+input.form-control {
 	border:none;
+	box-shadow: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	-moz-transition: none;
 	-webkit-transition: none;
+	border:solid 1px #DDD;
 }
-
+input.form-control:focus {
+	/*border:none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+	border:solid 1px #DDD;*/
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+.form-control:focus {
+	border-color: none;
+	box-shadow: none;
+	outline: 0;
+}
 .form-control {
     margin-bottom: 10px;
 	border-radius: 0;
@@ -399,7 +415,6 @@ input.form-control:focus {
     font-size: 16px;
     line-height: 1.33333;
 }
-
 .form-group-md .form-control {
 	.form-control;
     height: 38px;
@@ -408,13 +423,6 @@ input.form-control:focus {
     line-height: 1.33333;
 }
 
-.radio input[type="radio"], 
-.radio-inline input[type="radio"], 
-.checkbox input[type="checkbox"], 
-.checkbox-inline input[type="checkbox"] {
-	box-shadow: none;
-	margin-top: 7px;
-}
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -623,13 +631,9 @@ div.multiseparator {
     min-height: 20px;
     padding: 20px 30px 30px 30px;
     margin-bottom: 20px;
-    background-color: #F5F5F5;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
 }
 .well-trans {
-	background: rgba(0,0,0,0.05);
+	.panel-block;
 }
 
 /* Navbar */
