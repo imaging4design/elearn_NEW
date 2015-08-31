@@ -1,42 +1,52 @@
-<h1 class="gridHeader">Member Login - Lost Password</h1>
+<!-- Starts Member Login (Both Students and Teachers) -->
+<div class="band-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
 
-<div class="gridPadding textPadding">
+                <h2>Password Recovery</h2>
+                <div class="multiseparator vc_custom"></div>
 
-<?php echo form_open('main/login_lostpass', array('class' => 'bg_lock')); ?>
 
-<div id="container">
+                <?php echo form_open('main/login_lostpass', array('class' => 'bg_lock')); ?>
 
-	<fieldset>
-	<legend>LOST PASSWORD RECOVERY</legend>
+                <div id="container">
 
-	<span class="marginBot">
-		If you have forgotten your password, enter your Username (Email) below.<br />
-		A link will then be sent to this email enabling you to reset your password.<br /><br />
-		<span class="textOrange bold">NOTE: </span>If you do not receive a link, be sure to check your <strong>'Junk'</strong> or <strong>'Spam'</strong> folders.</span>
+                	<fieldset class="well well-trans">
 
-		<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
+                		<p>To reset your password, enter your Username (Email) below. A link will be sent to this email allowing you to reset your password.</p>
+                        <p><small><strong>NOTE:</strong> If you do not receive the link, please check your <strong>'Junk' or 'Spam'</strong> folders.</small></p>
 
-		<label>Username (Email):</label>
-		<input type="text" name="username" id="username" size="35" value="<?php echo set_value('username'); ?>">
 
-		<div class="containerArea">
-		<input type="submit" id="submit" value="Send Link" />
-		</div>
+                		<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
-	</fieldset>
+                        <div class="form-group-lg">
+                            <label>Username (Email):</label>
+                            <input type="text" name="username" class="form-control" id="username" size="35" value="<?php echo set_value('username'); ?>">
+                        </div>
 
-</div>
+                    	<br>
+                		<div class="containerArea">
+                		  <input type="submit" class="btn btn-lg btn-red btn-block" id="submit" value="Send Link" />
+                		</div>
 
-<?php 
-if( isset( $this->error ))
-{
-	echo $this->error;
-}
+                	</fieldset>
 
-echo form_close(); 
-?>
+                </div><!--ENDS id container-->
 
-</div>
+                <?php 
+                if( isset( $this->error ))
+                {
+                	echo $this->error;
+                }
+
+                echo form_close(); 
+                ?>
+
+            </div><!--ENDS col-->
+        </div><!--ENDS row-->
+    </div><!--ENDS container-->
+</div><!-- ENDS band-white -->
 
 
 <!--JQUERY AJAX UPDATE SCRIPT-->

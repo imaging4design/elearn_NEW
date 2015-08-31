@@ -1,39 +1,50 @@
-<h1 class="gridHeader">Teacher Administration</h1>
+<!-- Starts Member Login (Both Students and Teachers) -->
+<div class="band-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
 
-<div class="gridPadding textPadding">
+            	<h2>Teacher Administration</h2>
+            	<p><small><strong>NOTE:</strong> Please keep your teacher admin login details secure.</small></p>
+                <div class="multiseparator vc_custom"></div>
 
 
-	<?php echo form_open('main/login_teach'); ?>
+					<?php echo form_open('main/login_teach'); ?>
 
-	<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
+					<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
-	<fieldset>
-	<legend>TEACHER LOGIN</legend>
+					<fieldset class="well well-trans">
 
-	<span class="marginBot"><span class="textOrange bold">NOTE: </span>Please keep your teacher admin login details secure.</span>
+					
 
-		<label>Username:</label>
-		<input type="text" name="admin_user" id="admin_user" size="30" value="<?php echo set_value('admin_user'); ?>">
+						<div class="form-group-lg">
+                            <label>Username:</label>
+						<input type="text" name="admin_user" class="form-control" id="admin_user" size="30" value="<?php echo set_value('admin_user'); ?>">
+                        </div>
 
-		<label>Password:</label>
-		<input type="password" name="admin_pass" id="admin_pass" size="30" value="<?php echo set_value('admin_pass'); ?>">
+                        <div class="form-group-lg">
+                            <label>Password:</label>
+						<input type="password" name="admin_pass" class="form-control" id="admin_pass" size="30" value="<?php echo set_value('admin_pass'); ?>">
+                        </div>
+                        <br>
+						<input type="submit" name="submit" class="btn btn-lg btn-red btn-block" id="submit" value="LOGIN" />
 
-		<label></label>
-		<input type="submit" name="submit" id="submit" value="LOGIN" />
+					</fieldset>
 
-	</fieldset>
+					<?php
+					// Display success / error message
+					if( $this->input->post('submit') && $this->session->userdata('login_teach') == 'fail' )
+					{
+						echo '<div class="message_error">Incorrect login details - please try again</div>';
+					}
 
-	<?php
-	// Display success / error message
-	if( $this->input->post('submit') && $this->session->userdata('login_teach') == 'fail' )
-	{
-		echo '<div class="message_error">Incorrect login details - please try again</div>';
-	}
+					echo form_close(); 
+					?>
 
-	echo form_close(); 
-	?>
-
-	<?php echo form_close(); ?>
+					<?php echo form_close(); ?>
 
   
-</div>
+            </div><!--ENDS col-->
+        </div><!--ENDS row-->
+    </div><!--ENDS container-->
+</div><!-- ENDS band-white -->

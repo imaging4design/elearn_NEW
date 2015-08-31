@@ -122,7 +122,7 @@
 
 						</fieldset>
 
-						<p>*Once registered, you will be directed to the login page.</p>
+						<p><small>*Once registered, you will be directed to the login page.</small></p>
 
 					<?php echo form_close(); ?>
 						

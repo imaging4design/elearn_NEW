@@ -6,7 +6,7 @@
 				
 
 				<?php 
-					$segments = array( 'item', url_title( $item->name, 'dash', true ), $item->id );
+					//$segments = array( 'item', url_title( $item->name, 'dash', true ), $item->id );
 					echo '<h2>' . $item->name . ' <span class="text-redLight">$' . $item->price . '</span></h2>';
 					echo '<div class="multiseparator vc_custom"></div>';
 					echo '<p>(Subscription period - as per terms and conditions).</p>';
@@ -19,7 +19,7 @@
 
 						<h3>Instructions</h3>
 						<div class="multiseparator vc_custom"></div>
-						<p>To purchase the <?php echo anchor( $segments, $item->name, array('class' => 'bold')); ?> subscription:</p>
+						<p>To purchase the <strong>Individual Student</strong> subscription:</p>
 
 						<ul>
 							<li>Enter your (valid) email address below and click through to pay with PayPal. </li>
