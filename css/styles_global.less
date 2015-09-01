@@ -688,6 +688,12 @@ div.multiseparator {
 	/*margin-bottom: 70px;*/
 }
 
+.carousel-caption {
+	h2 {
+		margin-top: 0; 
+	}
+}
+
 /* Nav Tabs */
 .mode-tabs-menu {
     margin-top: 20px;
@@ -713,16 +719,18 @@ div.multiseparator {
 }
 
 .nav-tabs > li > a {
-	color: @colWhite;
+	color: @colGreyDark;
 	font-weight: 400;
     margin-right: 0;
     line-height: 1.42857;
     border: none;
     border-radius: 0;
-    background: @colGreyMid;
+    background: @colGreySoft;
    /* background: lighten(@colGreyMid, 10%);*/
     &:hover {
+    	color: @colWhite;
     	background: @colRedDark;
+    	.transition-fast;
     }
 }
 
@@ -747,7 +755,7 @@ div.multiseparator {
 	&:active {
 		text-decoration: none;
 		color: @colWhite;
-		background:@colRedLight;
+		background:@colGreyMid;
 	}
 }
 .panel-group .panel {

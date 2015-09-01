@@ -5,7 +5,7 @@
 
 				<h2>Register with a Student Access Code</h2>
 				<div class="multiseparator vc_custom"></div>
-				<p>Fill in your details below, including your <span class="text-redLight">'Student Access Code'</span> to register for eLearnEconomics.</p>
+				<p>Fill in your details below, including your <span class="text-redLight"><strong>'Student Access Code'</strong></span> to register for eLearnEconomics.</p>
 
 				<?php 
 					if( isset($error)) { echo $error; 	}

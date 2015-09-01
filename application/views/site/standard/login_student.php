@@ -134,17 +134,17 @@
 					}
 					else
 					{
-						echo '<h5 class="text-redLight"><strong>SIGN UP WITH A SCHOOL ACCESS CODE!</strong></h5> <p>If you have been given an Access Code to subscribe through your school ' . anchor('add_member_codes', '<strong>CLICK HERE</strong>') . ' to register. <br>Once registered, login as a full member using your username and password.</p>';
+						echo '<h5 class="text-redLight"><strong>SIGN UP WITH A SCHOOL ACCESS CODE!</strong></h5> <p>If you have been given an <strong>Access Code</strong> to subscribe through your school ' . anchor('add_member_codes', '<strong>CLICK HERE</strong>') . ' to register. <br>Once registered, login as a full member using your username and password.</p>';
 					}
 
 					// Unset $this->session->userdata('code_message')
 					$this->session->unset_userdata('code_message');
 
 				?>
-
+				<br>
 				<?php
 				// TEACHERS LOGIN LINK
-					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red pull-right hidden-xs'));
+					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red hidden-xs'));
 					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red center-block visible-xs'));
 				?>
 				
