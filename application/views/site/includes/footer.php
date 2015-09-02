@@ -75,38 +75,6 @@
 
 
 
-	<?php 
-
-	if( $this->session->userdata('no_video') ) { ?>
-
-		<script>
-
-			(function() {
-
-				var disable = $('#checkVideo').data('video');
-				
-				if( disable != 'isvideo' ) {
-
-					var disableBut = $('#videoBlock');
-
-					disableBut.removeAttr("href");
-
-					disableBut.animate({
-						opacity: .5
-					}).html('No Video');
-
-				}
-
-			})();
-
-		</script>
-
-	<?php } ?>
-
-
-	<!-- Bootstrap js -->
-	<script src="<?php echo base_url(); ?>js/bootstrap.js" type="text/javascript"></script><!-- Bootstrap JS -->
-	<script src="<?php echo base_url(); ?>js/main.js" type="text/javascript"></script><!-- Main JS -->
 
 	<?php
 		// Show 'Back to Topics' animated button - only if user is on topic content pages (i.e., Key Notes, Audio/Video, Flash Cards, Writtem Answers, Multi-Choice)
@@ -123,6 +91,26 @@
 			echo '<div class="btn-top visible-md visible-lg" id="btn-top"><i class="fa fa-angle-up"></i></div>';
 		}
 	?>
+
+
+
+	<!-- Bootstrap js -->
+	<script src="<?php echo base_url(); ?>js/bootstrap.js" type="text/javascript"></script><!-- Bootstrap JS -->
+	<script src="<?php echo base_url(); ?>js/main.js" type="text/javascript"></script><!-- Main JS -->
+
+
+
+	<?php 
+	// Disable and hide 'Audo/Video' section nav button
+	if( $this->session->userdata('no_video') ) { ?>
+		<script>
+			(function() {
+				var disableBut = $('li#videoBlock');
+				disableBut.hide();
+			})();
+		</script>
+	<?php } ?>
+
 
 </body>
 </html>

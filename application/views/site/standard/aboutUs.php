@@ -79,6 +79,6 @@
 			</div><!--ENDS col-->
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
-</div>
+</div><!-- ENDS band-white -->
 
 

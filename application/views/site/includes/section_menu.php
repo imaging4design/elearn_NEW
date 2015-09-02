@@ -10,7 +10,7 @@
 <div class="e-tabs">
 	<ul class="nav nav-tabs mode-tabs-menu">
 		<li role="presentation" class="<?php echo $class1; ?>"><?php echo anchor('section/key_notes/' . $this->uri->segment(3), '<i class="fa fa-file-text"></i> Key Notes'); ?></li>
-		<li role="presentation" class="<?php echo $class2; ?>"><?php echo anchor('section/audio_video/' . $this->uri->segment(3), '<i class="fa fa-rss"></i> Audio Video'); ?></li>
+		<li role="presentation" class="<?php echo $class2; ?>" id="videoBlock"><?php echo anchor('section/audio_video/' . $this->uri->segment(3), '<i class="fa fa-rss"></i> Audio Video'); ?></li>
 		<li role="presentation" class="<?php echo $class3; ?>"><?php echo anchor('section/flash_cards/' . $this->uri->segment(3), '<i class="fa fa-clone"></i> Flash Cards'); ?></li>
 		<li role="presentation" class="<?php echo $class4; ?>"><?php echo anchor('section/written_answers/' . $this->uri->segment(3), '<i class="fa fa-pencil"></i> Written Answers'); ?></li>
 		<li role="presentation" class="<?php echo $class5; ?>"><?php echo anchor('section/multi_choice/' . $this->uri->segment(3), '<i class="fa fa-th-list"></i> Multi Choice'); ?></li>

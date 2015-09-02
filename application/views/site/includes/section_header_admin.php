@@ -1,11 +1,8 @@
 <?php
-// Don't display on the home page ...
-if( $this->uri->segment(1) != 'index' && $this->uri->segment(1) != ''):
-?>
+	// Don't display on the home page ...
+	if( $this->uri->segment(1) != 'index' && $this->uri->segment(1) != ''):
 
-<div class="info_bar">
 
-	<?php
 	// Used to show 'current' tab in use
 	$c1 = array('view_month', 'show_class_students', 'view_student', 'refresh_class_students', 'results_by_topic');
 	$c2 = array('view_month_print', 'results_PDF', 'show_class_students_print', 'view_student_print');
@@ -15,42 +12,40 @@ if( $this->uri->segment(1) != 'index' && $this->uri->segment(1) != ''):
 	$class2 = FALSE; // Initiate var
 	$class3 = FALSE; // Initiate var
 
-	if( in_array($this->uri->segment(2), $c1))
-	{
-		$class1 = 'one';
-	}
-
-	if( in_array($this->uri->segment(2), $c2))
-	{
-		$class2 = 'two';
-	}
-	
-
-	if( in_array($this->uri->segment(2), $c3))
-	{
-		$class3 = 'three';
-	}
-	
-		//Display view 'Progress' and 'Edit Options' buttons for registered uers only!
-		echo '<ul id="subNav">';
-			echo '<li id="screen">' . anchor('teachers/view_month', ' ', array('class' => $class1)) . '</li>';
-			echo '<li id="print">' . anchor('teachers/view_month_print', ' ', array('class' => $class2)) . '</li>';
-			echo '<li id="show_options">' . anchor('teachers/show_students_edit', ' ', array('class' => $class3)) . '</li>';
-		echo '</ul>';
-	?>
+	$class1 = ( in_array($this->uri->segment(2), $c1)) ? 'active' : '';
+	$class2 = ( in_array($this->uri->segment(2), $c2)) ? 'active' : '';
+	$class3 = ( in_array($this->uri->segment(2), $c3)) ? 'active' : '';
 
 
-	<?php
-		// Set up short names for session vars that were created at login
-		$schoolID = $this->session->userdata('schoolID');
-		$school = $this->session->userdata('school');
+	// Set up short names for session vars that were created at login
+	$schoolID = $this->session->userdata('schoolID');
+	$school = $this->session->userdata('school');
 
 
-	?>
-
-	<h6 style="margin-top:7px;">Logged in: <span class="bold">TEACHER ADMIN</span> from <span class="bold"><?php echo strtoupper( $school ); ?></span></h6>
+?>
 
 
+<div class="e-tabs">
+	<ul class="nav nav-tabs mode-tabs-menu">
+		<li class="<?php echo $class1; ?>" id ="screen"><?php echo anchor('teachers/view_month/', '<i class="fa fa-desktop"></i> Screen Reports'); ?></li>
+		<li class="<?php echo $class2; ?>" id ="print"><?php echo anchor('teachers/view_month_print/', '<i class="fa fa-print"></i> Print Reports'); ?></li>
+		<li class="<?php echo $class3; ?>" id ="show_options"><?php echo anchor('teachers/show_students_edit/', '<i class="fa fa-user"></i> Edit Classes'); ?></li>
+	</ul>
 </div>
+
+	
+
+<div class="band-topic-sections">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<h2>Welcome, <?php echo strtoupper( $school ); ?></h2>
+				<div class="multiseparator vc_custom"></div>
+
+			</div><!--ENDS col-->
+		</div><!--ENDS row-->
+	</div><!--ENDS container-->
+</div><!--ENDS band-topic-sections-->
 
 <?php endif; ?>

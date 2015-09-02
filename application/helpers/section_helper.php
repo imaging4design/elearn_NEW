@@ -84,7 +84,7 @@ function classDropdown($value='', $selected='', $label='', $default='')
 		$data = $query;
 	}
 
-	echo '<select name="classID" id="classID">';
+	echo '<select name="classID" id="classID" class="form-control">';
 	
 		if($value)
 		{

@@ -18,7 +18,6 @@
 
 							$video = $row->fileName;
 
-							//echo $row->fileName;
 
 				?>
 
@@ -48,24 +47,7 @@
 
 
 				<?php
-					endforeach;
-					
-					}
-					else
-					{
-						$image = array(
-							'src' => $this->css_path_url . 'main/misc/blue_monster.png',
-							'alt' => 'eLearn Economics',
-							'width' => '489',
-							'height' => '319',
-							'class' => 'img-responsive',
-							'style' => 'margin:0 auto;'
-						);
-
-						echo '<div align="center">';
-							echo '<h3><span class="bold">Sorry,</span> there is no Video resource available for this topic at present.</h3>';
-							echo img($image);
-						echo '</div>';
+					endforeach; 
 					}
 				?>
 

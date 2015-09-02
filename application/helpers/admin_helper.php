@@ -266,7 +266,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
 			$data = $query;
 		}
 		
-		echo '<select name="topic" id="topic">';
+		echo '<select name="topic" id="topic" class="form-control">';
 		
 			if($value)
 			{
