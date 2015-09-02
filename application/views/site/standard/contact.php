@@ -1,7 +1,7 @@
 <div class="band-white">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-9 col-full">
+			<div class="col-md-9 col-full">
 				
 				<h2>eLearn Economics Support</h2>
 				<div class="multiseparator vc_custom"></div>
@@ -14,7 +14,7 @@
 
 				</div><!-- ENDS col -->
 
-				<div class="col-sm-3 sidebar">
+				<div class="col-md-3 sidebar">
 
 					<h5><strong>ONLINE SUPPORT</strong></h5>
 					<div class="multiseparator vc_custom"></div>

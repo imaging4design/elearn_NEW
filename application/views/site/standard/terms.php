@@ -1,7 +1,7 @@
 <div class="band-white">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-9 col-full">
+			<div class="col-md-9 col-full">
 
 				<h2>Terms and Conditions</h2>
 				<div class="multiseparator vc_custom"></div>
@@ -48,7 +48,7 @@
 
 			</div><!--ENDS col-->
 
-			<div class="col-sm-3 sidebar">
+			<div class="col-md-3 sidebar">
 
 				<?php include('application/views/site/includes/sidebar.php'); // Pulls in side bar ?>
 

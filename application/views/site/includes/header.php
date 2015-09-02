@@ -78,7 +78,7 @@
 					$topics = anchor('section/index', 'TOPICS');
 				} elseif( $this->session->userdata('logged_in_admin') ==1) {
 					$log_status = anchor('main/logout', 'LOGOUT');
-					$topics = anchor('teachers/view_month', 'Teacher');
+					$topics = anchor('teachers/view_month', 'TEACHER');
 				} else {
 					$log_status = anchor('main/login', 'LOGIN');
 					$topics = anchor('section/demo', 'DEMO');
@@ -92,7 +92,7 @@
 				$home = ( $current == '' || $current == '') ? 'active' : '';
 				$about = ( $current == 'aboutUs') ? 'active' : '';
 				$topic = ( $current == 'demo' || $current == 'index' || $current == 'login_member_student') ? 'active' : '';
-				$blog = ( $current == 'news' || $current == 'news_full') ? 'active' : '';
+				$news = ( $current == 'news' || $current == 'news_full') ? 'active' : '';
 				$faqs = ( $current == 'faqs') ? 'active' : '';
 				$subscribe = ( $current == 'items' || $current == 'individual-student-premium' || $current == 'school_order') ? 'active' : '';
 				$contact = ( $current == 'contact') ? 'active' : '';
@@ -123,10 +123,12 @@
 								<li class="<?php echo $about; ?>"><?php echo anchor('site/aboutUs', 'ABOUT'); ?></li>
 								<li class="<?php echo $topic; ?>"><?php echo $topics; ?></li>
 								<li class="<?php echo $faqs; ?>"><?php echo anchor('site/faqs', 'FAQs'); ?></li>
-								<?php if( $this->session->userdata('logged_in') != 1) { ?>
+								<li class="<?php echo $news; ?>"><?php echo anchor('site/news', 'NEWS'); ?></li>
+
+								<?php if( $this->session->userdata('logged_in') != 1 and $this->session->userdata('logged_in_admin') != 1) { ?>
 									<li class="<?php echo $subscribe; ?>"><?php echo anchor('paypal/items', 'SUBSCRIBE'); ?></li>
 								<?php } ?>
-								<li class="<?php echo $blog; ?>"><?php echo anchor('site/news', 'BLOG'); ?></li>
+								
 								<li class="<?php echo $contact; ?>"><?php echo anchor('site/contact', 'CONTACT'); ?></li>
 								<li class="dropdown <?php echo $user; ?>">
 								<?php if( $this->session->userdata('logged_in') == 1) { ?>

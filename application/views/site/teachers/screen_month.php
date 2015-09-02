@@ -3,196 +3,211 @@
 		<div class="row">
 			<div class="col-sm-12 col-full">
 
-					<h2>Screen reports for class: <?php echo get_class_name( $this->session->userdata('classID') ); ?></h2>
+					<h2>Screen reports: <?php echo get_class_name( $this->session->userdata('classID') ); ?></h2>
+					<p>
+						This section allows you to view individual students or complete class results either on-screen or as downloadable PDFs.
+					</p>
 					<div class="multiseparator vc_custom"></div>
 
 
 					<?php
-					/*
-					|-----------------------------------------------------------------------------------------------------------------
-					| THIS IS THE MASTER 'SET YOU CLASS' DROP DOWN MENU
-					| WHY? So the teacher doesn't have to constantly keep selecting their class in the teacher admin section!
-					|-----------------------------------------------------------------------------------------------------------------
-					*/
-					echo form_open('teachers/set_class');
-					?>
-
-						<fieldset class="well well-trans">
-
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group-lg">
-
-										<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
-										<input type="hidden" name="current_URL" id="current_URL" value="<?php echo $this->uri->segment(2); ?>" />
-
-										<label>Select a class from</label>
-										<?php
-											// Set $class to current session -> classID
-											$current_class = get_class_name( $this->session->userdata('classID'));
-
-											// Display class list dropdown menu (with current selected class)
-											echo classDropdown($this->session->userdata('classID'), $this->session->userdata('classID'), $current_class, $this->session->userdata('school') ); 
-										?>
-
-									</div><!-- ENDS form-group-lg -->
-								</div><!-- ENDS col -->
-
-								<div class="col-md-6">
-									<div class="form-group-lg">
-										<label>Create a class message for <?php echo get_class_name( $this->session->userdata('classID') ); ?></label>
-										<p>
-											<?php 
-												if( $this->session->userdata('classID') )
-												{
-													echo anchor('teachers/class_message_form', 'Create Message', array('class'=>'btn btn-lg btn-red')); 
-												}
-											?>
-										</p>
-									</div><!-- ENDS form-group-lg -->
-								</div><!-- ENDS col -->
-							</div><!-- ENDS row -->
-
-						</fieldset>
-
-					<?php echo form_close(); ?>
-
-
-
-					<?php
-					/*
-					|-----------------------------------------------------------------------------------------------------------------
-					| Hide everything else on page until they select a class (therefore creating a session 'classID' )
-					|-----------------------------------------------------------------------------------------------------------------
-					*/
-					$hide_me = ( ! $this->session->userdata('classID') ) ? 'display:none;' : '';
-
+						// Hide everything else on page until they select a class (therefore creating a session 'classID' )
+						$hide_me = ( ! $this->session->userdata('classID') ) ? 'display:none;' : '';
 					?>
 
 
+					<div class="well well-trans">
 
-					<div class="row" style="<?php echo $hide_me; ?>">
-						<div class="col-md-6">
-							<div class="form-group-lg">
+						<div class="row">
+							<div class="col-md-4">
 
 								<?php
-								/************************************************************************************************************/
-								// This form will retrieve ALL results for a single topic/month for an entire class group
-								/************************************************************************************************************/
-								echo form_open('teachers/view_month', array('class' => 'bg_computer')); // THIS SHOWS RESULTS ON PAGE!!
-
+								/*
+								|-----------------------------------------------------------------------------------------------------------------
+								| THIS IS THE MASTER 'SET YOU CLASS' DROP DOWN MENU
+								| WHY? So the teacher doesn't have to constantly keep selecting their class in the teacher admin section!
+								|-----------------------------------------------------------------------------------------------------------------
+								*/
+								echo form_open('teachers/set_class');
 								?>
 
-									<fieldset class="well well-trans">
+									<fieldset>
 
-									<h3>TOPICS BY CLASS / MONTH</h3>
+										<div class="form-group-sm">
 
-										<label>View your class results for each topic and month</label>
-										<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
+											<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
+											<input type="hidden" name="current_URL" id="current_URL" value="<?php echo $this->uri->segment(2); ?>" />
 
-										<?php 
-											echo dropDownTopics('', '', 'Select Topic'); // See admin_helper
-										?>
+											<label>Select a class from</label>
 
-										<label>Select Month</label>
+											<?php
 
-										<?php
-											$month = date('M'); // Get current Month - for 'value'
-											$month_full = date('F'); // Get current Month - for 'label'
+												// Set $class to current session -> classID
+												$current_class = get_class_name( $this->session->userdata('classID'));
+												// Display class list dropdown menu (with current selected class)
+												echo classDropdown($this->session->userdata('classID'), $this->session->userdata('classID'), $current_class, $this->session->userdata('school') ); 
+												
+												if( $this->session->userdata('classID') )
+												{
+													echo anchor('teachers/class_message_form', '<strong>Create Class Message</strong>', array('class'=>'btn btn-sm btn-red btn-block'));
+												}
+											?>
 
-											echo monthDropdown($value=$month, $selected=$month, $label=$month_full);
-										?>
-										
-										<br>
-										<input type="submit" name="submit" class="btn btn-lg btn-red" id="submit" value="View Results" />
+										</div><!-- ENDS form-group-lg -->
 
 									</fieldset>
 
-
-								<?php 
-								if( isset($error))
-								{
-									echo $error;
-								}
-								echo form_close(); ?>
-
-							</div><!-- ENDS form-group-lg -->
-						</div><!-- ENDS col -->
-
-					
-
-
-
-
-						<div class="col-md-6">
-							<div class="form-group-lg">
-
-								<?php
-								/************************************************************************************************************/
-								// This form will first display a full list of students in a single class group
-								// Then each student can be clicked to view their entire results for the current month
-								/************************************************************************************************************/
-								echo form_open('teachers/show_class_students', array('class' => 'bg_computer'));
-
+								<?php echo form_close(); ?>
 								
-								// Set the default label / value for the Class dropdown menu
-								// i.e. Remember the Teacher/Class name so we don't have to reselect!
-								// Used in classDropdown($value, $selected, $label) below
-								if( isset($class) && $this->session->userdata('classID'))
-								{
-									$value = $this->session->userdata('classID');
-									$selected = $this->session->userdata('classID');
-									$label = $class->class_name;
-								}
-								else
-								{
-									$value = '';
-									$selected = ''; 
-									$label = 'Classes for '. $this->session->userdata('school');
-								}
-								/****************************************************************************/
-
-								?>
-
-								<fieldset class="well well-trans">
-
-									<h3>VIEW INDIVIDUAL STUDENTS</h3>
-
-									<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
-
-									<label>View individual students results for each month</label>
-
-									<div class="row">
-										<div class="col-md-6">
-											<input type="submit" name="submit" class="btn btn-sm btn-red" id="submit" value="View Students" />
-										</div>
-
-										<div class="col-md-6">
-											<!-- Display Teachers access button to the Leaderboard -->
-											<?php echo anchor('results/leaders_school', 'The Leader Board', array('class'=>'btn btn-sm btn-red')); ?>
-										</div>
-									</div>
-
-								</fieldset>
+							</div><!-- ENDS col -->
 
 
-								<?php
+							<div class="col-md-8">
+								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum purus eu ex imperdiet, quis semper felis pulvinar. Phasellus imperdiet id massa nec vehicula. Aenean at lobortis justo, in ultricies purus. Duis vel luctus tortor. Integer a ante arcu. Mauris pellentesque egestas convallis. Integer vel magna et purus pretium feugiat quis quis eros. Sed faucibus, ipsum ut placerat pellentesque, orci sem tincidunt sem, sit amet facilisis felis risus in eros. Morbi euismod volutpat nibh, mattis accumsan magna volutpat quis. Praesent convallis at lectus sollicitudin euismod. Etiam sem arcu, efficitur vitae purus id, cursus consequat eros. </small></p>
+							</div><!-- ENDS col -->
 
-									if( isset($error2)) { echo $error2; }
-									echo form_close();
-
-								?>
-
-								
-								
-
-							</div><!-- ENDS form-group-lg -->
-						</div><!-- ENDS col -->
-
-					</div><!-- ENDS row -->
+						</div><!-- ENDS row -->
 
 
 
+						<hr class="small">
+
+
+						<div style="<?php echo $hide_me; ?>"><!-- HIDE BELOW IF CLASS NOR SELECTED -->
+						
+
+						<div class="row">	
+							<div class="col-md-4">
+
+								<div class="form-group-sm">
+
+									<?php
+									/************************************************************************************************************/
+									// This form will retrieve ALL results for a single topic/month for an entire class group
+									/************************************************************************************************************/
+									echo form_open('teachers/view_month', array('class' => 'bg_computer')); // THIS SHOWS RESULTS ON PAGE!!
+
+									?>
+
+										<fieldset>
+
+
+											<label>View class results - topic and month</label>
+											<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
+
+											<?php 
+												echo dropDownTopics('', '', 'Select Topic'); // See admin_helper
+											?>
+
+											
+
+											<?php
+												$month = date('M'); // Get current Month - for 'value'
+												$month_full = date('F'); // Get current Month - for 'label'
+
+												echo monthDropdown($value=$month, $selected=$month, $label=$month_full);
+											?>
+											
+											<input type="submit" name="submit" class="btn btn-sm btn-red btn-block" id="submit" value="View Results" />
+
+										</fieldset>
+
+
+									<?php 
+										if( isset($error))
+										{
+											echo $error;
+										}
+										echo form_close(); 
+									?>
+
+								</div><!-- ENDS form-group-lg -->
+
+								<hr class="small visible-xs">
+							
+							</div><!-- ENDS col -->
+
+
+							<div class="col-md-8">
+								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum purus eu ex imperdiet, quis semper felis pulvinar. Phasellus imperdiet id massa nec vehicula. Aenean at lobortis justo, in ultricies purus. Duis vel luctus tortor. Integer a ante arcu. Mauris pellentesque egestas convallis. Integer vel magna et purus pretium feugiat quis quis eros. Sed faucibus, ipsum ut placerat pellentesque, orci sem tincidunt sem, sit amet facilisis felis risus in eros. Morbi euismod volutpat nibh, mattis accumsan magna volutpat quis. Praesent convallis at lectus sollicitudin euismod. Etiam sem arcu, efficitur vitae purus id, cursus consequat eros. </small></p>
+							</div><!-- ENDS col -->
+
+						</div><!-- ENDS row -->
+
+
+
+						<hr class="small">
+
+
+
+						<div class="row">
+							<div class="col-md-4">
+
+								<div class="form-group-lg">
+
+									<?php
+									/************************************************************************************************************/
+									// This form will first display a full list of students in a single class group
+									// Then each student can be clicked to view their entire results for the current month
+									/************************************************************************************************************/
+									echo form_open('teachers/show_class_students', array('class' => 'bg_computer'));
+
+									
+									// Set the default label / value for the Class dropdown menu
+									// i.e. Remember the Teacher/Class name so we don't have to reselect!
+									// Used in classDropdown($value, $selected, $label) below
+									if( isset($class) && $this->session->userdata('classID'))
+									{
+										$value = $this->session->userdata('classID');
+										$selected = $this->session->userdata('classID');
+										$label = $class->class_name;
+									}
+									else
+									{
+										$value = '';
+										$selected = ''; 
+										$label = 'Classes for '. $this->session->userdata('school');
+									}
+									/****************************************************************************/
+
+									?>
+
+									<fieldset>
+
+										<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
+
+										<label>View individual students results for each month</label>
+
+										<input type="submit" name="submit" class="btn btn-sm btn-red btn-block" id="submit" value="View Students" />
+										<br><br>
+
+										<!-- Display Teachers access button to the Leaderboard -->
+										<?php echo anchor('results/leaders_school', 'Leader Board', array('class'=>'btn btn-sm btn-red btn-block')); ?>
+
+									</fieldset>
+
+									<?php
+
+										if( isset($error2)) { echo $error2; }
+										echo form_close();
+
+									?>
+
+								</div><!-- ENDS form-group-lg -->
+
+								<hr class="small visible-xs">
+
+							</div><!-- ENDS col -->
+
+
+							<div class="col-md-8">
+								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum purus eu ex imperdiet, quis semper felis pulvinar. Phasellus imperdiet id massa nec vehicula. Aenean at lobortis justo, in ultricies purus. Duis vel luctus tortor. Integer a ante arcu. Mauris pellentesque egestas convallis. Integer vel magna et purus pretium feugiat quis quis eros. Sed faucibus, ipsum ut placerat pellentesque, orci sem tincidunt sem, sit amet facilisis felis risus in eros. Morbi euismod volutpat nibh, mattis accumsan magna volutpat quis. Praesent convallis at lectus sollicitudin euismod. Etiam sem arcu, efficitur vitae purus id, cursus consequat eros. </small></p>
+							</div><!-- ENDS col -->
+
+						</div><!-- ENDS row -->
+
+
+						</div><!-- ENDS $hide_mw -->
 
 
 
@@ -284,6 +299,7 @@
 
 					?>
 
+					</div><!-- ENDS well well-trans -->
 
 			</div><!--ENDS col-->
 		</div><!--ENDS row-->

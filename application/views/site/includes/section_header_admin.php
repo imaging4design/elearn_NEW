@@ -42,6 +42,7 @@
 
 				<h2>Welcome, <?php echo strtoupper( $school ); ?></h2>
 				<div class="multiseparator vc_custom"></div>
+				<p><i class="fa fa-exclamation-circle"></i> Please take care to keep this administration section secure.</p>
 
 			</div><!--ENDS col-->
 		</div><!--ENDS row-->

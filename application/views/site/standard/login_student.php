@@ -27,7 +27,7 @@
 		<div class="row">
 
 			<!-- Student Login panel -->
-			<div class="col-sm-6">
+			<div class="col-md-6">
 
 				<h2>Premium Login</h2>
 				<p><small>Login here if you have paid for an individual student membership.</small></p>
@@ -74,7 +74,7 @@
 
 
 			<!-- Teachers Login panel -->
-			<div class="col-sm-6">
+			<div class="col-md-6">
 
 				<h2>Guest Login</h2>
 				<p><small>Login here if you have a username and password from your school.</small></p>
@@ -127,6 +127,11 @@
 			<div class="col-sm-12">
 
 				<?php
+					// TEACHERS LOGIN LINK DESKTOP
+					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red pull-right hidden-xs'));
+				?>
+
+				<?php
 
 					if($this->session->userdata('code_message')) // This located in 'paypal' controller 'add_member_codes()' function
 					{
@@ -143,8 +148,7 @@
 				?>
 				<br>
 				<?php
-				// TEACHERS LOGIN LINK
-					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red hidden-xs'));
+					// TEACHERS LOGIN LINK MOBILE
 					echo anchor('main/login_teach', 'TEACHER LOGIN', array('class' => 'btn btn-lg btn-red center-block visible-xs'));
 				?>
 				

@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="col-sm-9 col-full">
+			<div class="col-md-9 col-full">
 				
 				<h2>Subscription Details</h2>
 				<div class="multiseparator vc_custom"></div>
@@ -22,7 +22,7 @@
 			</div><!--ENDS col-->
 
 
-			<div class="col-sm-3 sidebar">
+			<div class="col-md-3 sidebar">
 
 				<?php include('application/views/site/includes/sidebar.php'); // Pulls in side bar ?>
 
