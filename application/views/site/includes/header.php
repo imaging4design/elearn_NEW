@@ -10,34 +10,15 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'><!--FONTS CSS-->
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'><!--FONTS CSS-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><!-- FONT AWESOME CSS -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/coda_slider.css" type="text/css" /><!--JQ CODA SLIDER CSS-->
-	<!--<link rel="stylesheet" href="<?php //echo base_url(); ?>css/charts.css" type="text/css" />MAIN STYLES CSS-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css" type="text/css" /><!--BOOTSTRAP CSS-->
 	
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.carousel.css"><!--OWL CAROUSEL CSS-->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.theme.css"><!--OWL CAROUSEL DEFAULT THEME CSS-->
-
 	<link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/styles.css" type="text/css" /><!--MAIN STYLES CSS-->
 
 
-	<!--JS IMPORTS-->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script><!--JQUERY 1.7 MAIN PACK JS-->
-	<script src="<?php echo base_url() . 'js/charts.js'; ?>" type="text/javascript" ></script>
 
-
-	<script type="text/javascript" src="<?php echo base_url() . 'js/magnify/jquery.magnifier.js'; ?>"></script><!--JQUERY MAGNIFY JS-->
-
-
-	<!--<script src="<?php //echo base_url() . 'js/coda_slider/jquery.coda-slider-2.0.js'; ?>"></script> CODA-SLIDER JS -->
-	<script src="<?php echo base_url() . 'js/coda_slider/jquery.easing.1.3.js'; ?>"></script><!-- JQUERY-EASING JS -->
-
-
-	<script src="<?php echo base_url() . 'js/owl.carousel.js'; ?>"></script><!--OWL CAROUSEL JS-->
-
-
-	<!--jQuery Auto Scroller-->
-	<script src="<?php echo base_url() . 'js/jquery.simplyscroll.js'; ?>"></script>
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.simplyscroll.css" type="text/css" /><!--SIMPLY SCROLL CSS-->
 
 
 
@@ -106,7 +87,7 @@
 
 
 				<!-- Fixed navbar -->
-				<nav class="navbar navbar-default navbar-fixed-top">
+				<nav class="navbar navbar-default navbar-fixed-top menu-bar-large">
 					<div class="container">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -151,6 +132,3 @@
 			</div><!--ENDS col-->
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
-
-
-	

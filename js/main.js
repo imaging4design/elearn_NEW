@@ -36,7 +36,7 @@ $('.count').each(function () {
 /**************************************************************/
 
 var element = document.querySelector('.navbar-default');
-element.classList.add('menu-bar-large');
+//element.classList.add('menu-bar-large');
 
 	function menuBarResize() {
 		if(window.pageYOffset > 10) {
@@ -48,8 +48,8 @@ element.classList.add('menu-bar-large');
 		}
 	}
 
-	// Add listener event to detect scrolling
-	window.addEventListener('scroll', menuBarResize, false);
+// Add listener event to detect scrolling
+window.addEventListener('scroll', menuBarResize, false);
 
 /**************************************************************/
 

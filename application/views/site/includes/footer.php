@@ -93,6 +93,10 @@
 	?>
 
 
+	<!--JS IMPORTS-->
+	
+	<script src="<?php echo base_url() . 'js/coda_slider/jquery.easing.1.3.js'; ?>"></script><!-- JQUERY-EASING JS -->
+	<script src="<?php echo base_url() . 'js/owl.carousel.js'; ?>"></script><!--OWL CAROUSEL JS-->
 
 	<!-- Bootstrap js -->
 	<script src="<?php echo base_url(); ?>js/bootstrap.js" type="text/javascript"></script><!-- Bootstrap JS -->
