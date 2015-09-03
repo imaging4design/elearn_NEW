@@ -33,7 +33,7 @@
 
 									<fieldset>
 
-										<div class="form-group-sm">
+										<div class="form-group-lg">
 
 											<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 											<input type="hidden" name="current_URL" id="current_URL" value="<?php echo $this->uri->segment(2); ?>" />
@@ -63,7 +63,8 @@
 
 
 							<div class="col-md-8">
-								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum purus eu ex imperdiet, quis semper felis pulvinar. Phasellus imperdiet id massa nec vehicula. Aenean at lobortis justo, in ultricies purus. Duis vel luctus tortor. Integer a ante arcu. Mauris pellentesque egestas convallis. Integer vel magna et purus pretium feugiat quis quis eros. Sed faucibus, ipsum ut placerat pellentesque, orci sem tincidunt sem, sit amet facilisis felis risus in eros. Morbi euismod volutpat nibh, mattis accumsan magna volutpat quis. Praesent convallis at lectus sollicitudin euismod. Etiam sem arcu, efficitur vitae purus id, cursus consequat eros. </small></p>
+								<h3>1. Select Your Class</h3>
+								<p><small>To begin viewing on-screen or downloadable reports or to edit your class, first choose your class group from the drop-down menu.</small></p>
 							</div><!-- ENDS col -->
 
 						</div><!-- ENDS row -->
@@ -129,7 +130,8 @@
 
 
 							<div class="col-md-8">
-								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum purus eu ex imperdiet, quis semper felis pulvinar. Phasellus imperdiet id massa nec vehicula. Aenean at lobortis justo, in ultricies purus. Duis vel luctus tortor. Integer a ante arcu. Mauris pellentesque egestas convallis. Integer vel magna et purus pretium feugiat quis quis eros. Sed faucibus, ipsum ut placerat pellentesque, orci sem tincidunt sem, sit amet facilisis felis risus in eros. Morbi euismod volutpat nibh, mattis accumsan magna volutpat quis. Praesent convallis at lectus sollicitudin euismod. Etiam sem arcu, efficitur vitae purus id, cursus consequat eros. </small></p>
+								<h3>2. View Class Reports</h3>
+								<p><small>Select a 'Topic' and corresponding month that you wish to view the report of. A graphical chart will display the results of every student within your class that has completed one or more multi-choice tests for the topic. A student must complete a minimum of 5 tests for a progress bar displaying their % average score to appear.</small></p>
 							</div><!-- ENDS col -->
 
 						</div><!-- ENDS row -->
@@ -137,6 +139,123 @@
 
 
 						<hr class="small">
+
+
+
+						<div class="row">
+							<div class="col-md-12">
+
+								<?php
+								/*************************************************************************************************************************************************************************/
+								// THIS SECTION SHOWS THE RESULTS FOR ALL STUDENTS IN A CLASS -> BY TOPIC
+								/*************************************************************************************************************************************************************************/
+								if( isset($results))
+								{
+
+									//****************************************************************************//
+									// PERFORMANCE KEY
+									//****************************************************************************//
+									if( isset($topic) && $this->input->post('token'))
+									{
+										// Show performance rating guage
+										echo '<div class="rating-container">';
+											echo '<span class="poor rating">&nbsp;</span> Poor';
+											echo '<span class="good rating">&nbsp;</span> Satisfactory';
+											echo '<span class="satisfactory rating">&nbsp;</span> Good';
+											echo '<span class="excellent rating">&nbsp;</span> Excellent';
+										echo '</div>';
+
+										echo '<h2>' . strtoupper($topic->topic) . '</h2>';
+										echo '<div class="multiseparator vc_custom"></div>';
+									}
+
+									
+
+									// Initiate these vars to prevent errors
+									$month = $this->input->post('month');
+									$n_month = 'n_' . $this->input->post('month');
+									$total = 0;
+									$num = 0;
+
+
+									// Display Topic Name and selected month
+									echo '<h3 class="bold">' . $topic->topic . ' <span class="bold textOrange">[' . $month . ' - ' . date('Y') . ']</span></h3>';
+
+									
+										foreach($results as $row):
+
+											$total = $row->$month; // get average value
+											$average = ($total/5); // get average value
+											$average_score_percent = ($average * 10); // round up to 10
+
+
+											/**********************************************************/
+											// Work out colour coded div progress bar
+											// See section_helper.php
+											$div_colour = resultColourCodes($average_score_percent);
+											/**********************************************************/
+
+											
+											if( $average_score_percent !=0)
+											{
+												if($row->$n_month <5) // if total number to tests completed if less than 5 - show 'Not Enough Data'
+												{
+													
+													echo '<div class="row result">';
+
+														echo '<div class="col-md-4">';
+															echo '<p><strong>' . strtoupper($row->last_name) . '</span>, ' . $row->first_name . '</strong> <span class="text-redLight">(' . $row->$n_month . ')</span> ' . $average_score_percent . '%</p>';
+														echo '</div>';
+
+														echo '<div class="col-md-8">';
+															echo '<span class="guage-container">';
+																echo '<span class="guage poor" style="width:0%;"></span>';
+															echo '</span>';
+														echo '</div>';
+														
+													echo '</div><!-- ENDS row -->';
+												
+												} else {
+													
+													echo '<div class="row result">';
+
+														echo '<div class="col-md-4">';
+															echo '<p><strong>' . strtoupper($row->last_name) . ', ' . $row->first_name . '</strong> (' . $row->$n_month . ') ' . $average_score_percent . '%</p>';
+														echo '</div>';
+
+														echo '<div class="col-md-8">';
+															echo '<span class="guage-container">';
+																echo '<span class="guage ' . $div_colour . ' " style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
+															echo '</span>';
+														echo '</div>';
+
+													echo '</div><!-- ENDS row -->';
+												}
+												
+											}
+
+											if($average_score_percent >0)
+											{
+												$num++;
+											}
+
+
+										endforeach;
+
+									echo '<hr class="small">';
+									
+								}
+
+								?>
+
+
+
+							</div><!-- ENDS col -->
+						</div><!-- ENDS row -->
+
+
+
+						
 
 
 
@@ -201,7 +320,9 @@
 
 
 							<div class="col-md-8">
-								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum purus eu ex imperdiet, quis semper felis pulvinar. Phasellus imperdiet id massa nec vehicula. Aenean at lobortis justo, in ultricies purus. Duis vel luctus tortor. Integer a ante arcu. Mauris pellentesque egestas convallis. Integer vel magna et purus pretium feugiat quis quis eros. Sed faucibus, ipsum ut placerat pellentesque, orci sem tincidunt sem, sit amet facilisis felis risus in eros. Morbi euismod volutpat nibh, mattis accumsan magna volutpat quis. Praesent convallis at lectus sollicitudin euismod. Etiam sem arcu, efficitur vitae purus id, cursus consequat eros. </small></p>
+								<h3>3. View Individual Student Reports</h3>
+								<p><small>To view a progress report of an individual student, click the 'View Students' button and then click on the name of the student you wish to access. Monthly breakdowns and full yearl summaries are available. </small></p>
+								<p><small>Click the 'Leaderboard' button to view where your students are placed against others within your school and nationally.</small></p>
 							</div><!-- ENDS col -->
 
 						</div><!-- ENDS row -->
@@ -209,95 +330,6 @@
 
 						</div><!-- ENDS $hide_mw -->
 
-
-
-
-
-
-
-					<?php
-					/*************************************************************************************************************************************************************************/
-					// THIS SECTION SHOWS THE RESULTS FOR ALL STUDENTS IN A CLASS -> BY TOPIC
-					/*************************************************************************************************************************************************************************/
-					if( isset($results))
-					{
-						echo '<div class="gridPadding textPadding" style="margin-top:-20px;">';
-
-
-						$score_guage = array(
-								'src' => $this->css_path_url . 'main/misc/score_guage.png',
-								'alt' => 'eLearn Economics',
-								'width' => '400',
-								'height' => '25',
-								'style' => 'float:right; margin:5px 30px 0 0;'
-							);
-
-						echo img($score_guage);
-
-						
-
-						// Initiate these vars to prevent errors
-						$month = $this->input->post('month');
-						$n_month = 'n_' . $this->input->post('month');
-						$total = 0;
-						$num = 0;
-
-
-						// Display Topic Name and selected month
-						echo '<h3 class="bold">' . $topic->topic . ' <span class="bold textOrange">[' . $month . ' - ' . date('Y') . ']</span></h3>';
-
-						echo '<ul id="chart">';
-						
-							foreach($results as $row):
-
-								$total = $row->$month; // get average value
-								$average = ($total/5); // get average value
-								$average_score_percent = ($average * 10); // round up to 10
-
-
-								/**********************************************************/
-								// Work out colour coded div progress bar
-								// See section_helper.php
-								$div_colour = resultColourCodes($average_score_percent);
-								/**********************************************************/
-
-								
-								if( $average_score_percent !=0)
-								{
-									if($row->$n_month <5) // if total number to tests completed if less than 5 - show 'Not Enough Data'
-									{
-										echo 	'<li>' . strtoupper($row->last_name) . '</span>, ' . $row->first_name . ' | '.$average_score_percent.'% - less than 5 Tests | Tests: <span class="bold">' . $row->$n_month . '</li>';
-										echo 	'<li title="'.$average_score_percent.'" class="codeGrey">
-												<span class="bar"></span>
-												<span class="percent"></span>
-											</li>';
-									}
-									else
-									{
-										echo 	'<li>' . strtoupper($row->last_name) . ', ' . $row->first_name . ' | <span class="bold textOrange">'.$average_score_percent.'%</span> | Tests: <span class="bold">' . $row->$n_month . '</span></li>';
-										echo 	'<li title="'.$average_score_percent.'" class="'.$div_colour.'">
-												<span class="bar"></span>
-												<span class="percent"></span>
-											</li>';
-									}
-									
-								}
-
-								if($average_score_percent >0)
-								{
-									$num++;
-								}
-
-
-							endforeach;
-
-						echo '</ul>';
-						
-
-						echo '</div>';
-					}
-
-					?>
 
 					</div><!-- ENDS well well-trans -->
 

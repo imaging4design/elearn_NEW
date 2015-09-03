@@ -1,6 +1,7 @@
 <div class="band-topic-sections">
 	<div class="container">
 		<div class="row">
+
 			<div class="col-sm-12 col-full">
 
 
@@ -77,6 +78,7 @@
 
 	<div class="band-grey">
 		<div class="container">
+
 			<div class="row">
 				<div class="col-sm-12">
 
@@ -89,78 +91,78 @@
 
 
 
-
-			<div class="row topics-list">
-				<div class="col-sm-4">
-
-					<?php
-							
-						/*************************************************************************/
-						// Loop through each topic alphbetically
-						/*************************************************************************/
-						// FULL LIST OF TOPICS ...
-						// Display full list of topics in alphabetical order with letter (A, B, C) as heading
-
-						$alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-						$letters = str_split($alphabet);
-						$set_letter = FALSE;
-
-						$results = count($topics);
-						$per_column = ceil($results/3);
+				<?php
 						
-						$i = 0;
-						$score = NULL;
+					/*************************************************************************/
+					// Loop through each topic alphbetically
+					/*************************************************************************/
+					// FULL LIST OF TOPICS ...
+					// Display full list of topics in alphabetical order with letter (A, B, C) as heading
 
+					$alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+					$letters = str_split($alphabet);
+					$set_letter = FALSE;
 
-						foreach($topics as $row) {
-						
-							 if($i == $per_column)
-							 {
-								echo '</div><div class="col-sm-4">';
-								$i = 0;
-							 }
-
-							 $month = date('M'); // Get current month and append below
+					$results = count($topics);
+					$per_column = ceil($results/3);
 					
-							$score = $row->$month*2;
-							 
-									/*************************************************************************/
-									// Break topics up by each letter of alphabet - Use letter (A, B, C ..) as label
-									/*************************************************************************/
-									foreach($letters as $letter):
+					$i = 0;
+					$score = NULL;
+
+
+					echo '<div class="row topics-list">';
+					echo '<div class="col-sm-4">';
+
+
+					foreach($topics as $row) {
 					
-									$segments = array( 'topic_con/edit_topics/' . $row->topicID);
-						
-										if( substr($row->topic, 0, 1) == $letter )
-										{
-											// Only show new alpha letter at the start of each alpha category
-											$alpha_header = ( $set_letter != $letter ) ? $letter  . '<div class=	"multiseparator vc_custom"></div>' : ''; 
-											// Display alpha letter (i.e., A, B, C ...)
-											echo '<h4 class="text-redLight"><strong>' . $alpha_header . '</strong></h4>';
+						 if($i == $per_column)
+						 {
+							echo '</div><div class="col-sm-4">';
+							$i = 0;
+						 }
 
-											// Display Topic Name
-											echo '<p>' .anchor('results/leaders_school/' . $row->topicID,  ' <i class="fa fa-search"></i> ') . ' ' . anchor( 'section/key_notes/' . $row->topicID, $row->topic) . ' ' . $score . '%</p>';
+						 $month = date('M'); // Get current month and append below
+				
+						$score = $row->$month*2;
+						 
+								/*************************************************************************/
+								// Break topics up by each letter of alphabet - Use letter (A, B, C ..) as label
+								/*************************************************************************/
+								foreach($letters as $letter):
+				
+								$segments = array( 'topic_con/edit_topics/' . $row->topicID);
+					
+									if( substr($row->topic, 0, 1) == $letter )
+									{
+										// Only show new alpha letter at the start of each alpha category
+										$alpha_header = ( $set_letter != $letter ) ? $letter  . '<div class="multiseparator vc_custom"></div>' : ''; 
+										// Display alpha letter (i.e., A, B, C ...)
+										echo '<h4 class="text-redLight"><strong>' . $alpha_header . '</strong></h4>';
 
-											// Save alpha letter as var to test against looped through version above
-											$set_letter = $letter; 
-										}
-										
-									endforeach;
+										// Display Topic Name
+										echo '<p>' .anchor('results/leaders_school/' . $row->topicID,  ' <i class="fa fa-search"></i> ') . ' ' . anchor( 'section/key_notes/' . $row->topicID, $row->topic) . ' ' . $score . '%</p>';
+
+										// Save alpha letter as var to test against looped through version above
+										$set_letter = $letter; 
+									}
 									
-									/*************************************************************************/
-							 
-							 $i++;
-							 
-						}
-						
-						echo '</row>';
-						
-					?>
+								endforeach;
+								
+								/*************************************************************************/
+						 
+						 $i++;
+						 
+					}
+					
+					echo '</div>';
+					echo '</div>';
+					
+				?>
 
-				</div><!-- ENDS col -->
-			</div><!-- ENDS row -->
 		</div><!-- ENDS container -->
 	</div><!--ENDS full-band -->
+
 <?php } ?>
 
 
@@ -171,6 +173,7 @@
 <?php if( isset($subTopics) ) { // DO NOT display unless $subTopics exists! ?>
 	<div class="band-white">
 		<div class="container">
+
 			<div class="row">
 				<div class="col-sm-12">
 
@@ -184,9 +187,7 @@
 
 
 
-			<div class="row topics-list">
-				<div class="col-sm-3">
-
+			
 					<?php
 						// Display full list of topics in alphabetical order with letter (A, B, C) as heading
 						// FULL LIST OF SUB-TOPICS ...
@@ -202,6 +203,10 @@
 						/*************************************************************************/
 						// Loop through each topic alphbetically
 						/*************************************************************************/
+
+						echo '<div class="row topics-list">';
+						echo '<div class="col-sm-3">';
+
 						foreach($subTopics as $row) {
 						
 							if($i == $per_column)
@@ -239,13 +244,13 @@
 							 
 						}
 
-						echo '</row>';
+						echo '</div>';
+						echo '</div>';
 
 					?>
 
 					
-				</div><!--ENDS col-->
-			</div><!--ENDS row-->
+
 		</div><!--ENDS container-->
 	</div><!-- ENDS band-white -->
 

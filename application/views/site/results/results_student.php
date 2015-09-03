@@ -40,6 +40,7 @@
 					{
 						echo $topic_error;
 					}
+					
 					echo form_close(); 
 				?>
 
@@ -164,48 +165,33 @@
 		echo '</div><!-- ENDS row -->';
 
 
-					if($results->$n_month[$i] <5) // if total number to tests completed if less than 5 - show 'Not Enough Data'
+					if( $results->$n_month[$i] < 5 ) // if total number to tests completed if less than 5 - show 'Not Enough Data'
 					{
 						$min_tests = ( date('M') == $month[$i] && $average_score_percent) ? ' - Min of 5 tests required.' : '';
 
-						// echo 	'<li>' . $month[$i] . ' ' . date('Y') . ' | Tests: <strong>(' . $results->$n_month[$i] . ')</strong>' . $min_tests . '</li>';
-						// echo 	'<li title="'.$average_score_percent.'" class="codeGrey">
-						// 			<span class="bar"></span>
-						// 			<span class="percent"></span>
-						// 		</li>';
-
-
 						echo '<div class="row result">';
+
 							echo '<div class="col-md-2">';
-								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . ' %</p>';
+								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> <span class="text-redLight">(' . $results->$n_month[$i] . ')</span> ' . $average_score_percent . '%</p>';
 							echo '</div>';
 							echo '<div class="col-md-10">';
 								echo '<span class="guage-container">';
-									echo '<span class="guage ' . $div_colour . ' " style="width:' . $average_score_percent . '%;"></span>';
+									echo '<span class="guage poor " style="width:0%;"></span>'; // Don't display any progress bar!
 								echo '</span>';
 							echo '</div>';
 							
 						echo '</div><!-- ENDS row -->';
 
-
-					}
-					else
-					{
-						// echo 	'<li>' . $month[$i] . ' ' . date('Y') . ' | ' . $average_score_percent . '% | Tests: <strong>' . $results->$n_month[$i] . '</strong></li>';
-						// echo 	'<li title="'.$average_score_percent.'" class="'.$div_colour.'">
-						// 			<span class="bar"></span>
-						// 			<span class="percent"></span>
-						// 		</li>';
-
+					} else {
 
 						echo '<div class="row result">';
-							echo '<div class="col-md-2">';
 
-								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . ' %</p>';
+							echo '<div class="col-md-2">';
+								echo '<p><strong>' . $month[$i] . ' ' . date('Y') . '</strong> (' . $results->$n_month[$i] . ') ' . $average_score_percent . '%</p>';
 							echo '</div>';
 							echo '<div class="col-md-10">';
 								echo '<span class="guage-container">';
-									echo '<span class="guage poop '.$div_colour.'" style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
+									echo '<span class="guage '.$div_colour.'" style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
 								echo '</span>';
 							echo '</div>';
 							
