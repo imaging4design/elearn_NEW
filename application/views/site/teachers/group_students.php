@@ -4,7 +4,7 @@
 			<div class="col-lg-12 col-full">
 
 
-				<h2>Managing Class Groups</h2>
+				<h2>Edit Class name</h2>
 				<div class="multiseparator vc_custom"></div>
 
 
@@ -25,7 +25,7 @@
 									<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
 									<div class="form-group-lg">
-										<label for="classID">Select class to rename</label>
+										<label for="classID">Your class</label>
 										<?php echo classDropdown('', '', 'Classes for '. $this->session->userdata('school') .''); ?>
 									</div>
 
@@ -33,11 +33,11 @@
 								<div class="col-md-6">
 
 									<div class="form-group-lg">
-										<label for="newclass_name">Rename Class to:</label>
-										<input type="text" name="newclass_name" class="form-control" id="newclass_name" size="35" value="<?php echo set_value('newclass_name'); ?>">
+										<label for="newclass_name">Enter new class name</label>
+										<input type="text" name="newclass_name" class="form-control" id="newclass_name" size="35" value="<?php echo set_value('newclass_name'); ?>" placeholder="Class Name" required>
 									</div>
 
-									<input type="submit" name="submit" class="btn btn-lg btn-red" id="submit" value="Update" class="butSmall" />
+									<input type="submit" name="submit" class="btn btn-lg btn-red fa-fa" id="submit" value="&#xf00c; Update" />
 
 								</div><!-- ENDS col -->
 							</div><!-- ENDS row -->
@@ -62,13 +62,17 @@
 		</div><!-- ENDS row -->
 
 
+		<h2>Manage Students</h2>
+		<div class="multiseparator vc_custom"></div>
+
+
 
 		<div class="well well-trans">
 
 			<div class="row">
 				<div class="col-lg-12 col-full">
 
-					<h3>Add students to your class</h3>
+					<h3>Add/Move students into your class</h3>
 					<p>This task only needs to be performed once to arrange students into your class group.</p>
 
 					<ul>
@@ -156,7 +160,7 @@
 			?>
 
 			<br />
-			<input type="submit" name="submit" class="btn btn-lg btn-red" id="submit" value="Move Students" />
+			<input type="submit" name="submit" class="btn btn-lg btn-red fa-fa" id="submit" value="Move Students &#xf061;" />
 
 			<?php echo form_close(); ?>
 

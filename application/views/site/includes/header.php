@@ -40,7 +40,7 @@
 
 
 </head>
-<body id='body'>
+<body id='body' class='body'>
 
 	<div class="container">
 		<div class="row">

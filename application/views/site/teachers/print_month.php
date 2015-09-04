@@ -81,7 +81,7 @@
 									<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
 									<p>Full summary of all students (for <?php echo date('Y') ?>)</p>
-									<input type="submit" name="submit" class="btn btn-md btn-red" id="submit" value="Download Report" />
+									<input type="submit" name="submit" class="btn btn-md btn-red fa-fa" id="submit" value="&#xf019; Download Report" />
 
 								</fieldset>
 
@@ -133,7 +133,9 @@
 								<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
 								<p>Individual student reports (for <?php echo date('Y') ?>)</p>
-								<input type="submit" name="submit" class="btn btn-md btn-red" id="submit" value="View Students" />
+								<input type="submit" name="submit" class="btn btn-md btn-red fa-fa" id="submit" value="View Students &#xf061;" />
+
+
 
 							</fieldset>
 

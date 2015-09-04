@@ -5,7 +5,7 @@
 
 					<h2>Screen reports: <?php echo get_class_name( $this->session->userdata('classID') ); ?></h2>
 					<p>
-						This section allows you to view individual students or complete class results either on-screen or as downloadable PDFs.
+						This section allows you to access individual students or complete class reports either on-screen or as downloadable PDFs.
 					</p>
 					<div class="multiseparator vc_custom"></div>
 
@@ -49,7 +49,7 @@
 												
 												if( $this->session->userdata('classID') )
 												{
-													echo anchor('teachers/class_message_form', '<strong>Create Class Message</strong>', array('class'=>'btn btn-sm btn-red btn-block'));
+													echo anchor('teachers/class_message_form', '<strong><i class="fa fa-comment"></i> Create Class Message</strong>', array('class'=>'btn btn-md btn-red btn-block'));
 												}
 											?>
 
@@ -64,7 +64,7 @@
 
 							<div class="col-md-8">
 								<h3>1. Select Your Class</h3>
-								<p><small>To begin viewing on-screen or downloadable reports or to edit your class, first choose your class group from the drop-down menu.</small></p>
+								<p><small>To begin viewing on-screen reports, first choose your class group from the drop-down menu. Then, from section 2 (below), choose the topic and month to generate the report.</small></p>
 							</div><!-- ENDS col -->
 
 						</div><!-- ENDS row -->
@@ -93,7 +93,7 @@
 										<fieldset>
 
 
-											<label>View class results - topic and month</label>
+											<label>View class results - (topic/month)</label>
 											<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 
 											<?php 
@@ -109,7 +109,7 @@
 												echo monthDropdown($value=$month, $selected=$month, $label=$month_full);
 											?>
 											
-											<input type="submit" name="submit" class="btn btn-sm btn-red btn-block" id="submit" value="View Results" />
+											<input type="submit" name="submit" class="btn btn-md btn-red btn-block fa-fa" id="submit" value="&#xf002; View Results" />
 
 										</fieldset>
 
@@ -297,11 +297,11 @@
 
 										<label>View individual students results for each month</label>
 
-										<input type="submit" name="submit" class="btn btn-sm btn-red btn-block" id="submit" value="View Students" />
+										<input type="submit" name="submit" class="btn btn-md btn-red btn-block fa-fa" id="submit" value="&#xf007; View Students" />
 										<br><br>
 
 										<!-- Display Teachers access button to the Leaderboard -->
-										<?php echo anchor('results/leaders_school', 'Leader Board', array('class'=>'btn btn-sm btn-red btn-block')); ?>
+										<?php echo anchor('results/leaders_school', '<i class="fa fa-bars"></i> Leader Board', array('class'=>'btn btn-md btn-red btn-block')); ?>
 
 									</fieldset>
 

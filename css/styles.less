@@ -19,6 +19,7 @@ body {
 	font-size: 16px;
 	padding-top: 50px;
 	background: @colWhite;
+	overflow-x: hidden;
 	/*.noselect*/
 }
 .footer {
@@ -39,6 +40,7 @@ body {
 	margin-bottom: 35px;
 }
 .band-topic-sections {
+	position: relative;
 	color: @colWhite;
 	background: @colRedDark;
 	padding-top: 30px;
@@ -119,6 +121,85 @@ body {
 	padding: 15px 0 7px 0;
 	background: #FFF;
 }
+
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| OFF-CANVAS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.topics-off-canvas-btn {
+	position: fixed;
+	font-size: 22px;
+	color: @colWhite;
+	background: @colRedLight;
+	/*padding: 15px 30px 15px 30px;*/
+	padding: 15px 24px 18px 24px;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	.transition;
+	&:hover {
+		color: @colWhite;
+		background: #333;
+		.transition-fast;
+	}
+	z-index: 1081;
+}
+
+.topics-off-canvas {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	right:-300px;
+	color: @colWhite;
+	font-size: 13px;
+	font-weight: 400;
+	background: #3E3E3E;
+	z-index: 1080;
+	-webkit-box-shadow:inset 40px 0 30px -30px rgba(0,0,0,0.7);
+	box-shadow:inset 40px 0 30px -30px rgba(0,0,0,0.7);
+	overflow: hidden;
+}
+.topics-off-canvas-show {
+	.topics-off-canvas;
+	right:0px;
+	width: 350px;
+	.transition-fast;
+}
+.topics-off-canvas-content {
+    position: absolute;
+    padding: 80px 20px 50px 0;
+    margin-bottom: 50px;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: -20px; /* Decrease this value for cross-browser compatibility */
+    overflow: auto;
+    h2 {
+    	padding-left: 40px;
+    }
+    .btn {
+    	margin: 15px 0 0 40px;
+    }
+}
+
+ul.canvas-topics {
+	z-index: 1050;
+	padding: 0;
+	li {
+		color: @colGreySoft;
+		-webkit-box-shadow:inset 40px 0 30px -30px rgba(0,0,0,0.7);
+		box-shadow:inset 40px 0 30px -30px rgba(0,0,0,0.7);
+		list-style: none;
+		background: linear-gradient(#3E3E3E, #383838);
+		padding: 10px 10px 10px 40px;
+		margin-right: -10px;
+		&:hover {
+			background: linear-gradient(#484848, #383838);
+		}
+	}
+}
+  
 
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -381,6 +462,11 @@ a:hover {
 | FORMS
 |-----------------------------------------------------------------------------------------------------------------
 */
+.fa-fa {
+  font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+
 label {
 	font-size: 14px;
 	font-weight: 600;
@@ -704,7 +790,8 @@ div.multiseparator {
 }
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover, 
-.nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:active {
 	color: #FFF;
 	background-color: @colRedDark;
 	border-width: 0;
@@ -720,13 +807,14 @@ div.multiseparator {
 }
 
 .nav-tabs > li > a {
-	color: @colGreyDark;
-	font-weight: 400;
+	color: @colWhite;
+	font-size: 14px;
+	font-weight: 600;
     margin-right: 0;
     line-height: 1.42857;
     border: none;
     border-radius: 0;
-    background: @colGreySoft;
+    background: @colGreyDark;
    /* background: lighten(@colGreyMid, 10%);*/
     &:hover {
     	color: @colWhite;
@@ -854,8 +942,7 @@ div.multiseparator {
 	.navbar-nav > li > a,
 	.navbar-nav > li > a:hover {
 	    font-size: 18px;
-	   	padding-top: 10px;
-	    padding-bottom: 10px;
+	   	padding: 10px;
 	}
 	.navbar-default .navbar-nav > li > a:hover,
 	.navbar-default .navbar-nav > li > a:focus {

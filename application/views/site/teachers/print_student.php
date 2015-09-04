@@ -4,7 +4,7 @@
 			<div class="col-lg-12 col-full">
 
 
-				<h2>Teachers Admin - PRINT Reports</h2>
+				<h2>Print Reports - Students</h2>
 				<div class="multiseparator vc_custom"></div>
 
 
@@ -12,8 +12,8 @@
 
 
 
-					<h3>Screen/Print reports for individual students</h3>
-					<p>* Students with their names greyed out have NOT completed any test topics in <?php echo date('Y'); ?></p>
+					<h3>Click on student name to download report</h3>
+					<p><small>* Students with their names greyed out have NOT completed any test topics in <?php echo date('Y'); ?></small></p>
 
 
 					<div>
@@ -140,7 +140,7 @@
 
 					if( ! isset($students) && ! $this->uri->segment(3))
 					{
-						echo '<h4 class="bold textOrange marginLeft">No students found in this class.</h4>';
+						echo '<h3 class="text-redLight">No students found in this class.</h3>';
 					}	
 					?>
 

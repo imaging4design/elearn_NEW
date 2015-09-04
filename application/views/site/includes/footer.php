@@ -78,11 +78,7 @@
 
 	<?php
 		// Show 'Back to Topics' animated button - only if user is on topic content pages (i.e., Key Notes, Audio/Video, Flash Cards, Writtem Answers, Multi-Choice)
-		$sections_one = array('key_notes', 'audio_video', 'flash_cards', 'written_answers', 'multi_choice', 'leaders_school');
-
-		if( in_array( $this->uri->segment(2), $sections_one ) ) {
-			echo anchor('section/index', '<i class="fa fa-angle-left"></i>', array('id'=>'btn-back', 'class'=>'btn-back visible-md visible-lg'));
-		}
+		$sections_one = array('audio_video', 'flash_cards', 'written_answers', 'multi_choice', 'leaders_school');
 
 		// Show 'Top of Page' animated button - only if user is on topic content pages (i.e., Home, Topics)
 		// $sections_two = array('', 'index', 'aboutUs', 'news_full');
@@ -91,6 +87,9 @@
 			echo '<div class="btn-top visible-md visible-lg" id="btn-top"><i class="fa fa-angle-up"></i></div>';
 		}
 	?>
+
+
+	
 
 
 	<!--JS IMPORTS-->

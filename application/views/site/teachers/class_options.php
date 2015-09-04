@@ -34,7 +34,7 @@
 										<input type="text" name="class_name" class="form-control"  id="class_name" value="<?php echo set_value('class_name'); ?>" placeholder="New Class Name" required>
 									</div>
 
-									<input type="submit" name="submit" class="btn btn-lg btn-red btn-block" id="submit" value="Create Now" class="butSmall" />
+									<input type="submit" name="submit" class="btn btn-lg btn-red btn-block fa-fa" id="submit" value="&#xf067; Create Now" />
 
 								</fieldset>
 
@@ -73,7 +73,7 @@
 										?>
 									</div>
 
-									<input type="submit" name="submit" class="btn btn-lg btn-red btn-block" id="submit" value="Edit Now" class="butSmall" />
+									<input type="submit" name="submit" class="btn btn-lg btn-red btn-block fa-fa" id="submit" value="&#xf040; Edit Now" />
 
 								</fieldset>
 

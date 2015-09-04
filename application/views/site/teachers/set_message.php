@@ -31,7 +31,7 @@
 								<textarea cols="80" rows="10" class="form-control" name="class_message" id="class_message"><?php echo $class_message->message; ?></textarea>
 							<div>
 
-							<input type="submit" name="submit" class="btn btn-lg btn-red" id="submit" value="Save Message" />
+							<input type="submit" name="submit" class="btn btn-lg btn-red fa-fa" id="submit" value="&#xf00c; Save Message" />
 
 						</fieldset>
 

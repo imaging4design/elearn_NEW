@@ -226,29 +226,22 @@ h3 {
 
 }
 
-.btn-back {
+.btn-top {
 	position: fixed;
 	font-size: 30px;
 	color: @colWhite;
 	background: @colRedLight;
-	/*background: rgba(0,0,0, 0.9);*/
-	padding: 15px 30px 15px 25px;
-	bottom: -100px;
 	cursor: pointer;
+	padding: 11px 25px 16px 25px;
+	right:0;
+	bottom: -100px;
+	z-index: 1000;
 	.transition;
 	&:hover {
 		color: @colWhite;
 		background: #333;
 		.transition-fast;
 	}
-}
-
-.btn-top {
-	.btn-back;
-	padding: 13px 30px 18px 25px;
-	right:0;
-	bottom: -100px;
-	z-index: 1000;
 }
 
 /*

@@ -24,7 +24,7 @@
 					<!-- Start EasyHtml5Video.com BODY section -->
 					<div data-video="isvideo" id="checkVideo" class="center video">
 
-						<video controls="controls"  poster="<?php echo $path; ?><?php echo '_video_intro_slide.jpg'; ?>" width="900" height="480"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
+						<video controls="controls"  poster="<?php echo $path; ?><?php echo '_video_intro_slide.png'; ?>" width="900" height="480"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
 
 							<source src="<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.mp4" type="video/mp4" />
 							<source src="<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.webm" type="video/webm" />
@@ -34,7 +34,7 @@
 							<param name="movie" value="<?php echo $path; ?><?php echo $video; ?>/flashfox.swf" />
 							<param name="allowFullScreen" value="true" />
 							<param name="flashVars" value="autoplay=true&amp;controls=true&amp;loop=true&amp;src=<?php echo $video; ?>.mp4" />
-							 <embed src="<?php echo $path; ?><?php echo $video; ?>/flashfox.swf" width="900" height="480" style="position:relative;"  flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.jpg&amp;src=<?php echo $video; ?>.mp4"	allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+							<embed src="<?php echo $path; ?><?php echo $video; ?>/flashfox.swf" width="900" height="480" style="position:relative;"  flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=<?php echo $path; ?>/<?php echo '_video_intro_slide.png'; ?>.png&amp;src=<?php echo $video; ?>.mp4" allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
 							<img alt="<?php echo $video; ?>" src="<?php echo $path; ?><?php echo $video; ?>/<?php echo $video; ?>.jpg" style="position:absolute;left:0;" width="900" height="480" title="Video playback is not supported by your browser" />
 							</object>
 

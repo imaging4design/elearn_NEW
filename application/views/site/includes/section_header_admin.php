@@ -27,9 +27,9 @@
 
 <div class="e-tabs">
 	<ul class="nav nav-tabs mode-tabs-menu">
-		<li class="<?php echo $class1; ?>" id ="screen"><?php echo anchor('teachers/view_month/', '<i class="fa fa-desktop"></i> Screen Reports'); ?></li>
-		<li class="<?php echo $class2; ?>" id ="print"><?php echo anchor('teachers/view_month_print/', '<i class="fa fa-print"></i> Print Reports'); ?></li>
-		<li class="<?php echo $class3; ?>" id ="show_options"><?php echo anchor('teachers/show_students_edit/', '<i class="fa fa-user"></i> Edit Classes'); ?></li>
+		<li class="<?php echo $class1; ?>" id ="screen"><?php echo anchor('teachers/view_month/', '<i class="fa fa-desktop"></i> SCREEN REPORTS'); ?></li>
+		<li class="<?php echo $class2; ?>" id ="print"><?php echo anchor('teachers/view_month_print/', '<i class="fa fa-print"></i> PRINT REPORTS'); ?></li>
+		<li class="<?php echo $class3; ?>" id ="show_options"><?php echo anchor('teachers/show_students_edit/', '<i class="fa fa-pencil"></i> EDIT CLASSES'); ?></li>
 	</ul>
 </div>
 
