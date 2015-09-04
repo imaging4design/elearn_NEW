@@ -35,16 +35,21 @@ $('.count').each(function () {
 // Dynamically resizes the menu 'nav bar' (smaller) when scroll from top > 200px
 /**************************************************************/
 
-var element = document.querySelector('.navbar-default');
+var element = document.querySelector('.navbar-default'),
+	topicBtn = document.querySelector('.topics-off-canvas-btn');
 //element.classList.add('menu-bar-large');
 
 	function menuBarResize() {
 		if(window.pageYOffset > 10) {
 			element.classList.add('menu-bar-small');
 			element.classList.remove('menu-bar-large');
+			topicBtn.classList.add('topics-off-canvas-btn-small');
+			topicBtn.classList.remove('topics-off-canvas-btn');
 		} else {
 			element.classList.add('menu-bar-large');
 			element.classList.remove('menu-bar-small');
+			topicBtn.classList.add('topics-off-canvas-btn');
+			topicBtn.classList.remove('topics-off-canvas-btn-small');
 		}
 	}
 

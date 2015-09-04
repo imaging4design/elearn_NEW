@@ -1,12 +1,12 @@
 <?php $topics = show_topics(); // Get list of current topics to display in 'Off-Canvas' ?>
 
 <!-- This is the 'Off-Canvas' slide in list of topics -->
-<div class="topics-off-canvas-btn visible-md visible-lg" id="topics-off-canvas-btn"><i class="fa fa-bars"></i></div>
+<div class="topics-off-canvas-btn visible-lg visible-lg" id="topics-off-canvas-btn"><i class="fa fa-bars"></i></div>
 
 <div class="topics-off-canvas">
 	<div class="topics-off-canvas-content">
 
-		<h2>Topics</h2>
+		<h2>Topics <i class="fa fa-angle-down"></i></h2>
 
 		<ul class="canvas-topics">
 			

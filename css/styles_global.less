@@ -42,7 +42,7 @@ body {
 .band-topic-sections {
 	position: relative;
 	color: @colWhite;
-	background: @colRedDark;
+	background: darken(@colGreyDark, 25%);
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
@@ -133,17 +133,21 @@ body {
 	color: @colWhite;
 	background: @colRedLight;
 	/*padding: 15px 30px 15px 30px;*/
-	padding: 15px 24px 18px 24px;
+	padding: 35px 24px 34px 24px;
 	top: 0;
 	right: 0;
 	cursor: pointer;
-	.transition;
+	.transition-fast;
 	&:hover {
 		color: @colWhite;
 		background: #333;
 		.transition-fast;
 	}
 	z-index: 1081;
+}
+.topics-off-canvas-btn-small {
+	.topics-off-canvas-btn;
+	padding: 9px 24px 9px 24px;
 }
 
 .topics-off-canvas {
@@ -678,7 +682,7 @@ video {
 	width: 100% !important;
 	height: auto !important;
 	margin-top: 20px;
-	border: solid 1px @colGreyDark;
+	/*border: solid 1px @colGreyDark;*/
 }
 hr {
 	margin: 60px 0;
@@ -793,7 +797,7 @@ div.multiseparator {
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:active {
 	color: #FFF;
-	background-color: @colRedDark;
+	background: darken(@colGreyDark, 25%);
 	border-width: 0;
 	border-style: solid;
 	border-color: #DDD #DDD transparent;
@@ -818,7 +822,7 @@ div.multiseparator {
    /* background: lighten(@colGreyMid, 10%);*/
     &:hover {
     	color: @colWhite;
-    	background: @colRedDark;
+    	background: darken(@colGreyDark, 25%);
     	.transition-fast;
     }
 }
