@@ -6,7 +6,7 @@
 <div class="topics-off-canvas">
 	<div class="topics-off-canvas-content">
 
-		<h2>Topics <i class="fa fa-angle-down"></i></h2>
+		<h2><span class="text-redLight">Topic List</span></h2>
 
 		<ul class="canvas-topics">
 			

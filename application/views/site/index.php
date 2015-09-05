@@ -14,8 +14,8 @@
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">Learn Economics</h1>
-					<h2 class="hidden-xs">In your own time, at your own pace</h2>
-					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="section/demo" role="button">TRIAL FOR FREE</a></p>
+					<h2 class="hidden-xs">at your own pace, in your own time with ...</h2>
+					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="section/demo" role="button">Try the Demo</a></p>
 				</div> 
 			</div>
 		</div>
@@ -23,8 +23,8 @@
 			<img class="second-slide center-block" src="<?php echo base_url() . 'images/banner_02.png'; ?>">
 			<div class="container">
 				<div class="carousel-caption pull-left">
-					<h1 class="giant-text-rev">Economics Studies</h1>
-					<h2 class="hidden-xs">For all ages and learning abilities</h2>
+					<h1 class="giant-text-rev">eLearn</h1>
+					<h2 class="hidden-xs">the most comprehensive online economics resource</h2>
 					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="paypal/items" role="button">Subscribe Now</a></p>
 				</div>
 			</div>
@@ -158,11 +158,11 @@
 							<?php echo anchor(base_url() . 'section/demo/3', '<li>AS</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/5', '<li>IB (SL)</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/7', '<li>AP Micro</li>'); ?>
-							<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/2', '<li>IGCSE</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/4', '<li>A2</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/6', '<li>IB (HL)</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/8', '<li>AP Macro</li>'); ?>
+							<?php echo anchor(base_url() . 'section/demo/10', '<li>NCEA Level 1</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/11', '<li>NCEA Level 2</li>'); ?>
 							<?php echo anchor(base_url() . 'section/demo/12', '<li>NCEA Level 3</li>'); ?>
 						</ul>
