@@ -380,14 +380,14 @@ class Section extends CI_Controller
 					{
 						$data['score'] = $data['score'] +1; // Add 1 to the total score
 
-						$data['result']  .= '<div class="correct bg_correct">';
-						$data['result']  .= '<h4 class="bold">' . $q_number . '. ' . $_POST['question'][$i] . '</h4>';
-						$data['result']  .= '<h4><span class="textGreen bold">You: </span>' . $posted_answer . '</h4>';
+						$data['result']  .= '<div class="correct">';
+						$data['result']  .= '<p><strong>' . $q_number . '. ' . $_POST['question'][$i] . '</strong></p>';
+						$data['result']  .= '<p><strong class="text-redLight"> You: </strong>' . $posted_answer . '</p>';
 
 						if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 						{
-							$data['result']  .= '<h4><span class="textGreen bold">eLearn: </span>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</h4>';
-							$data['result']  .= '<h4><span class="textGreen bold">Reason: </span><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></h4>';
+							$data['result']  .= '<p><strong class="text-greenMid">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
+							$data['result']  .= '<p><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 						}
 
 						$data['result']  .= $display_image; // SHOWS IMAGE
@@ -395,14 +395,14 @@ class Section extends CI_Controller
 					}
 					else // If the user has selected the INCORRECT answer
 					{
-						$data['result']  .= '<div class="incorrect bg_incorrect">';
-						$data['result']  .= '<h4 class="bold">' . $q_number . '. ' . $_POST['question'][$i] . '</h4>';
-						$data['result']  .= '<h4><span class="textRed bold">You: </span>' . $posted_answer . '</h4>';
+						$data['result']  .= '<div class="incorrect">';
+						$data['result']  .= '<p><strong>' . $q_number . '. ' . $_POST['question'][$i] . '</strong></p>';
+						$data['result']  .= '<p><strong class="text-redLight">You: </strong>' . $posted_answer . '</p>';
 
 						if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 						{
-							$data['result']  .= '<h4><span class="textRed bold">eLearn: </span>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</h4>';
-							$data['result']  .= '<h4><span class="textRed bold">Reason: </span><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></h4>';
+							$data['result']  .= '<p><strong class="text-greenMid">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
+							$data['result']  .= '<p><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 						}
 
 						$data['result']  .= $display_image; // SHOWS IMAGE
@@ -413,13 +413,13 @@ class Section extends CI_Controller
 				else // If the user has NOT submitted and answer
 				{
 					$data['result']  .= '<div class="no_answer">';
-					$data['result']  .= '<h4 class="bold">' . $q_number . '. ' . $_POST['question'][$i] . '</h4>';
-					$data['result']  .= '<h4><span class="textGrey bold">You: </span>No answer provided</h4>';
+					$data['result']  .= '<p><strong>' . $q_number . '. ' . $_POST['question'][$i] . '</strong></p>';
+					$data['result']  .= '<p><strong class="text-redLight">You: </strong>No answer provided</p>';
 
 					if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 					{
-						$data['result']  .= '<h4><span class="textGrey bold">eLearn: </span><em>' . $this->encrypt->decode(  $_POST['answer'][$i] ) . '</em></h4>';
-						$data['result']  .= '<h4><span class="textGrey bold">Reason: </span><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></h4>';
+						$data['result']  .= '<p><strong class="text-greenMid">eLearn: </strong><em>' . $this->encrypt->decode(  $_POST['answer'][$i] ) . '</em></p>';
+						$data['result']  .= '<p><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 					}
 
 					$data['result']  .= $display_image; // SHOWS IMAGE

@@ -10,18 +10,16 @@
 				if( isset($result))
 				{
 					// Display score in text output
-					echo '<h3 class="bold" align="center">ANSWERS: You scored ' . $score . ' out of 10</h3>';
+					echo '<h3>ANSWERS: You scored ' . $score . ' out of 10</h3>';
 
 					// Display score in graphic output
-					echo '<div>';
 					echo '<div style="width:'.$score.'0%;"></div>';
-					echo '</div>';
 					
 					// Display actual list of results as $results array
 					echo $result;
 
 					// Restart new test of current topic
-					echo '<div class="genericBut genOrange center"><a href="'. $this->uri->segment(3) .'">Restart Test</button></a></div>';
+					echo '<a href="'. $this->uri->segment(3) .'"><button class="btn btn-lg btn-red">Another Test?</button></button></a>';
 				}
 
 				?>

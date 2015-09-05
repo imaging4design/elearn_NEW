@@ -14,7 +14,7 @@
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">Learn Economics</h1>
-					<h2 class="hidden-xs">at your own pace, in your own time with ...</h2>
+					<h2 class="hidden-xs">at your own pace, in your own time</h2>
 					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="section/demo" role="button">Try the Demo</a></p>
 				</div> 
 			</div>
@@ -24,7 +24,7 @@
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">eLearn</h1>
-					<h2 class="hidden-xs">the most comprehensive online economics resource</h2>
+					<h2 class="hidden-xs">the complete online economics resource</h2>
 					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="paypal/items" role="button">Subscribe Now</a></p>
 				</div>
 			</div>
@@ -106,7 +106,7 @@
 					<div class="col-md-3 modules greyMid">
 						<div class="module-head">
 							<div class="icon-med text-greyMid"><i class="fa fa-check-square-o"></i></div>
-							<h4 class="text-greyMid">Ticks the boxes</h4>
+							<h4 class="text-greyMid">ticks the boxes</h4>
 						</div>
 						<ul>
 							<li>Quality economic content available 24/7</li>
@@ -122,7 +122,7 @@
 					<div class="col-md-3 modules greyDark">
 						<div class="module-head">
 							<div class="icon-med text-greyDark"><i class="fa fa-book"></i></div>
-							<h4 class="text-greyDark">Course material</h4>
+							<h4 class="text-greyDark">course material</h4>
 						</div>
 						<ul>
 							<li>International Baccalaureate Economics (SL and HL)</li>
@@ -137,7 +137,7 @@
 					<div class="col-md-3 modules redLight">
 						<div class="module-head">
 							<div class="icon-med text-redLight"><i class="fa fa-desktop"></i></div>
-							<h4 class="text-redLight">Content formats</h4>
+							<h4 class="text-redLight">content formats</h4>
 						</div>
 						<ul>
 							<li><strong>KEY NOTES</strong> - comprehensive explinations detailing each topic in depth </li>
@@ -151,7 +151,7 @@
 					<div class="col-md-3 modules redDark">
 						<div class="module-head">
 							<div class="icon-med text-redDark"><i class="fa fa-list"></i></div>
-							<h4 class="text-redDark">View the topics</h4>
+							<h4 class="text-redDark">view the topics</h4>
 						</div>
 						<ul>
 							<?php echo anchor(base_url() . 'section/demo/1', '<li>All Topics</li>'); ?>
