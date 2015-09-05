@@ -24,6 +24,11 @@
 </div><!-- ENDS topics-off-canvas -->
 
 
+<?php
+
+	//$test = $this->output->cache(30);
+
+?>
 
 
 <?php

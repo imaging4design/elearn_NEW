@@ -46,7 +46,7 @@
 
 						<br>
 						
-						<input type="submit" value="Pay $<?php echo $item->price; ?> via PayPal" class="btn btn-lg btn-red" />	
+						<input type="submit" value="$<?php echo $item->price; ?> via PayPal" class="btn btn-lg btn-red" />	
 
 					</fieldset>
 

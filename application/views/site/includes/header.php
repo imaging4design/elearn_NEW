@@ -5,6 +5,8 @@
 	<meta charset="UTF-8"> 
 	<meta name="description" content="Online economics study resource for secondary schools and tertiary training institutes" />
 	<meta name="keywords" content="economics 101, economics online, economics help, learn economics, study economics, economics study, economics tutor, economics online course" />
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
 
 	<!--CSS STYLE SHEETS-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'><!--FONTS CSS-->
@@ -19,7 +21,7 @@
 
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script><!--JQUERY 1.7 MAIN PACK JS-->
 
-
+	
 
 
 	<!--GOOGLE ANALYTICS-->
@@ -40,7 +42,7 @@
 
 
 </head>
-<body id='body' class='body'>
+<body id='body' class='body top-home'>
 
 	<div class="container">
 		<div class="row">
@@ -97,6 +99,7 @@
 								<span class="icon-bar"></span>
 							</button>
 							<?php echo anchor('', ' ', array('class' => 'navbar-brand hidden-sm')); ?>
+							<?php echo anchor('', '<strong>MENU</strong>', array('class' => 'navbar-brand visible-xs')); ?>
 						</div>
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">

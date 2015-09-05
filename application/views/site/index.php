@@ -10,7 +10,7 @@
 	<div class="carousel-inner" role="listbox">
 
 		<div class="item active">
-			<img class="first-slide center-block" src="<?php echo base_url() . 'images/banner_01.jpg'; ?>">
+			<img class="first-slide center-block" src="<?php echo base_url() . 'images/banner_01.png'; ?>">
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">Learn Economics</h1>
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img class="second-slide center-block" src="<?php echo base_url() . 'images/banner_02.jpg'; ?>">
+			<img class="second-slide center-block" src="<?php echo base_url() . 'images/banner_02.png'; ?>">
 			<div class="container">
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">Economics Studies</h1>
@@ -78,9 +78,8 @@
 
 					<h1>Want to learn Economics?</h1>
 					<h4>
-						Are you studying or teaching Macroeconomics, Microeconomics, Advanced Placement, IB&nbsp;Economics, Cambridge Economics or another Economics Course? 
+						Are you studying or teaching Macroeconomics, Microeconomics, Advanced Placement, IB&nbsp;Economics, Cambridge Economics or another Economics Course? <br><br>
 					</h4>
-
 					<p>
 						 Help is at hand, elearnEconomics assists individuals studying Economics. This site covers a wide range of courses and individuals have the ability to customise their course or do extension work. It's simple, easy to use and very cost effective.
 					</p>
@@ -91,7 +90,7 @@
 		</div><!--ENDS row-->
 
 
-		<br><hr>
+		<br><hr class="hidden-xs">
 
 		<!-- Features and benefits (4 x boxes) -->
 		<div class="row no-gutters">

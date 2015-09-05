@@ -17,6 +17,16 @@
 		);
 	?>
 
+	<div class="band-grey">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<button class="btn btn-lg btn-grey center-block visible-xs" id="back-top">Back To Top</button>
+				</div><!--ENDS col-->
+			</div><!--ENDS row-->
+		</div><!--ENDS container-->
+	</div><!--ENDS band-grey-->		
+
 
 
 	<footer class="footer" id="footer">
@@ -35,6 +45,7 @@
 						Ph (09) 410 9653 <br>
 						Email: <a href="mailto: info@elearneconomics.com">info@elearneconomics.com</a>
 					</p>
+					<hr class="visible-xs">
 				</div>
 
 				<div class="col-sm-3 social-media">
@@ -44,6 +55,7 @@
 					&nbsp;
 					<!-- LinkedIN Link -->
 					<a href="https://www.linkedin.com/company/elearn-resources-ltd?trk=biz-companies-cym" target="_blank"><span class="icon-med"><i class="fa fa-linkedin-square"></i></span></a>
+					<hr class="visible-xs">
 				</div><!-- ENDS col -->
 
 				<div class="col-sm-3">
@@ -83,9 +95,9 @@
 		// Show 'Top of Page' animated button - only if user is on topic content pages (i.e., Home, Topics)
 		// $sections_two = array('', 'index', 'aboutUs', 'news_full');
 
-		if( ! in_array( $this->uri->segment(2), $sections_one ) ) {
+		//if( ! in_array( $this->uri->segment(2), $sections_one ) ) {
 			echo '<div class="btn-top visible-md visible-lg" id="btn-top"><i class="fa fa-angle-up"></i></div>';
-		}
+		//}
 	?>
 
 

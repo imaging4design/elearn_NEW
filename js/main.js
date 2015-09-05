@@ -10,6 +10,11 @@
 /**************************************************************/
 // ANIMATE 'Total Tests Conpleted' COUNTER
 /**************************************************************/
+$.fn.digits = function(){ 
+	return this.each(function(){ 
+		$(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+	})
+}
 
 $('.count').each(function () {
     $(this).prop('Counter', 0).animate({
@@ -18,8 +23,8 @@ $('.count').each(function () {
         duration: 2000,
         easing: 'easeInCirc',
         step: function (now) {
-            //$(this).text(Math.round(now)); // Original
-            $(this).text(Intl.NumberFormat().format(Math.round(now)));
+            $(this).text(Math.round(now)).digits(); // Original
+            //$(this).text(Intl.NumberFormat().format(Math.round(now)));
             //Intl.NumberFormat().format(1234); - Formats the ',' in thousands
         }
     });
@@ -35,21 +40,21 @@ $('.count').each(function () {
 // Dynamically resizes the menu 'nav bar' (smaller) when scroll from top > 200px
 /**************************************************************/
 
-var element = document.querySelector('.navbar-default'),
-	topicBtn = document.querySelector('.topics-off-canvas-btn');
+var element = $('.navbar-default'),
+	topicBtn = $('.topics-off-canvas-btn');
 //element.classList.add('menu-bar-large');
 
 	function menuBarResize() {
 		if(window.pageYOffset > 10) {
-			element.classList.add('menu-bar-small');
-			element.classList.remove('menu-bar-large');
-			topicBtn.classList.add('topics-off-canvas-btn-small');
-			topicBtn.classList.remove('topics-off-canvas-btn');
+			element.addClass('menu-bar-small');
+			element.removeClass('menu-bar-large');
+			topicBtn.addClass('topics-off-canvas-btn-small');
+			topicBtn.removeClass('topics-off-canvas-btn');
 		} else {
-			element.classList.add('menu-bar-large');
-			element.classList.remove('menu-bar-small');
-			topicBtn.classList.add('topics-off-canvas-btn');
-			topicBtn.classList.remove('topics-off-canvas-btn-small');
+			element.addClass('menu-bar-large');
+			element.removeClass('menu-bar-small');
+			topicBtn.addClass('topics-off-canvas-btn');
+			topicBtn.removeClass('topics-off-canvas-btn-small');
 		}
 	}
 
@@ -160,10 +165,15 @@ $(document).ready(function (){
 
 	// Scrolls to very top of page
 	$(document).ready(function (){
-		$("#btn-top").click(function (){
+
+		console.log($("#back-top"));
+
+		$("#btn-top").add('#back-top').click(function (e){
+			e.preventDefault();
 			$('html, body').animate({
-				scrollTop: $("body").offset().top
-			}, 600);
+				scrollTop: $('.top-home').offset().top
+			}, 500);
+
 		});
 	});
 
