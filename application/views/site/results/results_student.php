@@ -59,7 +59,7 @@
 						<div class="col-sm-6">
 
 							<?php 
-								echo orderDropdown($value='', $selected='', $label='Order By'); 
+								echo orderDropdown($value='topic', $selected='topic', $label='Order By'); 
 							?>
 						</div><!-- ENDS col -->
 
@@ -240,15 +240,13 @@
 				//****************************************************************************//
 				if( isset($months) && $this->input->post('token'))
 				{
-					$score_guage = array(
-							'src' => $this->css_path_url . 'main/misc/score_guage.png',
-							'alt' => 'eLearn Economics',
-							'width' => '400',
-							'height' => '25',
-							'style' => 'float:right; margin:5px 30px 0 0; display:inline;'
-						);
-
-					echo img($score_guage);
+					// Show performance rating guage
+					echo '<div class="rating-container">';
+						echo '<span class="poor rating">&nbsp;</span> Poor';
+						echo '<span class="good rating">&nbsp;</span> Satisfactory';
+						echo '<span class="satisfactory rating">&nbsp;</span> Good';
+						echo '<span class="excellent rating">&nbsp;</span> Excellent';
+					echo '</div>';
 
 				}
 
@@ -280,7 +278,6 @@
 
 					echo '<h3 class="bold">' . $month . ' / ' . date('Y') . ' ' . $order . '</h3>';
 
-					echo '<ul id="chart">';
 
 						foreach($months as $row):
 
@@ -300,22 +297,39 @@
 							{
 								if($row->$n_month <5) // if total number to tests completed if less than 5 - show 'Not Enough Data'
 								{
-								echo 	'<li><span class="bold">' . strtoupper($row->topic) . '</span> - Min of 5 tests required: <span class="bold">(' . $row->$n_month . ' completed)</span></li>';
-								echo 	'<li title="'.$average_score_percent.'" class="codeGrey">
-										<span class="bar"></span>
-										<span class="percent"></span>
-									</li>';
+
+									echo '<div class="row result">';
+
+										echo '<div class="col-md-6">';
+											echo '<p><strong>' . strtoupper($row->topic) . '</strong><br class="visible-xs"> <span class="text-redLight">(' . $row->$n_month . ')</span></p>';
+										echo '</div>';
+										echo '<div class="col-md-6">';
+											echo '<span class="guage-container">';
+												echo '<span class="guage poor " style="width:0%;"></span>'; // Don't display any progress bar!
+											echo '</span>';
+										echo '</div>';
+										
+									echo '</div><!-- ENDS row -->';
+
 								}
 								else
 								{
 								
-								echo 	'<li><span class="bold">' . strtoupper($row->topic) . '</span> | <span class="bold textOrange">(' . $average_score_percent . '%)</span> | Tests: <span class="bold">' . $row->$n_month . '</span> | Last Test: <span class="bold">(' . $row->test_date . ')</span></li>';
-								echo 	'<li title="'.$average_score_percent.'" class="'.$div_colour.'">
-									<span class="bar"></span>
-									<span class="percent"></span>
-									</li>';
+									echo '<div class="row result">';
+
+										echo '<div class="col-md-6">';
+										echo '<p><strong>' . strtoupper($row->topic) . '</strong><br class="visible-xs"> (' . $row->$n_month . ') ' . $average_score_percent . '% Last Test: (' . $row->test_date . ')</p>';
+										echo '</div>';
+										echo '<div class="col-md-6">';
+											echo '<span class="guage-container">';
+												echo '<span class="guage '.$div_colour.'" style="width:' . $average_score_percent . '%;"></span><span class="guage-line"></span>';
+											echo '</span>';
+										echo '</div>';
+										
+									echo '</div>';
+
 								}
-								
+									
 							}
 
 							if($average_score_percent >0)
@@ -325,7 +339,6 @@
 
 						endforeach;
 
-					echo '</ul>';
 
 				}
 

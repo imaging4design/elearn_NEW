@@ -45,7 +45,6 @@
 						Ph (09) 410 9653 <br>
 						Email: <a href="mailto: info@elearneconomics.com">info@elearneconomics.com</a>
 					</p>
-					<hr class="visible-xs">
 				</div>
 
 				<div class="col-sm-3 social-media">
@@ -55,7 +54,6 @@
 					&nbsp;
 					<!-- LinkedIN Link -->
 					<a href="https://www.linkedin.com/company/elearn-resources-ltd?trk=biz-companies-cym" target="_blank"><span class="icon-med"><i class="fa fa-linkedin-square"></i></span></a>
-					<hr class="visible-xs">
 				</div><!-- ENDS col -->
 
 				<div class="col-sm-3">

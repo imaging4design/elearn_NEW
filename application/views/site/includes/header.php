@@ -98,7 +98,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<?php echo anchor('', ' ', array('class' => 'navbar-brand hidden-sm')); ?>
+							<?php echo anchor('', ' ', array('class' => 'navbar-brand hidden-xs')); ?>
 							<?php echo anchor('', '<strong>MENU</strong>', array('class' => 'navbar-brand visible-xs')); ?>
 						</div>
 						<div id="navbar" class="navbar-collapse collapse">

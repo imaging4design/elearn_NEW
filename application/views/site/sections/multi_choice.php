@@ -10,19 +10,44 @@
 				if( isset($result))
 				{
 					// Display score in text output
-					echo '<h3>ANSWERS: You scored ' . $score . ' out of 10</h3>';
+					echo '<h2>ANSWERS: You scored ' . $score . ' out of 10</h2>';
+					echo '<div class="multiseparator vc_custom"></div>';
 
-					// Display score in graphic output
-					echo '<div style="width:'.$score.'0%;"></div>';
+					
+					// Set up graphical bar colour
+					$div_colour = NULL;
+
+					if( $score < 3 ) { $div_colour = 'poor'; }
+					if( $score >= 3 && $score < 5 ) { $div_colour = 'good'; }
+					if( $score >= 5 && $score < 8 ) { $div_colour = 'satisfactory'; }
+					if( $score >= 8 ) { $div_colour = 'excellent'; }
+					
+
+					echo '<div class="row result" style="margin-bottom:30px;">';
+
+						echo '<div class="col-md-12">';
+							echo '<span class="guage-container">';
+								echo '<span class="guage '.$div_colour.'" style="width:' . ( $score * 10 ) . '%;"></span><span class="guage-line"></span>';
+							echo '</span>';
+						echo '</div>';
+						
+					echo '</div>';
+
+
 					
 					// Display actual list of results as $results array
 					echo $result;
 
-					// Restart new test of current topic
-					echo '<a href="'. $this->uri->segment(3) .'"><button class="btn btn-lg btn-red">Another Test?</button></button></a>';
+					// Restart new test of current topic (large screens)
+					echo anchor('section/multi_choice/1', 'Another Test?', array('class'=>'btn btn-lg btn-red hidden-xs'));
+					// (mobile screens)
+					echo anchor('section/multi_choice/1', 'Another Test?', array('class'=>'btn btn-lg btn-red btn-block visible-xs'));
+
 				}
 
 				?>
+
+
 
 
 
@@ -97,7 +122,7 @@
 											echo '<div class="radio">';
 											echo '<label>';
 											echo '<input type="radio" name="q'.$row->id.'" class="radio_class owl-next" id="q' . $row->id . '" value="' . $option . '">';
-											echo $option;
+											echo $option . ' - ' .$answer;
 											echo '</label>';
 											echo '</div>';
 										}

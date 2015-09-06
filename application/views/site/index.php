@@ -15,7 +15,7 @@
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">Learn Economics</h1>
 					<h2 class="hidden-xs">at your own pace, in your own time</h2>
-					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="section/demo" role="button">Try the Demo</a></p>
+					<p class="visible-lg"><a class="btn btn-lg btn-red" href="section/demo" role="button">Try the Demo</a></p>
 				</div> 
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 				<div class="carousel-caption pull-left">
 					<h1 class="giant-text-rev">eLearn</h1>
 					<h2 class="hidden-xs">the complete online economics resource</h2>
-					<p class="hidden-xs"><a class="btn btn-lg btn-red" href="paypal/items" role="button">Subscribe Now</a></p>
+					<p class="visible-lg"><a class="btn btn-lg btn-red" href="paypal/items" role="button">Subscribe Now</a></p>
 				</div>
 			</div>
 		</div>
