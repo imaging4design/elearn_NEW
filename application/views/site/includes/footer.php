@@ -17,11 +17,11 @@
 		);
 	?>
 
-	<div class="band-grey">
+	<div class="band-grey visible-xs">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<button class="btn btn-lg btn-grey center-block visible-xs" id="back-top">Back To Top</button>
+					<button class="btn btn-lg btn-grey center-block" id="back-top">Back To Top</button>
 				</div><!--ENDS col-->
 			</div><!--ENDS row-->
 		</div><!--ENDS container-->
