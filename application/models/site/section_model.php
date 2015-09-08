@@ -107,7 +107,7 @@ class Section_model extends CI_Model {
 		$this->db->where('topicID', $this->uri->segment(3));
 		$this->db->where('on_off', 'true');
 		$this->db->order_by('id', 'random');
-		$this->db->limit(10);
+		$this->db->limit(7);
 		$query = $this->db->get('con_flash_written');
 		
 		if($query->num_rows() >0) 
