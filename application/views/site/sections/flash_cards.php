@@ -32,7 +32,7 @@
 								//Only show image if there is one (otherwise leaves an empty box in some browsers)!
 								$display_image = ( $row->image !='' ) ? img($image) : '';
 
-									//if($flash_opt == 'combine')
+									if($flash_opt == 'combine')
 									{
 										//Display BOTH Question AND Answer on the same slide - (refer student config for flash_opt)
 										echo '<div class="owl-carousel-cont">';
@@ -48,18 +48,34 @@
 
 										echo '</div>';
 									}
-									// else
-									// {
-									// 	//Display Question and Answer on SEPARATE slides - (refer student config for flash_opt)
-									// 	echo	'<h2 class="title">Q'.$count.'</h2>';
-									// 	echo 	'<h3>' . $display_image . '<span class="textOrange bold">QUESTION: </span><br />'.$row->question.'</h3><br />';
-									// 	echo	'<h2 class="title">A'.$count.'</h2>';
-									// 	echo 	'<h3>' . $display_image . '<span class="textOrange bold">ANSWER: </span><br />'.$row->answer.'</h3><br />';
+									else
+									{
+										//Display Question and Answer on SEPARATE slides - (refer student config for flash_opt)
+										echo '<div class="owl-carousel-cont">';
+											echo '<h2><span class="quest-num">Q'.$count.'</span> ' . $display_image . '</h2>';
+											// Show Question ONLY!
+											echo '<h3>QUESTION:</h3>';
+											echo '<p>' . $row->question . '</p>';
+
+											if($count == 10) {
+												echo anchor('section/flash_cards/1', 'Shuffle', array('class'=>'btn btn-md btn-red'));
+											}
+
+										echo '</div>';
+
+										echo '<div class="owl-carousel-cont">';
+											echo '<h2><span class="quest-num">A'.$count.'</span> ' . $display_image . '</h2>';
+											// Show Answer ONLY!
+											echo '<h3>ANSWER:</h3>';
+											echo '<p>' . $row->answer . '</p>';
+
+											if($count == 10) {
+												echo anchor('section/flash_cards/1', 'Shuffle', array('class'=>'btn btn-md btn-red'));
+											}
+
+										echo '</div>';
 										
-
-									
-
-									// }
+									}
 								
 								$count++;
 
@@ -120,6 +136,11 @@
 		paginationNumbers: false
 
       });
+
+      //Auto submit the 'Choose Topics Level' dropdown form
+		$(".flash_opt").on('change', function () {
+			this.form.submit();
+		});
      
     });
 

@@ -226,7 +226,7 @@ class Section extends CI_Controller
 					$data['result'] .= '<div class="no_answer">';
 					$data['result'] .= $display_image;
 					$data['result'] .= '<p><strong>' . $q_num . '. ' . $_POST['question'][$i] . '</strong></p>';
-					$data['result'] .= '<p><strong class="text-redLight">You: </strong>' . $_POST['answer'][$i] . '</p>';
+					$data['result'] .= '<p><strong class="text-redLight">You: </strong>' . strip_tags($_POST['answer'][$i]) . '</p>';
 					$data['result'] .= '<hr class="hr-written">';
 					$data['result'] .= '</div>';
 				}
@@ -235,7 +235,7 @@ class Section extends CI_Controller
 					$data['result'] .= '<div class="correct">';
 					$data['result'] .= $display_image;
 					$data['result'] .= '<p><strong>' . $q_num . '. ' . $_POST['question'][$i] . '</strong></p>';
-					$data['result'] .= '<p><strong class="text-redLight">You: </strong>' . $_POST['answer'][$i] . '</p>';
+					$data['result'] .= '<p><strong class="text-redLight">You: </strong>' . strip_tags($_POST['answer'][$i]) . '</p>';
 					$data['result'] .= '<p><strong class="text-greenMid">eLearn: </strong><em>' . $this->encrypt->decode( $_POST['mod_answer'][$i] ) . '</em></p>';
 					$data['result'] .= '<hr class="hr-written">';
 					$data['result'] .= '</div>';
@@ -382,11 +382,13 @@ class Section extends CI_Controller
 
 						$data['result']  .= '<div class="correct">';
 						$data['result']  .= '<p><strong>' . $q_number . '. ' . $_POST['question'][$i] . '</strong></p>';
-						$data['result']  .= '<p><strong class="text-redLight"> You: </strong>' . $posted_answer . '</p>';
+						$data['result']  .= '<div class="multi-correct">';
+						$data['result']  .= '<p><strong class="text-greenMid"><i class="fa fa-check"></i> You: </strong>' . $posted_answer . '</p>';
+						$data['result']  .= '</div>';
 
 						if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 						{
-							$data['result']  .= '<p><strong class="text-greenMid">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
+							$data['result']  .= '<p><strong class="text-muted">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
 							$data['result']  .= '<p class="text-muted"><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 						}
 
@@ -398,11 +400,13 @@ class Section extends CI_Controller
 					{
 						$data['result']  .= '<div class="incorrect">';
 						$data['result']  .= '<p><strong>' . $q_number . '. ' . $_POST['question'][$i] . '</strong></p>';
-						$data['result']  .= '<p><strong class="text-redLight">You: </strong>' . $posted_answer . '</p>';
+						$data['result']  .= '<div class="multi-incorrect">';
+						$data['result']  .= '<p><strong class="text-redLight"><i class="fa fa-times"></i> You: </strong>' . $posted_answer . '</p>';
+						$data['result']  .= '</div>';
 
 						if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 						{
-							$data['result']  .= '<p><strong class="text-greenMid">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
+							$data['result']  .= '<p><strong class="text-muted">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
 							$data['result']  .= '<p class="text-muted"><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 						}
 
@@ -420,7 +424,7 @@ class Section extends CI_Controller
 
 					if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 					{
-						$data['result']  .= '<p><strong class="text-greenMid">eLearn: </strong><em>' . $this->encrypt->decode(  $_POST['answer'][$i] ) . '</em></p>';
+						$data['result']  .= '<p><strong class="text-muted">eLearn: </strong><em>' . $this->encrypt->decode(  $_POST['answer'][$i] ) . '</em></p>';
 						$data['result']  .= '<p><strong class="text-muted">Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 					}
 

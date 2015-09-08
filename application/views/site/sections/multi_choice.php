@@ -122,7 +122,7 @@
 											echo '<div class="radio">';
 											echo '<label>';
 											echo '<input type="radio" name="q'.$row->id.'" class="radio_class owl-next" id="q' . $row->id . '" value="' . $option . '">';
-											echo $option . ' - ' .$answer;
+											echo $option;
 											echo '</label>';
 											echo '</div>';
 										}
