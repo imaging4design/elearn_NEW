@@ -76,12 +76,12 @@
 
 				<div class="center">
 
-					<h1>Want to learn Economics?</h1>
+					<h1>Want to learn or need assistance with Economics?</h1>
 					<h4>
-						Are you studying or teaching Macroeconomics, Microeconomics, Advanced Placement, IB&nbsp;Economics, Cambridge Economics or another Economics Course? <br><br>
+						Are you studying or teaching Macroeconomics, Microeconomics, Advanced Placement, International Baccalaureate (IB) Economics or Cambridge Economics? <br><br>
 					</h4>
 					<p>
-						 Help is at hand, elearnEconomics assists individuals studying Economics. This site covers a wide range of courses and individuals have the ability to customise their course or do extension work. It's simple, easy to use and very cost effective.
+						Help is at hand, elearnEconomics assists individuals studying Economics. This site covers a wide range of courses and individuals have the ability to customise their course or do extension work. It's simple, easy to use and very cost effective.
 					</p>
 					
 				</div>
@@ -140,11 +140,12 @@
 							<h4 class="text-redLight">content formats</h4>
 						</div>
 						<ul>
-							<li><strong>KEY NOTES</strong> - comprehensive explinations detailing each topic in depth </li>
+							<li><strong>KEY NOTES</strong> - detailed explanations covering each topic </li>
 							<li><strong>AUDIO/VIDEO</strong> - professionally animated and narrated video clips</li>
 							<li><strong>FLASH CARDS</strong> - question and answer concept prompts</li>
-							<li><strong>WRITTEN QUESTIONS</strong> - designed to enforce the learning process</li>
-							<li><strong>MULTI-CHOICE</strong> - test your knowledge with tracked results</li>
+							<li><strong>WRITTEN QUESTIONS</strong> - designed to reinforce the learning process</li>
+							<li><strong>MULTI CHOICE</strong> - test your knowledge with tracked results</li>
+							<li><strong>PRINTABLE PDFS</strong></li>
 						</ul>
 					</div>
 
