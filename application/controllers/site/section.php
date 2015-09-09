@@ -13,7 +13,8 @@ class Section extends CI_Controller
 		//$this->logged_in();
 
 		//Get the topicID so we can use it for the 
-		if($this->uri->segment(2) == 'key_notes' && $this->uri->segment(3))
+		//if($this->uri->segment(2) == 'key_notes' && $this->uri->segment(3))
+		if($this->uri->segment(2) && $this->uri->segment(3))
 		{
 			$this->session->set_userdata('topicID', $this->uri->segment(3));
 		}
@@ -388,7 +389,7 @@ class Section extends CI_Controller
 
 						if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 						{
-							$data['result']  .= '<p><strong class="text-muted">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
+							// NOT REQUIRED - $data['result']  .= '<p><strong class="text-muted">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
 							$data['result']  .= '<p class="text-muted"><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 						}
 
@@ -406,7 +407,7 @@ class Section extends CI_Controller
 
 						if($this->input->post('show_answers')) // Only show correct answers and reasons if user checks 'show_reasons' checkbox
 						{
-							$data['result']  .= '<p><strong class="text-muted">eLearn: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
+							$data['result']  .= '<p><strong class="text-muted">Correct Answer: </strong>' . $this->encrypt->decode( $_POST['answer'][$i] ) . '</p>';
 							$data['result']  .= '<p class="text-muted"><strong>Reason: </strong><em>' . $this->encrypt->decode(  $_POST['reason'][$i] ) . '</em></p>';
 						}
 

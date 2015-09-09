@@ -118,7 +118,7 @@
 							echo '<span class="excellent rating">&nbsp;</span> Excellent';
 						echo '</div>';
 
-						echo '<h2>' . strtoupper($topic->topic) . '</h2>';
+						echo '<h2>' . anchor('section/multi_choice/' . $topic->topicID, 'Take a Test', array( 'class'=>'btn btn-sm btn-red' )) . '<br class="marBot20 visible-xs"> ' . strtoupper($topic->topic) . '</h2>';
 						echo '<div class="multiseparator vc_custom"></div>';
 					}
 
@@ -318,7 +318,7 @@
 									echo '<div class="row result">';
 
 										echo '<div class="col-md-6">';
-										echo '<p><strong>' . strtoupper($row->topic) . '</strong><br class="visible-xs"> (' . $row->$n_month . ') ' . $average_score_percent . '% Last Test: (' . $row->test_date . ')</p>';
+										echo '<p><strong>' . strtoupper($row->topic) . '</strong><br class="visible-xs"> (' . $row->$n_month . ' - Last Test: ' . $row->test_date . ') ' . $average_score_percent . '%</p>';
 										echo '</div>';
 										echo '<div class="col-md-6">';
 											echo '<span class="guage-container">';

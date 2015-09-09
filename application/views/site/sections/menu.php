@@ -141,7 +141,7 @@
 										echo '<h4 class="text-redLight"><strong>' . $alpha_header . '</strong></h4>';
 
 										// Display Topic Name
-										echo '<p>' .anchor('results/leaders_school/' . $row->topicID,  ' <i class="fa fa-search"></i> ') . ' ' . anchor( 'section/key_notes/' . $row->topicID, $row->topic) . ' ' . $score . '%</p>';
+										echo '<p>' .anchor('results/leaders_school/' . $row->topicID,  ' <i class="fa fa-search"></i> ') . ' ' . anchor( 'section/key_notes/' . $row->topicID, $row->topic) . ' <span class="text-redLight">' . $score . '%</span></p>';
 
 										// Save alpha letter as var to test against looped through version above
 										$set_letter = $letter; 
