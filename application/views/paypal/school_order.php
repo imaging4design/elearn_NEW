@@ -120,7 +120,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<label>
-										<input type="checkbox" name="conf_order" value="1"> Confirm Order Details
+										<input type="checkbox" name="conf_order" value="1"> I agree to the <?php echo anchor('site/terms', 'Terms &amp; Conditions', array('target'=>'_blank')); ?>
 									</label>
 								</div><!-- ENDS col -->
 							</div><!-- ENDS row -->

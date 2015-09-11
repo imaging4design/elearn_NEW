@@ -4,7 +4,7 @@
 			<div class="col-lg-12 col-full">
 
 
-				<h2>Teachers Admin - Screen Reports (screen_student.php)</h2>
+				<h2>Teachers Admin - Screen Reports</h2>
 				<div class="multiseparator vc_custom"></div>
 
 

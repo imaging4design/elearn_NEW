@@ -40,7 +40,7 @@
 						
 						<div class="checkbox">
 							<label for="terms">
-								<input type="checkbox" name="terms" id="terms" value="1" class="checkbox" /> I agree to the <?php echo anchor( 'site/terms', '<strong>terms and conditions.</strong>', array('target' => '_blank') ); ?><br />
+								<input type="checkbox" name="terms" id="terms" value="1" class="checkbox" /> I agree to the <?php echo anchor( 'site/terms', '<strong>Terms and Conditions.</strong>', array('target' => '_blank') ); ?><br />
 							</label>
 						</div>
 
