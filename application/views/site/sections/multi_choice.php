@@ -39,9 +39,9 @@
 					echo $result;
 
 					// Restart new test of current topic (large screens)
-					echo anchor('section/multi_choice/1', 'Another Test?', array('class'=>'btn btn-lg btn-red hidden-xs'));
+					echo anchor('section/multi_choice/'. $this->uri->segment(3), 'Another Test?', array('class'=>'btn btn-lg btn-red hidden-xs'));
 					// (mobile screens)
-					echo anchor('section/multi_choice/1', 'Another Test?', array('class'=>'btn btn-lg btn-red btn-block visible-xs'));
+					echo anchor('section/multi_choice/'. $this->uri->segment(3), 'Another Test?', array('class'=>'btn btn-lg btn-red btn-block visible-xs'));
 
 				}
 
