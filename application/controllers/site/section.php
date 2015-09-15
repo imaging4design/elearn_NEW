@@ -244,18 +244,18 @@ class Section extends CI_Controller
 		}
 		else
 		{
-			//Get Key Notes from Database
+			//Get Written Answers from Database
 			if($query = $this->section_model->written_answers())
 			{
 				$data['written_answers'] = $query;
 			}
 
-			//Get ALL related Sub Topics to display
-			if($query = $this->section_model->get_related_topics())
-			{
-				$data['sub_topics'] = $query;
-			}
+		}
 
+		//Get ALL related Sub Topics to display
+		if($query = $this->section_model->get_related_topics())
+		{
+			$data['sub_topics'] = $query;
 		}
 
 		$data['main_content'] = 'site/sections/written_answers';
@@ -358,9 +358,9 @@ class Section extends CI_Controller
 					$image = array(
 						'src' => base_url() . 'images/images/' . $_POST['image'][$i],
 						'alt' => 'eLearn Economics',
-						'width' => '200px',
-						'height' => '133',
-						'style' => 'margin: 10px 0 10px 30px;',
+						'width' => '440',
+						'height' => '293',
+						'style' => 'margin:0 20px 20px 0;',
 						'class' => 'img-responsive'
 					);
 
@@ -462,13 +462,13 @@ class Section extends CI_Controller
 				$data['token'] = $this->auth->token();
 				$data['multi_choice'] = $query;
 			}
-
-			//Get ALL related Sub Topics to display
-			if($query = $this->section_model->get_related_topics())
-			{
-				$data['sub_topics'] = $query;
-			}
 		
+		}
+
+		//Get ALL related Sub Topics to display
+		if($query = $this->section_model->get_related_topics())
+		{
+			$data['sub_topics'] = $query;
 		}
 
 		$data['main_content'] = 'site/sections/multi_choice';
