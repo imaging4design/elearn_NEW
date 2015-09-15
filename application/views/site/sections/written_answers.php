@@ -55,7 +55,7 @@
 									echo '<p>' . $row->question . '</p>';
 
 									echo '<input type="hidden" name="question[]" id="question[]" value=" ' . $row->question . ' " />'; //Hidden field containing Question
-									echo '<input type="hidden" name="mod_answer[]" id="mod_answer[]" value=" ' . $this->encrypt->encode( $row->answer ) . ' " />'; //Hidden field containing Model Answer
+									//echo '<input type="hidden" name="mod_answer[]" id="mod_answer[]" value=" ' . $this->encrypt->encode( $row->answer ) . ' " />'; //Hidden field containing Model Answer
 									echo '<textarea name="mod_answer[]" id="mod_answer[]" style="display:none;">' . $this->encrypt->encode( $row->answer ) . '</textarea>'; //Input field containing User Answer
 									echo '<input type="hidden" name="image[]" id="image[]" value="'.$row->image.'" />';
 									echo '<textarea rows="6" name="answer[]" class="form-control" id="answer[]" ></textarea>'; //Input field containing User Answer

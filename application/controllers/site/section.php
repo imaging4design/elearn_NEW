@@ -221,7 +221,6 @@ class Section extends CI_Controller
 				//Only show image if there is one (otherwise leaves an empty box in some browsers)!
 				$display_image = ( $_POST['image'][$i] !='' ) ? img($image) : '';
 
-
 				if($_POST['answer'][$i] =='')
 				{
 					$data['result'] .= '<div class="no_answer">';
