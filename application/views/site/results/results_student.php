@@ -365,14 +365,18 @@
 
 				<br>
 
+				
+
 				<div align="center">
+
+					<h3>PDF Report <span class="text-redLight">(Month by Month)</span></h3>
 
 					<!--DISPLAY DOWNLOAD PDF REPORT-->
 					<?php echo form_open('students_pdf/results_PDF', array('style' => 'background:none;')); ?>
 
 						<input type="hidden" name="token" id="token" value="<?php echo $token; ?>" />
 						<input type="hidden" name="studentID" id="studentID" value="<?php echo $this->session->userdata('studentID'); ?>" />
-						<input type="submit" name="report" value="Download (PDF) Report" class="btn btn-md btn-red" />
+						<input type="submit" name="report" value="&#xf019; Download" class="btn btn-md btn-red fa-fa" />
 
 					<?php echo form_close(); ?>
 

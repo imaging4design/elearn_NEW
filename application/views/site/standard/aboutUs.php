@@ -69,7 +69,7 @@
 				<div class="multiseparator vc_custom"></div>
 
 				<p>
-					Dan Rennie has written and published over 30 economics resource publications in the past 20 years and is one of New Zealand's foremost experts on the subject. A former (HOD) head of department at Rosmini College on Auckland's North Shore, Dan conceived and developed the eLearn Economics website as the now <strong>'go to'</strong> online resource for learning the subject. 
+					Dan Rennie has written and published over 30 economics resource publications in the past 20 years and is one of New Zealand's foremost experts on the subject. A former Head of Department at Rosmini College on Auckland's North Shore, Dan conceived and developed the eLearn Economics website as the <strong>'go to'</strong> online resource for learning economics. 
 				</p>
 
 				<p>
