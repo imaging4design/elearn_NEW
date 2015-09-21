@@ -9,7 +9,10 @@
 				<p>Breaches of the following terms and conditions may result in termination of your licence.</p>
 				<h3 class="bold">Licence Time Frame</h3>
 				<ul>
-					<li>Unless agreed in written form by eLearn Resources Ltd licence agreements will be terminated on: <br>- the 8th of December of the current year.</li>
+					<li>Unless agreed in written form by eLearn Resources Ltd licence agreements will be terminated on: 
+						<br>- Northern hemisphere - 8th July of the following year.
+						<br>- Southern hemisphere - 8th December of the current year.
+					</li>
 					<li>Should you decide to continue with your current and/or another subject/level then you will need to re-register and a new payment will be required.</li>
 				</ul>
 

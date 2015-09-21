@@ -226,8 +226,8 @@
 		if( n == 10 ) // Display submit answers / options when ALL 10 answers been selected
 		{
 			//$("#coda-nav-right-1").html('Test Complete - submit your answers');
-			$('#submit_but').delay(200).fadeIn(400);
-			$('#options').delay(200).fadeIn(400);
+			$('#submit_but').delay(800).fadeIn(400);
+			$('#options').delay(800).fadeIn(400);
 		}
 
 		//console.log('clicked ' + n + ' time(s)');

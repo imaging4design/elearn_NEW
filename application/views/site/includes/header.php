@@ -115,7 +115,8 @@
 								
 								<li class="<?php echo $contact; ?>"><?php echo anchor('site/contact', 'CONTACT'); ?></li>
 								<li class="dropdown <?php echo $user; ?>">
-								<?php if( $this->session->userdata('logged_in') == 1) { ?>
+								<!-- Only allow paid members the 'Options' drop down -->
+								<?php if( $this->session->userdata('logged_in') == 1 && $this->session->userdata('member_type') == 'paid_member') { ?>
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">OPTIONS <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><?php echo anchor('results/view_progress', 'View Progress'); ?></li>
