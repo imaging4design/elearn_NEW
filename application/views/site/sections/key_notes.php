@@ -28,3 +28,13 @@
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
 </div><!--ENDS band-white-->
+
+
+<!-- BLOCK non paid users from downloading PDF resources in Key Notes -->
+<?php if( ! $this->session->userdata('studentID')) { ?>
+		
+	<script>
+		$('a.pdf').removeAttr("href").html('PDFs are available to fully subscribed members only.');
+	</script>
+
+<?php } ?>

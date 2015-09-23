@@ -48,7 +48,7 @@
 
 				<?php
 					// Displays the class message instructing students what to study
-					//This is created by the teacher and displays for each student in that teachers class
+					//	This is created by the teacher and displays for each student in that teachers class
 					// if( isset( $class_message->message ) && ! empty( $class_message->message ) )
 					// {
 					// 	echo '<div id="class_message">';
@@ -85,6 +85,22 @@
 					<h2>Course Topics</h2>
 					<div class=	"multiseparator vc_custom"></div>
 					<p>Click <i class="fa fa-search"></i> for leaderboard results</p>
+
+
+					<?php
+						// Displays the class message instructing students what to study
+						//	This is created by the teacher and displays for each student in that teachers class
+						if( isset( $class_message->message ) && ! empty( $class_message->message ) )
+						{
+							echo '<div id="class_message" class="well well-trans">';
+								echo '<h3>Hello ' . $class_message->first_name . ',</h3>';
+								echo '<p>' . nl2br($class_message->message) . '</p>';
+
+								echo anchor('#', 'Hide Instructions', array('class'=>'btn btn-md btn-red class_message_toggle'));
+							echo '</div>';
+						}
+					?>
+					<hr class="small">
 
 				</div><!-- ENDS col -->
 			</div><!-- ENDS row -->

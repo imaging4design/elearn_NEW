@@ -311,7 +311,7 @@
 									echo '<div class="row result">';
 
 										echo '<div class="col-md-4">';
-											echo '<p><strong>' . strtoupper($row->topic) . '</strong> <br />Last Test: (' . $row->test_date . ') <span class="text-redLight">(' . $row->$n_month . ')</span> 0%</p>';
+											echo '<p><strong>' . strtoupper($row->topic) . '</strong> <br />Last Test: (' . $row->test_date . ') <span class="text-redLight">(' . $row->$n_month . ')</span> ' . $average_score_percent . '%</p>';
 										echo '</div>';
 										echo '<div class="col-md-8">';
 											echo '<span class="guage-container">';
@@ -417,7 +417,7 @@
 								echo '<div class="row result">';
 
 									echo '<div class="col-md-2">';
-										echo '<p>' . $month[$i] . ' ' . date('Y') . ' <span class="text-redLight">(' . $topic_results->$n_month[$i] . ') </span>0%</p>';
+										echo '<p>' . $month[$i] . ' ' . date('Y') . ' <span class="text-redLight">(' . $topic_results->$n_month[$i] . ') </span> ' . $average_score_percent . '% </p>';
 									echo '</div>';
 									echo '<div class="col-md-10">';
 										echo '<span class="guage-container">';
