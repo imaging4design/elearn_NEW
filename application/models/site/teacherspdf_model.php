@@ -59,7 +59,7 @@ class Teacherspdf_model extends CI_Model {
 		$this->db->join('ad_topics', 'ad_topics.topicID = mem_results.topicID');
 
 		$this->db->order_by('last_name', 'ASC');
-		//$this->db->order_by('topic', 'ASC');
+		$this->db->order_by('topic', 'ASC');
 		$this->db->order_by('mem_results.studentID', 'ASC', 'topic', 'ASC');
 
 		$query = $this->db->get('mem_students');
