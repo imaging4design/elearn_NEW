@@ -52,7 +52,7 @@
 
 
 		<?php 
-			$total = ( isset( $total ) ) ? $total : '';
+			$total = ( isset( $total ) ) ? $total : 0;
 			$num_users = ( isset( $num_users ) ) ? $num_users : '';
 		?>
 

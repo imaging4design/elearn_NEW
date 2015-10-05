@@ -69,11 +69,11 @@ class Main extends CI_Controller
 		// Loop through each month ...
 		foreach ($scores as $key => $value) {
 
-			//echo $key . ' - ' . $value . '<br>';
-			
-			// Loop through each results for month
-			foreach ($data['stats'] as $row) {
-				$key = $row->$value + $key;
+			if( isset( $data['stats'] )) {
+				// Loop through each results for month
+				foreach ($data['stats'] as $row) {
+					$key = $row->$value + $key;
+				}
 			}
 
 			$total = $key + $total;
