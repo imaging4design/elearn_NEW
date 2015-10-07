@@ -301,7 +301,7 @@
 									echo '<div class="row result">';
 
 										echo '<div class="col-md-6">';
-											echo '<p><strong>' . strtoupper($row->topic) . '</strong><br class="visible-xs"> <span class="text-redLight">(' . $row->$n_month . ')</span></p>';
+											echo '<p><strong>' . strtoupper($row->topic) . '</strong><br class="visible-xs"> <span class="text-redLight">(' . $row->$n_month . ')</span> ' . $average_score_percent . '%</p>';
 										echo '</div>';
 										echo '<div class="col-md-6">';
 											echo '<span class="guage-container">';
