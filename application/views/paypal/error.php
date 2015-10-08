@@ -2,8 +2,10 @@
 	<div class="container">
 		<div class="row">
 
-			<h2>Message from eLearn Economics</h2>
-			<div class="multiseparator vc_custom"></div>
+			<div class="col-md-12">
+
+				<h2>Message from eLearn Economics</h2>
+				<div class="multiseparator vc_custom"></div>
 
 				<?php
 
@@ -19,6 +21,8 @@
 					}
 
 				?>
+
+			</div><!-- ENDS col -->
 
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
