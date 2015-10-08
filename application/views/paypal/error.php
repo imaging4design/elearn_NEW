@@ -1,20 +1,25 @@
-<h1 class="gridHeader">Message from eLearn Economics:</h1>
+<div class="band-grey">
+	<div class="container">
+		<div class="row">
 
-<div class="gridPadding textPadding">
+			<h2>Message from eLearn Economics</h2>
+			<div class="multiseparator vc_custom"></div>
 
-<?php
+				<?php
 
-	if( $this->session->flashdata('error') )
-	{
-		echo '<h4>' . $this->session->flashdata('error') . '</h4>';
-	}
-	
-	// KEEP THIS THOUGH
-	if( $this->session->flashdata('success') )
-	{
-		echo '<h4>' . $this->session->flashdata('success') . '</h4>';
-	}
+					if( $this->session->flashdata('error') )
+					{
+						echo '<p>' . $this->session->flashdata('error') . '</p>';
+					}
+					
+					// KEEP THIS THOUGH
+					if( $this->session->flashdata('success') )
+					{
+						echo '<p>' . $this->session->flashdata('success') . '</p>';
+					}
 
-?>
+				?>
 
-</div>
+		</div><!--ENDS row-->
+	</div><!--ENDS container-->
+</div><!--ENDS band-grey-->
