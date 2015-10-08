@@ -131,9 +131,8 @@ function add_member()
 	$this->form_validation->set_rules( 'conf_password', 'Confirm Password', 'trim|required|matches[password]' );
 	$this->form_validation->set_rules( 'schoolID', 'School', 'trim|required' );
 	$this->form_validation->set_rules( 'subscribe', 'Subscribe', 'trim|required' );
-	//$this->form_validation->set_rules( 'courseID', 'Course', 'trim|required' );
+	$this->form_validation->set_rules( 'season', 'School Year Begins', 'trim|required' );
 
-	
 	// Work out which $check_key variable to check against
 	// 'key_code' for those visting via their email link
 	// 'txn_id' for those coming directly back from PayPal
@@ -146,11 +145,11 @@ function add_member()
 		'email' => $this->input->post('email'),
 		'password' => md5($this->input->post('password')),
 		'schoolID' => $this->input->post('schoolID'),
-		//'courseID' => $this->input->post('courseID'),
 		'subscribe' => $this->input->post('subscribe'),
 		'created_at' => date('Y-m-d'),
-		'pay_method' => 1
-		);
+		'pay_method' => 1,
+		'season' => $this->input->post('season')
+	);
 
 	$update = array(
 		'email' => $this->input->post('email'),
@@ -160,7 +159,7 @@ function add_member()
 	// If form validates -> add new record to database and initiate success or failure message
         	if($this->form_validation->run() == TRUE && $this->input->post('token') == $this->session->userdata('token'))
         	{
-		// Before entering new a subscriber into database - check to see if a legitimate 'key_code' OR PayPal 'txn_id' exists for this user
+				// Before entering new a subscriber into database - check to see if a legitimate 'key_code' OR PayPal 'txn_id' exists for this user
         		// This function will see if the current (PayPal) txn_id session matches an entry in the database
         		// or whether the $this->uri->segment(3) URL from the link emailed to the subscriber matches an entry in the database
         		if( $this->subscribers_model->check_key($check_key) )
@@ -215,7 +214,7 @@ function add_member_codes()
 	$this->form_validation->set_rules( 'conf_password', 'Confirm Password', 'trim|required|matches[password]' );
 	$this->form_validation->set_rules( 'schoolID', 'School', 'trim|required' );
 	$this->form_validation->set_rules( 'subscribe', 'Subscribe', 'trim|required' );
-	//$this->form_validation->set_rules( 'courseID', 'Course', 'trim|required' );
+	$this->form_validation->set_rules( 'season', 'School Year Begins', 'trim|required' );
 
 	$data_code = array(
 		'access_code' => $this->input->post('access_code')
@@ -228,10 +227,10 @@ function add_member_codes()
 		'password' => md5($this->input->post('password')),
 		'schoolID' => $this->input->post('schoolID'),
 		'subscribe' => $this->input->post('subscribe'),
-		// 'courseID' => $this->input->post('courseID'),
 		'created_at' => date('Y-m-d'),
-		'pay_method' => 0
-		);
+		'pay_method' => 0,
+		'season' => $this->input->post('season')
+	);
 
 
 	// If form validates -> add new record to database and initiate success or failure message
@@ -248,23 +247,23 @@ function add_member_codes()
         			$this->subscribers_model->update_code_status($code_status); // update the mem_codes table - change status to 'Used'
         			$this->session->set_userdata('code_message', '<div class="textGreen">Thank you. You have successfully registered with your access code. Login below as a Full Member using the email and password that you subscribed with.</div>');
 
-				redirect( 'main/login' );
+					redirect( 'main/login' );
         		}
         		else
         		{
         			$data['token'] = $this->auth->token();
         			$data['code_error'] = '<div class="message_error">Your Access Code is not valid. Please try again</div>';
-				$data['error'] = $this->error_school = validation_errors('<div class="message_error">* ', '</div>');
+					$data['error'] = $this->error_school = validation_errors('<div class="message_error">* ', '</div>');
 	        		$data['main_content'] = 'paypal/register_codes';
-				$this->load->view('site/includes/template', $data);
+					$this->load->view('site/includes/template', $data);
         		}
         	}
         	else
         	{
         		$data['token'] = $this->auth->token();
-			$data['error'] = $this->error_school = validation_errors('<div class="message_error">* ', '</div>');
+				$data['error'] = $this->error_school = validation_errors('<div class="message_error">* ', '</div>');
         		$data['main_content'] = 'paypal/register_codes';
-			$this->load->view('site/includes/template', $data);
+				$this->load->view('site/includes/template', $data);
         	}
 
 }

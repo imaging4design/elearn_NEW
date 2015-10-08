@@ -159,5 +159,25 @@ class General_model extends CI_Model {
 	
 	
 	
+	/*************************************************************************************/
+	// FUNCTION NAME :: clean_out()
+	// Deletes ALL Students and their Results by 'Hemisphere' (i.e., Northern or Southern)
+	/*************************************************************************************/
+	function clean_out($data)
+	{
+		$query = $this->db->query("
+			DELETE mem_students, mem_results
+			FROM mem_students
+			INNER JOIN mem_results
+				ON mem_results.studentID = mem_students.studentID
+			WHERE mem_students.season = ".$data['season']."
+		");
+
+		$this->db->where('season', $data['season'] /*record id*/);
+		$this->db->delete('mem_students' /*tablename*/);
+	}
+
+
+	
 
 } //ENDS Subscribers_model class

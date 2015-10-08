@@ -100,6 +100,7 @@
 		<?php
 			echo anchor('general_con/show_faqs', img($this->css_path_url . 'admin/icons/32/freelance.png') . '<br />FAQs', array('class' => 'adminBut'));
 			echo anchor('general_con/view_latest_news', img($this->css_path_url . 'admin/icons/32/future-projects.png') . '<br />Lastest News', array('class' => 'adminBut'));
+			echo anchor('general_con/clean_out_users', img($this->css_path_url . 'admin/icons/32/process.png') . '<br />Clean Out Users', array('class' => 'adminBut'));
 		?>
 	</p>
 	</div>

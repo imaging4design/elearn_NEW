@@ -96,9 +96,42 @@
 									?>
 								</div>
 							</div><!-- ENDS col -->
+						</div><!-- ENDS row -->
+
+
+						<div class="row">
+							<div class="col-md-6">
+								<label for="season">My School Year begins:</label><br>
+								<?php
+
+									// Display Northern or Southern hemisphere - when school begins year! 
+									$south = array(
+										'name' => 'season',
+										'id' => 'season',
+										'value' => '0',
+										'checked' => FALSE,
+										'style' => 'margin: 10px 10px 0 0',
+									);
+
+									$north = array(
+										'name' => 'season',
+										'id' => 'season',
+										'value' => '1',
+										'checked' => FALSE,
+										'style' => 'margin: 0 10px 0 0',
+									);
+
+									echo '<label>';
+									echo form_radio($south) . 'January (Southern Hemisphere)';
+									echo '</label><br>';
+									echo '<label>';
+									echo form_radio($north) . 'July (Northern Hemisphere)';
+									echo '</label>';
+								?>
+							</div><!-- ENDS col -->
 
 							<div class="col-md-6">
-								<label>Subscribe to Newsletter Updates</label>
+								<label for="subscribe">Subscribe to Newsletter Updates</label>
 								<div class="form-group-lg radio">
 									<label>
 										<input type="radio" name="subscribe" value="1" checked> Yes &nbsp; &nbsp;
@@ -109,7 +142,10 @@
 									</label>
 								</div>
 							</div><!-- ENDS col -->
-						</div><!-- ENDS row -->
+
+						</div><!--ENDS row-->	
+
+
 
 
 						<div class="row">
@@ -120,7 +156,7 @@
 							</div><!--ENDS col-->
 						</div><!--ENDS row-->
 
-						</fieldset>
+						</fieldset><!-- ENDS well well-trans -->
 
 						<p><small>*Once registered, you will be directed to the login page.</small></p>
 
@@ -137,4 +173,4 @@
 
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
-</div><!--ENDS band-white-->
+</div><!--ENDS band-grey-->

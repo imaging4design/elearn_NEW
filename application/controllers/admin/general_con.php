@@ -39,6 +39,19 @@ class General_con extends CI_Controller
 	/************************************************************************************************************************************************************************/	
 	
 	/*************************************************************************************/
+	// FUNCTION clean_out_users()
+	// Removed all users/members in the 'mem_students' and related 'mem_results' tables
+	/*************************************************************************************/
+	public function clean_out_users()
+	{
+		$data['token'] = $this->auth->token();
+
+		$data['main_content'] = 'admin/general/clean_out_users';
+		$this->load->view('admin/includes/template', $data);
+	}
+
+
+	/*************************************************************************************/
 	// FUNCTION show_faqs()
 	// Displays a list of all the FAQs
 	/*************************************************************************************/
@@ -326,6 +339,40 @@ class General_con extends CI_Controller
 		}
 		redirect($this->session->userdata('url'));
 		
+	}
+
+
+
+	/*************************************************************************************/
+	// FUNCTION NAME :: clean_out()
+	// Deletes ALL Students and their Results by 'Hemisphere' (i.e., Northern or Southern)
+	/*************************************************************************************/
+	public function clean_out()
+	{
+		$this->form_validation->set_rules('token', 'token', 'trim|required');
+		$this->form_validation->set_rules('season', 'Hemisphere', 'trim|required');
+
+		$data = array(
+			'season' => $this->input->post('season')
+		);
+
+		if($this->form_validation->run() == TRUE && $this->input->post('token') == $this->session->userdata('token')) 
+		{
+			$this->general_model->clean_out($data);
+			$this->delete_message = '<div class="message_success">Students (and results) successfully removed!</div>';
+		}
+		else
+		{
+			//$this->delete_message = '<div class="message_success">Students (and results) successfully removed!</div>';
+			$this->delete_message = validation_errors('<div class="message_error">* ', '</div>');
+		}
+
+		$data['token'] = $this->auth->token();
+		
+		$data['main_content'] = 'admin/general/clean_out_users';
+		$this->load->view('admin/ckedit');
+		$this->load->view('admin/includes/template', $data);
+				
 	}
 	
 	
