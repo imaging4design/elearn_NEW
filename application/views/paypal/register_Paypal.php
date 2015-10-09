@@ -129,7 +129,7 @@
 											echo form_radio($south) . 'January (Southern Hemisphere)';
 										echo '</label><br>';
 										echo '<label>';
-											echo form_radio($north) . 'July (Northern Hemisphere)';
+											echo form_radio($north) . 'August (Northern Hemisphere)';
 										echo '</label>';
 									?>
 								</div><!-- ENDS col -->
