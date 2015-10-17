@@ -82,3 +82,40 @@
 </div><!-- ENDS band-white -->
 
 
+
+<div class="band-white padTop60">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<?php
+
+					$dan = array(
+						'src' => base_url() . 'images/mark_johnston.jpg',
+						'alt' => 'Mark Johnston',
+						'width' => '180',
+						'height' => '180',
+						'style' => 'display:block;',
+						'class' => 'img-circle img-border-grey'
+					);
+
+					echo img($dan);
+
+				?>
+
+
+
+				<h2>Co-Author <br class="visible-xs">- Mark Johnston</h2>
+				<div class="multiseparator vc_custom"></div>
+
+				<p>
+					Mark is a well-known and respected economics teacher who has taught in the United Kingdom and New Zealand. He has had a keen interest in online education from when he was the manager of the Kings College online economics course. Mark’s popular blog econfix - <a href="http://econfix.wordpress.com" target="_blank">econfix.wordpress.com</a> continues to assist economics teachers and students with their understanding of current issues in economics. 
+				</p>
+				
+			</div><!--ENDS col-->
+		</div><!--ENDS row-->
+	</div><!--ENDS container-->
+</div><!-- ENDS band-white -->
+
+
+
