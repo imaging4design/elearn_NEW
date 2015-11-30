@@ -59,7 +59,7 @@
 							// Only display link to 'Options' page if user is a paid member
 							$link = ( $this->session->userdata( 'member_type' ) == 'paid_member' ) ? anchor('section/edit_options', 'MY OPTIONS', array('class'=>'btn btn-lg btn-red')) : 'MY OPTIONS';
 						?>
-						<p><strong>To appear on the leader board you must be a fully suscribed member and 'opt in' under 'My Options' below.  </strong></p>
+						<p><strong>To appear on the leader board you must be a fully subscribed member and 'opt in' under 'My Options' below.  </strong></p>
 						<?php echo $link; ?>
 
 					<?php //} ?>
