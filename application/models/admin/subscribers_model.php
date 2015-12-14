@@ -156,6 +156,30 @@ class Subscribers_model extends CI_Model {
 
 
 	/*************************************************************************************/
+	// FUNCTION NAME :: get_northern_students()
+	// Displays Students registered for the Northern Hemisphere Season
+	/*************************************************************************************/
+	function get_northern_students($data)
+	{
+		$this->db->select('*');
+		$this->db->select("DATE_FORMAT(created_at, '%d %b %Y') AS created_at", FALSE);
+		//$this->db->where('studentID', $data['studentID']);
+		$this->db->where('season', $data['season']);
+		$this->db->join('ad_schools', 'ad_schools.id = mem_students.schoolID');
+		$this->db->join('ad_courses', 'ad_courses.id = mem_students.courseID');
+		$this->db->order_by('mem_students.last_name', 'ASC');
+		$query = $this->db->get('mem_students');
+		
+		if($query->num_rows() > 0) 
+		{
+			return $query->result();
+		}
+		
+	}
+
+
+
+	/*************************************************************************************/
 	// FUNCTION NAME :: get_student_from_school()
 	// Displays ALL students from teh selected school - via their schoolID
 	/*************************************************************************************/

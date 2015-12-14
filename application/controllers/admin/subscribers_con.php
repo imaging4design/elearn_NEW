@@ -103,6 +103,51 @@ public function get_student_details()
 	}
 
 }
+
+
+
+/*************************************************************************************/
+// FUNCTION NAME :: get_northern_students()
+// Displays Students registered for the Northern Hemisphere Season
+/*************************************************************************************/
+public function get_northern_students()
+{
+	$this->form_validation->set_rules('token', 'Token', 'trim|required');
+	$this->form_validation->set_rules('season', 'Season', 'trim|required');
+
+	// Get value for 'Northern Hemisphere' students
+	$season = $this->input->post('season');
+
+	$data = array(
+		'season' => $season
+	);
+
+
+	// If form validates -> add new record to database and initiate success or failure message
+	if($this->form_validation->run() == TRUE && $this->input->post('token') == $this->session->userdata('token')) 
+	{
+		
+		if($query = $this->subscribers_model->get_northern_students($data))
+		{
+			$data['show_season'] = $query;
+		}
+
+		$data['token'] = $this->auth->token();
+
+		$data['main_content'] = 'admin/subscribers/search_students';
+		$this->load->view('admin/includes/template', $data);
+	} 
+	else 
+	{
+		$this->error_season = validation_errors('<div class="message_error">* ', '</div>');
+
+		$data['token'] = $this->auth->token();
+
+		$data['main_content'] = 'admin/subscribers/search_students';
+		$this->load->view('admin/includes/template', $data);
+	}
+
+}
     
     
     
