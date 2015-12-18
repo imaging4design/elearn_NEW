@@ -18,7 +18,7 @@
 
 		</ul>
 
-		<a href="../section/index"><button class="btn btn-md btn-red">All Topics</button></a>
+		<a href="../section/index"><button class="btn btn-md btn-red">All Base Topics</button></a>
 
 	</div><!-- ENDS topics-off-canvas-content -->
 </div><!-- ENDS topics-off-canvas -->
