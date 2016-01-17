@@ -496,7 +496,7 @@ public function add_access_codes()
 			$enquiry .= '<strong>ACCESS CODES:</strong><br>';
 			$enquiry .= $email_codes . '<br><br>';
 
-			$enquiry .= 'Rennie Resources Ltd<br>';
+			$enquiry .= 'eLearn Resources<br>';
 			$enquiry .= 'Ph (09) 410 9653<br>';
 			$enquiry .= 'Email: '. mailto('info@elearneconomics.com', 'info@elearneconomics.com') .'<br>';
 			//$enquiry .= 'Email: '. mailto('info@imaging4design.co.nz', 'info@imaging4design.co.nz') .'<br>';
