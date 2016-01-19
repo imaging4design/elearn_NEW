@@ -12,8 +12,8 @@
 					<li>Unless agreed in written form by eLearn Resources Ltd licence agreements will be terminated on: 
 						<br>- Northern hemisphere - 8th July of the following year.
 						<br>- Southern hemisphere - 8th December of the current year.
+						<br>- All users at NZ schools are required to register under the <strong>Southern Hemisphere.</strong>
 					</li>
-					<li><strong>All users at New Zealand schools are required to register under the Souuthern Hemisphere</strong></li>
 					<li>Should you decide to continue with your current and/or another subject/level then you will need to re-register and a new payment will be required.</li>
 				</ul>
 
