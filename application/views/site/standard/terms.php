@@ -45,7 +45,7 @@
 				<h3 class="bold">Privacy</h3>
 				<p>eLearn Resources Ltd will endeavour to keep all user information private. We may use this information for our own research and we may contact users regarding other offers.</p>
 				<p>In registering for this site it is accepted that you have read and agree to all the above terms and conditions. Breaches of these terms and conditions will result in a termination of your licence and any necessary legal action may be taken.</p>
-				<p>This agreement shall be governed by New Zealand law and the non-exclusive juristriction of the courts of New Zealand.</p>
+				<p>This agreement shall be governed by New Zealand law and the non-exclusive jurisdiction of the courts of New Zealand.</p>
 
 				<h3 class="bold">Contact</h3>
 				<p>Any inquiries or communications may be directed to <?php echo safe_mailto('info@elearneconomics.com', 'eLearn Economics Support'); ?></p>
